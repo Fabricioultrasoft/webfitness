@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="293596ac15a24c5e835e502c19cf0301" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="WebfitnessDBModel.Aula" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Cidade" Width="1.5" PointX="3" PointY="2" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Equipamento" Width="1.5" PointX="6" PointY="3.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.EquipamentoAula" Width="1.5" PointX="9" PointY="5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Exercicio" Width="1.5" PointX="12" PointY="6.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.ExercicioEquipamento" Width="1.5" PointX="15" PointY="8" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Fornecedor" Width="1.5" PointX="18" PointY="9.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Pais" Width="1.5" PointX="0.5" PointY="11" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.TpAula" Width="1.5" PointX="3" PointY="12.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.TpEquipamento" Width="1.5" PointX="6" PointY="14" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.TpExercicio" Width="1.5" PointX="9" PointY="15.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.TpFornecedor" Width="1.5" PointX="12" PointY="17" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.TpFuncionario" Width="1.5" PointX="15" PointY="18.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Uf" Width="1.5" PointX="18" PointY="20" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Aula_TpAula" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_EquipamentoAula_Aula" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Cidade_Uf" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Fornecedor_Cidade" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Equipamento_Fornecedor" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Equipamento_TpEquipamento" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_EquipamentoAula_Equipamento" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_ExercicioEquipamento_Equipamento" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Exercicio_TpExercicio" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_ExercicioEquipamento_Exercicio" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Fornecedor_TpFornecedor" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Uf_Pais" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
