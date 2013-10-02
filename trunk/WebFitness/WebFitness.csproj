@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -55,6 +58,9 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -112,13 +118,118 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aluno.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AlunoAula.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TipoAulaController.cs" />
+    <Compile Include="Aula.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cidade.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Compra.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CompraEquipamento.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Conserto.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ConsertoEquipamento.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Contato.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Equipamento.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EquipamentoAula.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Exercicio.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExercicioEquipamento.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Ficha.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Fornecedor.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Funcionario.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FuncionarioPermissao.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="HistExercicioAluno.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HistPgtoAluno.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HistPgtoFuncionario.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="HistSalarioFuncionario.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pais.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Permissao.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TpAula.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TpConserto.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TpEquipamento.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TpExercicio.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TpFornecedor.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TpFuncionario.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Uf.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Venda.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VendaEquipamento.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="WebfitnessModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -143,7 +254,49 @@
     <Content Include="App_Data\WebfitnessDB_log.ldf">
       <DependentUpon>WebfitnessDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\themes\admin\Admin.css" />
+    <Content Include="Content\themes\admin\base\css\avocado.css" />
+    <Content Include="Content\themes\admin\base\css\bootstrap-responsive.css" />
+    <Content Include="Content\themes\admin\base\css\bootstrap.min.css" />
+    <Content Include="Content\themes\admin\base\css\chosen.css" />
+    <Content Include="Content\themes\admin\base\css\fullcalendar.css" />
+    <Content Include="Content\themes\admin\base\css\photoswipe.css" />
+    <Content Include="Content\themes\admin\base\css\prism.css" />
+    <Content Include="Content\themes\admin\base\font\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\admin\chosen-sprite%402x.png" />
+    <Content Include="Images\admin\chosen-sprite.png" />
+    <Content Include="Images\admin\icons%402x.png" />
+    <Content Include="Images\admin\icons.png" />
+    <Content Include="Images\admin\loader.gif" />
+    <Content Include="Images\admin\pattern.png" />
+    <Content Include="Scripts\admin\base\analytics.js" />
+    <Content Include="Scripts\admin\base\avocado-custom-predom.js" />
+    <Content Include="Scripts\admin\base\avocado-custom.js" />
+    <Content Include="Scripts\admin\base\bootstrap-typeahead.js" />
+    <Content Include="Scripts\admin\base\bootstrap-wysiwyg.js" />
+    <Content Include="Scripts\admin\base\bootstrap.min.js" />
+    <Content Include="Scripts\admin\base\code.photoswipe-3.0.5.min.js" />
+    <Content Include="Scripts\admin\base\excanvas.min.js" />
+    <Content Include="Scripts\admin\base\fullcalendar.min.js" />
+    <Content Include="Scripts\admin\base\jquery-ui-1.10.2.custom.min.js" />
+    <Content Include="Scripts\admin\base\jquery.chosen.min.js" />
+    <Content Include="Scripts\admin\base\jquery.cookie.js" />
+    <Content Include="Scripts\admin\base\jquery.dataTables.min.js" />
+    <Content Include="Scripts\admin\base\jquery.easing.min.js" />
+    <Content Include="Scripts\admin\base\jquery.flot.js" />
+    <Content Include="Scripts\admin\base\jquery.flot.orderBars.js" />
+    <Content Include="Scripts\admin\base\jquery.flot.pie.js" />
+    <Content Include="Scripts\admin\base\jquery.flot.resize.js" />
+    <Content Include="Scripts\admin\base\jquery.flot.time.js" />
+    <Content Include="Scripts\admin\base\jquery.hotkeys.js" />
+    <Content Include="Scripts\admin\base\jquery.isotope.min.js" />
+    <Content Include="Scripts\admin\base\jquery.jpanelmenu.min.js" />
+    <Content Include="Scripts\admin\base\jquery.pajinate.js" />
+    <Content Include="Scripts\admin\base\jquery.prism.min.js" />
+    <Content Include="Scripts\admin\base\jquery1.8.1.min.js" />
+    <Content Include="Scripts\admin\base\jquery1.9.1.min.js" />
+    <Content Include="Scripts\admin\base\klass.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -154,30 +307,36 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\Controllers\" />
     <Folder Include="Areas\Admin\Models\" />
-    <Folder Include="Areas\Admin\Shared\css\" />
-    <Folder Include="Areas\Admin\Shared\img\" />
-    <Folder Include="Areas\Admin\Shared\js\" />
-    <Folder Include="Areas\Admin\Views\Shared\" />
+    <Folder Include="Content\themes\base\css\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Images\website\" />
     <Folder Include="Models\" />
-    <Folder Include="Public\css\" />
-    <Folder Include="Public\img\" />
-    <Folder Include="Public\js\" />
-    <Folder Include="Shared\css\" />
-    <Folder Include="Shared\img\" />
-    <Folder Include="Shared\js\" />
     <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Areas\Admin\Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Public\templates\Admin.Master" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebFitnessLib\WebFitnessLib.csproj">
+      <Project>{1639ac86-035f-497a-b817-4f8ed744b482}</Project>
+      <Name>WebFitnessLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="WebfitnessModel.edmx">
@@ -201,7 +360,22 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Areas\Admin\Views\TipoAula\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\TipoAula\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\TipoAula\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\themes\admin\base\font\fontawesome-webfontd41d.eot" />
+    <Content Include="Content\themes\admin\base\font\fontawesome-webfontf77b.eot" />
+    <Content Include="Content\themes\admin\base\font\fontawesome-webfontf77b.ttf" />
+    <Content Include="Content\themes\admin\base\font\fontawesome-webfontf77b.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\admin\base\jquery.min.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

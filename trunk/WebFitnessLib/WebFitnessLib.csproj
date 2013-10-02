@@ -39,8 +39,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="class\Mail.cs" />
-    <Compile Include="class\generated\Mail.cs" />
+    <Compile Include="classes\generated\General.cs" />
+    <Compile Include="classes\Mail.cs" />
+    <Compile Include="classes\generated\Mail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
