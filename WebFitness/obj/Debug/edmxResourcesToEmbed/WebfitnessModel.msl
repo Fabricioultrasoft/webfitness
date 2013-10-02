@@ -1,0 +1,405 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebfitnessDBModelStoreContainer" CdmEntityContainer="WebfitnessDBEntities">
+    <EntitySetMapping Name="Aluno">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Aluno">
+        <MappingFragment StoreEntitySet="Aluno">
+          <ScalarProperty Name="idAluno" ColumnName="idAluno" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="rua" ColumnName="rua" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="aniversario" ColumnName="aniversario" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="idCidade" ColumnName="idCidade" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlunoAula">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.AlunoAula">
+        <MappingFragment StoreEntitySet="AlunoAula">
+          <ScalarProperty Name="idAula" ColumnName="idAula" />
+          <ScalarProperty Name="idAluno" ColumnName="idAluno" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aula">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Aula">
+        <MappingFragment StoreEntitySet="Aula">
+          <ScalarProperty Name="idAula" ColumnName="idAula" />
+          <ScalarProperty Name="dsAula" ColumnName="dsAula" />
+          <ScalarProperty Name="capacidade" ColumnName="capacidade" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="preco" ColumnName="preco" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="idTpAula" ColumnName="idTpAula" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cidade">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Cidade">
+        <MappingFragment StoreEntitySet="Cidade">
+          <ScalarProperty Name="idCidade" ColumnName="idCidade" />
+          <ScalarProperty Name="dsCidade" ColumnName="dsCidade" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="idUf" ColumnName="idUf" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="dsCliente" ColumnName="dsCliente" />
+          <ScalarProperty Name="cpfCnpj" ColumnName="cpfCnpj" />
+          <ScalarProperty Name="inscrEstadual" ColumnName="inscrEstadual" />
+          <ScalarProperty Name="rua" ColumnName="rua" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="idCidade" ColumnName="idCidade" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Compra">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Compra">
+        <MappingFragment StoreEntitySet="Compra">
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
+          <ScalarProperty Name="valorCompra" ColumnName="valorCompra" />
+          <ScalarProperty Name="qtdParcelas" ColumnName="qtdParcelas" />
+          <ScalarProperty Name="dtVenda" ColumnName="dtVenda" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompraEquipamento">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.CompraEquipamento">
+        <MappingFragment StoreEntitySet="CompraEquipamento">
+          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
+          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
+          <ScalarProperty Name="qtdCompra" ColumnName="qtdCompra" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Conserto">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Conserto">
+        <MappingFragment StoreEntitySet="Conserto">
+          <ScalarProperty Name="idConserto" ColumnName="idConserto" />
+          <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
+          <ScalarProperty Name="idTpConserto" ColumnName="idTpConserto" />
+          <ScalarProperty Name="valorConserto" ColumnName="valorConserto" />
+          <ScalarProperty Name="qtdParcelas" ColumnName="qtdParcelas" />
+          <ScalarProperty Name="dtConserto" ColumnName="dtConserto" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsertoEquipamento">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.ConsertoEquipamento">
+        <MappingFragment StoreEntitySet="ConsertoEquipamento">
+          <ScalarProperty Name="idConserto" ColumnName="idConserto" />
+          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
+          <ScalarProperty Name="qtdEquipamentos" ColumnName="qtdEquipamentos" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contato">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Contato">
+        <MappingFragment StoreEntitySet="Contato">
+          <ScalarProperty Name="idContato" ColumnName="idContato" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="assunto" ColumnName="assunto" />
+          <ScalarProperty Name="mensagem" ColumnName="mensagem" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipamento">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Equipamento">
+        <MappingFragment StoreEntitySet="Equipamento">
+          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
+          <ScalarProperty Name="dsEquipamento" ColumnName="dsEquipamento" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="status_" ColumnName="status " />
+          <ScalarProperty Name="idTpEquipamento" ColumnName="idTpEquipamento" />
+          <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquipamentoAula">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.EquipamentoAula">
+        <MappingFragment StoreEntitySet="EquipamentoAula">
+          <ScalarProperty Name="idAula" ColumnName="idAula" />
+          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exercicio">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Exercicio">
+        <MappingFragment StoreEntitySet="Exercicio">
+          <ScalarProperty Name="idExercicio" ColumnName="idExercicio" />
+          <ScalarProperty Name="dsExercicio" ColumnName="dsExercicio" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="idTpExercicio" ColumnName="idTpExercicio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExercicioEquipamento">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.ExercicioEquipamento">
+        <MappingFragment StoreEntitySet="ExercicioEquipamento">
+          <ScalarProperty Name="idExercicio" ColumnName="idExercicio" />
+          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ficha">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Ficha">
+        <MappingFragment StoreEntitySet="Ficha">
+          <ScalarProperty Name="idFicha" ColumnName="idFicha" />
+          <ScalarProperty Name="idExercicio" ColumnName="idExercicio" />
+          <ScalarProperty Name="idAluno" ColumnName="idAluno" />
+          <ScalarProperty Name="qtdRepeticoes" ColumnName="qtdRepeticoes" />
+          <ScalarProperty Name="series" ColumnName="series" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fornecedor">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Fornecedor">
+        <MappingFragment StoreEntitySet="Fornecedor">
+          <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
+          <ScalarProperty Name="dsFornecedor" ColumnName="dsFornecedor" />
+          <ScalarProperty Name="cnpj" ColumnName="cnpj" />
+          <ScalarProperty Name="inscrEstadual" ColumnName="inscrEstadual" />
+          <ScalarProperty Name="rua" ColumnName="rua" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="idCidade" ColumnName="idCidade" />
+          <ScalarProperty Name="idTpFornecedor" ColumnName="idTpFornecedor" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Funcionario">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Funcionario">
+        <MappingFragment StoreEntitySet="Funcionario">
+          <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="cpf" ColumnName="cpf" />
+          <ScalarProperty Name="telefone" ColumnName="telefone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="rua" ColumnName="rua" />
+          <ScalarProperty Name="bairro" ColumnName="bairro" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="ctps" ColumnName="ctps" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="aniversario" ColumnName="aniversario" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="idCidade" ColumnName="idCidade" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="idTpFuncionario" ColumnName="idTpFuncionario" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FuncionarioPermissao">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.FuncionarioPermissao">
+        <MappingFragment StoreEntitySet="FuncionarioPermissao">
+          <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+          <ScalarProperty Name="idPermissao" ColumnName="idPermissao" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistExercicioAluno">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.HistExercicioAluno">
+        <MappingFragment StoreEntitySet="HistExercicioAluno">
+          <ScalarProperty Name="idHistExercicioAluno" ColumnName="idHistExercicioAluno" />
+          <ScalarProperty Name="idFicha" ColumnName="idFicha" />
+          <ScalarProperty Name="qtdRepeticoesVelha" ColumnName="qtdRepeticoesVelha" />
+          <ScalarProperty Name="qtdRepeticoesNova" ColumnName="qtdRepeticoesNova" />
+          <ScalarProperty Name="seriesVelho" ColumnName="seriesVelho" />
+          <ScalarProperty Name="seriesNovo" ColumnName="seriesNovo" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistPgtoAluno">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.HistPgtoAluno">
+        <MappingFragment StoreEntitySet="HistPgtoAluno">
+          <ScalarProperty Name="idHistPgtoAluno" ColumnName="idHistPgtoAluno" />
+          <ScalarProperty Name="dtPgto" ColumnName="dtPgto" />
+          <ScalarProperty Name="idAluno" ColumnName="idAluno" />
+          <ScalarProperty Name="vlrPgto" ColumnName="vlrPgto" />
+          <ScalarProperty Name="dtVigenciaInicial" ColumnName="dtVigenciaInicial" />
+          <ScalarProperty Name="dtVigenciaFinal" ColumnName="dtVigenciaFinal" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistPgtoFuncionario">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.HistPgtoFuncionario">
+        <MappingFragment StoreEntitySet="HistPgtoFuncionario">
+          <ScalarProperty Name="idHistPgtoFuncionario" ColumnName="idHistPgtoFuncionario" />
+          <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+          <ScalarProperty Name="dtPgto" ColumnName="dtPgto" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="vlrPgto" ColumnName="vlrPgto" />
+          <ScalarProperty Name="dtVigenciaInicial" ColumnName="dtVigenciaInicial" />
+          <ScalarProperty Name="dtVigenciaFinal" ColumnName="dtVigenciaFinal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HistSalarioFuncionario">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.HistSalarioFuncionario">
+        <MappingFragment StoreEntitySet="HistSalarioFuncionario">
+          <ScalarProperty Name="idHistSalarioFuncionario" ColumnName="idHistSalarioFuncionario" />
+          <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+          <ScalarProperty Name="dtAumento" ColumnName="dtAumento" />
+          <ScalarProperty Name="salarioAntigo" ColumnName="salarioAntigo" />
+          <ScalarProperty Name="salarioNovo" ColumnName="salarioNovo" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pais">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Pais">
+        <MappingFragment StoreEntitySet="Pais">
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+          <ScalarProperty Name="dsPais" ColumnName="dsPais" />
+          <ScalarProperty Name="abrevPais" ColumnName="abrevPais" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissao">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Permissao">
+        <MappingFragment StoreEntitySet="Permissao">
+          <ScalarProperty Name="idPermissao" ColumnName="idPermissao" />
+          <ScalarProperty Name="dsDescricao" ColumnName="dsDescricao" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TpAula">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.TpAula">
+        <MappingFragment StoreEntitySet="TpAula">
+          <ScalarProperty Name="idTpAula" ColumnName="idTpAula" />
+          <ScalarProperty Name="dsTpAula" ColumnName="dsTpAula" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TpConserto">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.TpConserto">
+        <MappingFragment StoreEntitySet="TpConserto">
+          <ScalarProperty Name="idTpConserto" ColumnName="idTpConserto" />
+          <ScalarProperty Name="dsTpConserto" ColumnName="dsTpConserto" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TpEquipamento">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.TpEquipamento">
+        <MappingFragment StoreEntitySet="TpEquipamento">
+          <ScalarProperty Name="idTpEquipamento" ColumnName="idTpEquipamento" />
+          <ScalarProperty Name="dsTpEquipamento" ColumnName="dsTpEquipamento" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TpExercicio">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.TpExercicio">
+        <MappingFragment StoreEntitySet="TpExercicio">
+          <ScalarProperty Name="idTpExercicio" ColumnName="idTpExercicio" />
+          <ScalarProperty Name="dsTpExercicio" ColumnName="dsTpExercicio" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TpFornecedor">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.TpFornecedor">
+        <MappingFragment StoreEntitySet="TpFornecedor">
+          <ScalarProperty Name="idTpFornecedor" ColumnName="idTpFornecedor" />
+          <ScalarProperty Name="dsTpFornecedor" ColumnName="dsTpFornecedor" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TpFuncionario">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.TpFuncionario">
+        <MappingFragment StoreEntitySet="TpFuncionario">
+          <ScalarProperty Name="idTpFuncionario" ColumnName="idTpFuncionario" />
+          <ScalarProperty Name="dsTpFuncionario" ColumnName="dsTpFuncionario" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Uf">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Uf">
+        <MappingFragment StoreEntitySet="Uf">
+          <ScalarProperty Name="idUf" ColumnName="idUf" />
+          <ScalarProperty Name="dsUf" ColumnName="dsUf" />
+          <ScalarProperty Name="abrevUf" ColumnName="abrevUf" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="idPais" ColumnName="idPais" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Venda">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.Venda">
+        <MappingFragment StoreEntitySet="Venda">
+          <ScalarProperty Name="idVenda" ColumnName="idVenda" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="valorVenda" ColumnName="valorVenda" />
+          <ScalarProperty Name="qtdParcelas" ColumnName="qtdParcelas" />
+          <ScalarProperty Name="dtVenda" ColumnName="dtVenda" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VendaEquipamento">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.VendaEquipamento">
+        <MappingFragment StoreEntitySet="VendaEquipamento">
+          <ScalarProperty Name="idVenda" ColumnName="idVenda" />
+          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
+          <ScalarProperty Name="qtdVenda" ColumnName="qtdVenda" />
+          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

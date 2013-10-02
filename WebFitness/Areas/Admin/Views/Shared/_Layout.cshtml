@@ -1,0 +1,259 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>@ViewBag.Title - @ViewBag.Controller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/Areas/Admin/Content/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- Styles -->
+    <link href="~/Content/themes/admin/base/css/chosen.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/themes/admin/base/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/themes/admin/base/css/avocado.css" rel="stylesheet" type="text/css" id="theme-style">
+    <link href="~/Content/themes/admin/base/css/prism.css" rel="stylesheet/less" type="text/css">
+    <link href="~/Content/themes/admin/base/css/fullcalendar.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,600,300" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        body {
+            padding-top: 102px;
+        }
+    </style>
+    <link href="~/Content/themes/admin/base/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="~/Content/themes/admin/admin.css" rel="stylesheet" type="text/css">
+
+    <!-- JavaScript/jQuery, Pre-DOM -->
+    <script src="~/Scripts/admin/base/jquery1.9.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script src="~/Scripts/admin/base/excanvas.min.js"></script>
+    <script src="~/Scripts/admin/base/jquery.flot.js"></script>
+    <script src="~/Scripts/admin/base/jquery.jpanelmenu.min.js"></script>
+    <script src="~/Scripts/admin/base/jquery.cookie.js"></script>
+    <script src="~/Scripts/admin/base/avocado-custom-predom.js"></script>
+
+    <!-- HTML5, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Top Fixed Bar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <!-- Top Fixed Bar: Navbar Inner -->
+        <div class="navbar-inner">
+
+            <!-- Top Fixed Bar: Container -->
+            <div class="container">
+
+                <!-- Mobile Menu Button -->
+                <a href="#">
+                    <button type="button" class="btn btn-navbar mobile-menu">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </a>
+                <!-- / Mobile Menu Button -->
+
+                <!-- / Logo / Brand Name -->
+                <a class="brand" href="#"><i class="icon-leaf"></i>Web Fitness - <b>Painel Administrativo</b></a>
+                <!--@Html.ActionLink("<i class='icon-leaf'></i>Web Fitness - <b>Painel Administrativo</b>", "Dashboard", null, new { @class = "brand"})-->
+                <!-- / Logo / Brand Name -->
+
+                <!-- User Navigation -->
+                <ul class="nav pull-right">
+                    <!-- User Navigation: User -->
+                    <li class="dropdown">
+
+                        <!-- User Navigation: User Link -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-user icon-white"></i>
+                            <span class="hidden-phone">Matheus Baierle</span>
+                        </a>
+                        <!-- / User Navigation: User Link -->
+
+                        <!-- User Navigation: User Dropdown -->
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="icon-off"></i>Logout</a></li>
+                        </ul>
+                        <!-- / User Navigation: User Dropdown -->
+
+                    </li>
+                    <!-- / User Navigation: User -->
+
+                </ul>
+                <!-- / User Navigation -->
+
+            </div>
+            <!-- / Top Fixed Bar: Container -->
+
+        </div>
+        <!-- / Top Fixed Bar: Navbar Inner -->
+
+        <!-- Top Fixed Bar: Breadcrumb -->
+        <div class="breadcrumb clearfix">
+
+            <!-- Top Fixed Bar: Breadcrumb Container -->
+            <div class="container">
+
+                <!-- Top Fixed Bar: Breadcrumb Location -->
+                <ul class="pull-left">
+                    <li><a href="#"><i class="icon-home"></i>Home</a> <span class="divider">/</span></li>
+                    <li class="active"><a href="#"><i class="icon-align-justify"></i>Dashboard</a></li>
+                </ul>
+                <!-- / Top Fixed Bar: Breadcrumb Location -->
+            </div>
+            <!-- / Top Fixed Bar: Breadcrumb Container -->
+
+        </div>
+        <!-- / Top Fixed Bar: Breadcrumb -->
+
+    </div>
+    <!-- / Top Fixed Bar -->
+
+    <!-- Content Container -->
+    <div class="container">
+
+        <!-- Main Navigation: Box -->
+        <div class="navbar navbar-inverse" id="nav">
+
+            <!-- Main Navigation: Inner -->
+            <div class="navbar-inner">
+
+                <!-- Main Navigation: Nav -->
+                <ul class="nav">
+
+                    <!-- Main Navigation: Dashboard -->
+                    <li class="active"><a href="#"><i class="icon-align-justify"></i>Dashboard</a></li>
+                    <!-- / Main Navigation: Dashboard -->
+
+                    <!-- Main Navigation: General -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-th"></i>General <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="grid.html"><i class="icon-th"></i>Grid</a></li>
+                            <li><a href="icons.html"><i class="icon-circle"></i>Icons</a></li>
+                            <li><a href="typography.html"><i class="icon-font"></i>Typography</a></li>
+                            <li><a href="buttons.html"><i class="icon-circle-blank"></i>Buttons</a></li>
+                        </ul>
+                    </li>
+                    <!-- / Main Navigation: General -->
+
+                    <!-- Main Navigation: UI Elements -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-magic"></i>UI Elements <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="forms.html"><i class="icon-check"></i>Forms</a></li>
+                            <li><a href="wysiwyg.html"><i class="icon-edit"></i>WYSIWYG</a></li>
+                            <li><a href="tabs.html"><i class="icon-th-large"></i>Tabs / Accordion</a></li>
+                        </ul>
+                    </li>
+                    <!-- / Main Navigation: UI Elements -->
+
+                    <!-- Main Navigation: Components -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-th-large"></i>Components <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="calendar.html"><i class="icon-calendar"></i>Calendar</a></li>
+                            <li><a href="maps.html"><i class="icon-map-marker"></i>Maps</a></li>
+                            <li><a href="tables.html"><i class="icon-table"></i>Tables</a></li>
+                            <li><a href="charts.html"><i class="icon-bar-chart"></i>Charts</a></li>
+                            <li><a href="login.html"><i class="icon-key"></i>Login</a></li>
+                            <li class="dropdown-submenu">
+                                <a href="#"><i class="icon-signin"></i>Sub-Menu</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#"><i class="icon-signout"></i>This</a></li>
+                                    <li><a href="#"><i class="icon-sitemap"></i>Is</a></li>
+                                    <li><a href="#"><i class="icon-share-alt"></i>An</a></li>
+                                    <li><a href="#"><i class="icon-reorder"></i>Example</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- / Main Navigation: Components -->
+
+                    <!-- Main Navigation: Gallery -->
+                    <li><a href="gallery.html"><i class="icon-picture"></i>Gallery</a></li>
+                    <!-- / Main Navigation: Gallery -->
+
+                </ul>
+                <!-- / Main Navigation: Nav -->
+
+
+            </div>
+            <!-- / Main Navigation: Inner -->
+
+        </div>
+        <!-- / Main Navigation: Box -->
+
+        @RenderBody()
+
+    </div>
+    <!-- / Content Container -->
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <!-- Footer Container -->
+        <div class="container">
+
+            <!-- Footer Container: Content -->
+            <p>&copy; @DateTime.Now.Year - WbFitness Corporation</p>
+
+
+        </div>
+        <!-- / Footer Container -->
+
+    </footer>
+    <!-- / Footer -->
+
+</body>
+
+<!-- Javascript
+	    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="~/Scripts/admin/base/jquery.hotkeys.js"></script>
+<script src="~/Scripts/admin/base/fullcalendar.min.js"></script>
+<script src="~/Scripts/admin/base/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="~/Scripts/admin/base/jquery.pajinate.js"></script>
+<script src="~/Scripts/admin/base/jquery.prism.min.js"></script>
+<script src="~/Scripts/admin/base/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/admin/base/jquery.flot.time.js"></script>
+<script src="~/Scripts/admin/base/jquery.flot.pie.js"></script>
+<script src="~/Scripts/admin/base/jquery.flot.resize.js"></script>
+<script src="~/Scripts/admin/base/bootstrap.min.js"></script>
+<script src="~/Scripts/admin/base/bootstrap-wysiwyg.js"></script>
+<script src="~/Scripts/admin/base/bootstrap-typeahead.js"></script>
+<script src="~/Scripts/admin/base/jquery.easing.min.js"></script>
+<script src="~/Scripts/admin/base/jquery.chosen.min.js"></script>
+<script src="~/Scripts/admin/base/avocado-custom.js"></script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '/Scripts/admin/base/analytics.js', 'ga');
+
+    ga('create', 'UA-43253177-1', 'lycheedesigns.com');
+    ga('send', 'pageview');
+
+</script>
+
+</html>

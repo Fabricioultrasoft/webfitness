@@ -1,0 +1,68 @@
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\WebFitness.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\WebFitness.pdb
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\Antlr3.Runtime.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\EntityFramework.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\Newtonsoft.Json.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Net.Http.Formatting.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.Helpers.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.Http.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.Http.WebHost.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.Mvc.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.Optimization.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.Razor.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.WebPages.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.WebPages.Razor.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\WebFitnessLib.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\WebGrease.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\WebFitnessLib.pdb
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\EntityFramework.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\Newtonsoft.Json.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Net.Http.Formatting.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.Helpers.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.Http.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.Http.WebHost.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.Mvc.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.Razor.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.WebPages.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\bin\System.Web.WebPages.Razor.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\obj\Debug\WebFitness.csprojResolveAssemblyReference.cache
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\obj\Debug\WebFitness.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitness\obj\Debug\WebFitness.pdb
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\WebFitness.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\WebFitness.pdb
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\Antlr3.Runtime.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\EntityFramework.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\Newtonsoft.Json.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Net.Http.Formatting.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.Helpers.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.Http.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.Http.WebHost.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.Mvc.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.Optimization.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.Razor.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.Razor.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\WebFitnessLib.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\WebGrease.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\WebFitnessLib.pdb
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\EntityFramework.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\Newtonsoft.Json.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Net.Http.Formatting.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.Helpers.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.Http.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.Http.WebHost.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.Mvc.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.Razor.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.Razor.xml
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\obj\Debug\WebFitness.csprojResolveAssemblyReference.cache
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\obj\Debug\WebFitness.dll
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\obj\Debug\WebFitness.pdb
