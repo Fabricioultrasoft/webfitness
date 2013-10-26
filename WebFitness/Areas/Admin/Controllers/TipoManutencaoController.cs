@@ -8,21 +8,22 @@ using System.Web.Mvc;
 
 namespace WebFitness.Areas.Admin.Controllers
 {
-    public class TipoAulaController : Controller
+    public class TipoManutencaoController : Controller
     {
         private WebfitnessDBEntities db = new WebfitnessDBEntities();
-        private String controller = "Tipo Aula";
+        private String controller = "Tipo Manutenção";
+
         //
-        // GET: /Admin/TipoAula/
+        // GET: /Admin/TipoConserto/
 
         public ActionResult Index()
         {
             @ViewBag.Controller = controller;
-            return View(db.TpAula.ToList());
+            return View(db.TpManutencao.ToList());
         }
 
         //
-        // GET: /Admin/TipoAula/Create
+        // GET: /Admin/TipoConserto/Create
 
         public ActionResult Create()
         {
@@ -31,88 +32,85 @@ namespace WebFitness.Areas.Admin.Controllers
         }
 
         //
-        // POST: /Admin/TipoAula/Create
+        // POST: /Admin/TipoConserto/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(TpAula tpaula)
+        public ActionResult Create(TpManutencao tpmanutencao)
         {
+            tpmanutencao.dtCriacao = DateTime.Now;
+            tpmanutencao.status = (byte) Status.Ativo;
+            tpmanutencao.idTpManutencao = 1;
+
+            @ViewBag.Controller = controller;
             if (ModelState.IsValid)
             {
-                tpaula.dtCriacao = DateTime.Now;
-                tpaula.idTpAula = 1;
-                tpaula.status = (byte) Status.Ativo;
-
-                db.TpAula.Add(tpaula);
+                db.TpManutencao.Add(tpmanutencao);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(tpaula);
+            return View(tpmanutencao);
         }
 
         //
-        // GET: /Admin/TipoAula/Edit/5
+        // GET: /Admin/TipoConserto/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
             @ViewBag.Controller = controller;
-
-            TpAula tpaula = db.TpAula.Find(id);
-            if (tpaula == null)
+            TpManutencao tpmanutencao = db.TpManutencao.Find(id);
+            if (tpmanutencao == null)
             {
                 return HttpNotFound();
             }
-            return View(tpaula);
+            return View(tpmanutencao);
         }
 
         //
-        // POST: /Admin/TipoAula/Edit/5
+        // POST: /Admin/TipoConserto/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(TpAula tpaula)
+        public ActionResult Edit(TpManutencao tpmanutencao)
         {
             @ViewBag.Controller = controller;
-
             if (ModelState.IsValid)
             {
-                db.Entry(tpaula).State = EntityState.Modified;
+                db.Entry(tpmanutencao).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(tpaula);
+            return View(tpmanutencao);
         }
 
         //
-        // GET: /Admin/TipoAula/Inactive/5
+        // GET: /Admin/TipoConserto/Inactive/5
 
         public ActionResult Inactive(int id = 0)
         {
             @ViewBag.Controller = controller;
-
-            TpAula tpaula = db.TpAula.Find(id);
-            if (tpaula == null)
+            TpManutencao tpmanutencao = db.TpManutencao.Find(id);
+            if (tpmanutencao == null)
             {
                 return HttpNotFound();
             }
-            tpaula.status = (byte) Status.Inativo;
+            tpmanutencao.status = (byte) Status.Inativo;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         //
-        // GET: /Admin/TipoAula/Active/5
+        // GET: /Admin/TipoConserto/Active/5
         public ActionResult Active(int id = 0)
         {
             @ViewBag.Controller = controller;
-
-            TpAula tpaula = db.TpAula.Find(id);
-            if (tpaula == null)
+            TpManutencao tpmanutencao = db.TpManutencao.Find(id);
+            if (tpmanutencao == null)
             {
                 return HttpNotFound();
             }
-            tpaula.status = (byte) Status.Ativo;
+            tpmanutencao.status = (byte) Status.Ativo;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

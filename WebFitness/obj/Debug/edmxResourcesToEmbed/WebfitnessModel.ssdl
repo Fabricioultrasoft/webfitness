@@ -5,11 +5,8 @@
     <EntitySet Name="AlunoAula" EntityType="WebfitnessDBModel.Store.AlunoAula" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Aula" EntityType="WebfitnessDBModel.Store.Aula" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Cidade" EntityType="WebfitnessDBModel.Store.Cidade" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Cliente" EntityType="WebfitnessDBModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Compra" EntityType="WebfitnessDBModel.Store.Compra" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CompraEquipamento" EntityType="WebfitnessDBModel.Store.CompraEquipamento" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Conserto" EntityType="WebfitnessDBModel.Store.Conserto" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="ConsertoEquipamento" EntityType="WebfitnessDBModel.Store.ConsertoEquipamento" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Contato" EntityType="WebfitnessDBModel.Store.Contato" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Equipamento" EntityType="WebfitnessDBModel.Store.Equipamento" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="EquipamentoAula" EntityType="WebfitnessDBModel.Store.EquipamentoAula" store:Type="Tables" Schema="dbo" />
@@ -18,19 +15,16 @@
     <EntitySet Name="Ficha" EntityType="WebfitnessDBModel.Store.Ficha" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Fornecedor" EntityType="WebfitnessDBModel.Store.Fornecedor" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Funcionario" EntityType="WebfitnessDBModel.Store.Funcionario" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="FuncionarioPermissao" EntityType="WebfitnessDBModel.Store.FuncionarioPermissao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="HistExercicioAluno" EntityType="WebfitnessDBModel.Store.HistExercicioAluno" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="HistPgtoAluno" EntityType="WebfitnessDBModel.Store.HistPgtoAluno" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="HistPgtoFuncionario" EntityType="WebfitnessDBModel.Store.HistPgtoFuncionario" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="HistSalarioFuncionario" EntityType="WebfitnessDBModel.Store.HistSalarioFuncionario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Manutencao" EntityType="WebfitnessDBModel.Store.Manutencao" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ManutencaoEquipamento" EntityType="WebfitnessDBModel.Store.ManutencaoEquipamento" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Pais" EntityType="WebfitnessDBModel.Store.Pais" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Permissao" EntityType="WebfitnessDBModel.Store.Permissao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TpAula" EntityType="WebfitnessDBModel.Store.TpAula" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TpConserto" EntityType="WebfitnessDBModel.Store.TpConserto" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TpEquipamento" EntityType="WebfitnessDBModel.Store.TpEquipamento" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TpExercicio" EntityType="WebfitnessDBModel.Store.TpExercicio" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TpFornecedor" EntityType="WebfitnessDBModel.Store.TpFornecedor" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="TpFuncionario" EntityType="WebfitnessDBModel.Store.TpFuncionario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TpManutencao" EntityType="WebfitnessDBModel.Store.TpManutencao" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Uf" EntityType="WebfitnessDBModel.Store.Uf" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Venda" EntityType="WebfitnessDBModel.Store.Venda" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="VendaEquipamento" EntityType="WebfitnessDBModel.Store.VendaEquipamento" store:Type="Tables" Schema="dbo" />
@@ -54,10 +48,6 @@
       <End Role="Uf" EntitySet="Uf" />
       <End Role="Cidade" EntitySet="Cidade" />
     </AssociationSet>
-    <AssociationSet Name="FK_Cliente_Cidade" Association="WebfitnessDBModel.Store.FK_Cliente_Cidade">
-      <End Role="Cidade" EntitySet="Cidade" />
-      <End Role="Cliente" EntitySet="Cliente" />
-    </AssociationSet>
     <AssociationSet Name="FK_Compra_Fornecedor" Association="WebfitnessDBModel.Store.FK_Compra_Fornecedor">
       <End Role="Fornecedor" EntitySet="Fornecedor" />
       <End Role="Compra" EntitySet="Compra" />
@@ -70,28 +60,8 @@
       <End Role="Equipamento" EntitySet="Equipamento" />
       <End Role="CompraEquipamento" EntitySet="CompraEquipamento" />
     </AssociationSet>
-    <AssociationSet Name="FK_Conserto_Fornecedor" Association="WebfitnessDBModel.Store.FK_Conserto_Fornecedor">
-      <End Role="Fornecedor" EntitySet="Fornecedor" />
-      <End Role="Conserto" EntitySet="Conserto" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Conserto_TpConserto" Association="WebfitnessDBModel.Store.FK_Conserto_TpConserto">
-      <End Role="TpConserto" EntitySet="TpConserto" />
-      <End Role="Conserto" EntitySet="Conserto" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ConsertoEquipamento_Conserto" Association="WebfitnessDBModel.Store.FK_ConsertoEquipamento_Conserto">
-      <End Role="Conserto" EntitySet="Conserto" />
-      <End Role="ConsertoEquipamento" EntitySet="ConsertoEquipamento" />
-    </AssociationSet>
-    <AssociationSet Name="FK_ConsertoEquipamento_Equipamento" Association="WebfitnessDBModel.Store.FK_ConsertoEquipamento_Equipamento">
-      <End Role="Equipamento" EntitySet="Equipamento" />
-      <End Role="ConsertoEquipamento" EntitySet="ConsertoEquipamento" />
-    </AssociationSet>
     <AssociationSet Name="FK_Equipamento_Fornecedor" Association="WebfitnessDBModel.Store.FK_Equipamento_Fornecedor">
       <End Role="Fornecedor" EntitySet="Fornecedor" />
-      <End Role="Equipamento" EntitySet="Equipamento" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Equipamento_TpEquipamento" Association="WebfitnessDBModel.Store.FK_Equipamento_TpEquipamento">
-      <End Role="TpEquipamento" EntitySet="TpEquipamento" />
       <End Role="Equipamento" EntitySet="Equipamento" />
     </AssociationSet>
     <AssociationSet Name="FK_EquipamentoAula_Aula" Association="WebfitnessDBModel.Store.FK_EquipamentoAula_Aula">
@@ -126,25 +96,9 @@
       <End Role="Cidade" EntitySet="Cidade" />
       <End Role="Fornecedor" EntitySet="Fornecedor" />
     </AssociationSet>
-    <AssociationSet Name="FK_Fornecedor_TpFornecedor" Association="WebfitnessDBModel.Store.FK_Fornecedor_TpFornecedor">
-      <End Role="TpFornecedor" EntitySet="TpFornecedor" />
-      <End Role="Fornecedor" EntitySet="Fornecedor" />
-    </AssociationSet>
     <AssociationSet Name="FK_Funcionario_Cidade" Association="WebfitnessDBModel.Store.FK_Funcionario_Cidade">
       <End Role="Cidade" EntitySet="Cidade" />
       <End Role="Funcionario" EntitySet="Funcionario" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Funcionario_TpFuncionario" Association="WebfitnessDBModel.Store.FK_Funcionario_TpFuncionario">
-      <End Role="TpFuncionario" EntitySet="TpFuncionario" />
-      <End Role="Funcionario" EntitySet="Funcionario" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FuncionarioPermissao_Funcionario" Association="WebfitnessDBModel.Store.FK_FuncionarioPermissao_Funcionario">
-      <End Role="Funcionario" EntitySet="Funcionario" />
-      <End Role="FuncionarioPermissao" EntitySet="FuncionarioPermissao" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FuncionarioPermissao_Permissao" Association="WebfitnessDBModel.Store.FK_FuncionarioPermissao_Permissao">
-      <End Role="Permissao" EntitySet="Permissao" />
-      <End Role="FuncionarioPermissao" EntitySet="FuncionarioPermissao" />
     </AssociationSet>
     <AssociationSet Name="FK_HistExercicioAluno_Ficha" Association="WebfitnessDBModel.Store.FK_HistExercicioAluno_Ficha">
       <End Role="Ficha" EntitySet="Ficha" />
@@ -162,13 +116,21 @@
       <End Role="Funcionario" EntitySet="Funcionario" />
       <End Role="HistSalarioFuncionario" EntitySet="HistSalarioFuncionario" />
     </AssociationSet>
+    <AssociationSet Name="FK_Manutencao_Fornecedor" Association="WebfitnessDBModel.Store.FK_Manutencao_Fornecedor">
+      <End Role="Fornecedor" EntitySet="Fornecedor" />
+      <End Role="Manutencao" EntitySet="Manutencao" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManutencaoEquipamento_Equipamento" Association="WebfitnessDBModel.Store.FK_ManutencaoEquipamento_Equipamento">
+      <End Role="Equipamento" EntitySet="Equipamento" />
+      <End Role="ManutencaoEquipamento" EntitySet="ManutencaoEquipamento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ManutencaoEquipamento_Manutencao" Association="WebfitnessDBModel.Store.FK_ManutencaoEquipamento_Manutencao">
+      <End Role="Manutencao" EntitySet="Manutencao" />
+      <End Role="ManutencaoEquipamento" EntitySet="ManutencaoEquipamento" />
+    </AssociationSet>
     <AssociationSet Name="FK_Uf_Pais" Association="WebfitnessDBModel.Store.FK_Uf_Pais">
       <End Role="Pais" EntitySet="Pais" />
       <End Role="Uf" EntitySet="Uf" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Venda_Cliente" Association="WebfitnessDBModel.Store.FK_Venda_Cliente">
-      <End Role="Cliente" EntitySet="Cliente" />
-      <End Role="Venda" EntitySet="Venda" />
     </AssociationSet>
     <AssociationSet Name="FK_VendaEquipamento_Equipamento" Association="WebfitnessDBModel.Store.FK_VendaEquipamento_Equipamento">
       <End Role="Equipamento" EntitySet="Equipamento" />
@@ -230,22 +192,6 @@
     <Property Name="idUf" Type="int" Nullable="false" />
     <Property Name="status" Type="tinyint" />
   </EntityType>
-  <EntityType Name="Cliente">
-    <Key>
-      <PropertyRef Name="idCliente" />
-    </Key>
-    <Property Name="idCliente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="dsCliente" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="cpfCnpj" Type="nvarchar" Nullable="false" MaxLength="14" />
-    <Property Name="inscrEstadual" Type="nvarchar" MaxLength="20" />
-    <Property Name="rua" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="bairro" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="telefone" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="dtCriacao" Type="datetime" />
-    <Property Name="idCidade" Type="int" Nullable="false" />
-    <Property Name="status" Type="tinyint" />
-  </EntityType>
   <EntityType Name="Compra">
     <Key>
       <PropertyRef Name="idCompra" />
@@ -265,28 +211,6 @@
     <Property Name="idEquipamento" Type="int" Nullable="false" />
     <Property Name="idCompra" Type="int" Nullable="false" />
     <Property Name="qtdCompra" Type="int" Nullable="false" />
-    <Property Name="dtCriacao" Type="datetime" />
-  </EntityType>
-  <EntityType Name="Conserto">
-    <Key>
-      <PropertyRef Name="idConserto" />
-    </Key>
-    <Property Name="idConserto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="idFornecedor" Type="int" Nullable="false" />
-    <Property Name="idTpConserto" Type="int" Nullable="false" />
-    <Property Name="valorConserto" Type="money" Nullable="false" />
-    <Property Name="qtdParcelas" Type="int" Nullable="false" />
-    <Property Name="dtConserto" Type="date" Nullable="false" />
-    <Property Name="dtCriacao" Type="datetime" />
-  </EntityType>
-  <EntityType Name="ConsertoEquipamento">
-    <Key>
-      <PropertyRef Name="idConserto" />
-      <PropertyRef Name="idEquipamento" />
-    </Key>
-    <Property Name="idConserto" Type="int" Nullable="false" />
-    <Property Name="idEquipamento" Type="int" Nullable="false" />
-    <Property Name="qtdEquipamentos" Type="int" Nullable="false" />
     <Property Name="dtCriacao" Type="datetime" />
   </EntityType>
   <EntityType Name="Contato">
@@ -390,15 +314,6 @@
     <Property Name="login" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="senha" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="FuncionarioPermissao">
-    <Key>
-      <PropertyRef Name="idFuncionario" />
-      <PropertyRef Name="idPermissao" />
-    </Key>
-    <Property Name="idFuncionario" Type="int" Nullable="false" />
-    <Property Name="idPermissao" Type="int" Nullable="false" />
-    <Property Name="dtCriacao" Type="datetime" />
-  </EntityType>
   <EntityType Name="HistExercicioAluno">
     <Key>
       <PropertyRef Name="idHistExercicioAluno" />
@@ -446,6 +361,28 @@
     <Property Name="salarioNovo" Type="money" Nullable="false" />
     <Property Name="dtCriacao" Type="datetime" />
   </EntityType>
+  <EntityType Name="Manutencao">
+    <Key>
+      <PropertyRef Name="idManutencao" />
+    </Key>
+    <Property Name="idManutencao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idFornecedor" Type="int" Nullable="false" />
+    <Property Name="idTpManutencao" Type="int" Nullable="false" />
+    <Property Name="valorManutencao" Type="money" Nullable="false" />
+    <Property Name="qtdParcelas" Type="int" Nullable="false" />
+    <Property Name="dtManutencao" Type="date" Nullable="false" />
+    <Property Name="dtCriacao" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ManutencaoEquipamento">
+    <Key>
+      <PropertyRef Name="idManutencao" />
+      <PropertyRef Name="idEquipamento" />
+    </Key>
+    <Property Name="idManutencao" Type="int" Nullable="false" />
+    <Property Name="idEquipamento" Type="int" Nullable="false" />
+    <Property Name="qtdEquipamentos" Type="int" Nullable="false" />
+    <Property Name="dtCriacao" Type="datetime" />
+  </EntityType>
   <EntityType Name="Pais">
     <Key>
       <PropertyRef Name="idPais" />
@@ -456,41 +393,12 @@
     <Property Name="status" Type="tinyint" />
     <Property Name="dtCriacao" Type="datetime" Nullable="false" />
   </EntityType>
-  <EntityType Name="Permissao">
-    <Key>
-      <PropertyRef Name="idPermissao" />
-    </Key>
-    <Property Name="idPermissao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="dsDescricao" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="observacao" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="dtCriacao" Type="datetime" />
-    <Property Name="status" Type="tinyint" />
-  </EntityType>
   <EntityType Name="TpAula">
     <Key>
       <PropertyRef Name="idTpAula" />
     </Key>
     <Property Name="idTpAula" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="dsTpAula" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="status" Type="tinyint" />
-    <Property Name="dtCriacao" Type="datetime" />
-  </EntityType>
-  <EntityType Name="TpConserto">
-    <Key>
-      <PropertyRef Name="idTpConserto" />
-    </Key>
-    <Property Name="idTpConserto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="dsTpConserto" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="observacao" Type="nvarchar" Nullable="false" MaxLength="200" />
-    <Property Name="status" Type="tinyint" />
-    <Property Name="dtCriacao" Type="datetime" />
-  </EntityType>
-  <EntityType Name="TpEquipamento">
-    <Key>
-      <PropertyRef Name="idTpEquipamento" />
-    </Key>
-    <Property Name="idTpEquipamento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="dsTpEquipamento" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="status" Type="tinyint" />
     <Property Name="dtCriacao" Type="datetime" />
   </EntityType>
@@ -503,21 +411,13 @@
     <Property Name="status" Type="tinyint" />
     <Property Name="dtCriacao" Type="datetime" />
   </EntityType>
-  <EntityType Name="TpFornecedor">
+  <EntityType Name="TpManutencao">
     <Key>
-      <PropertyRef Name="idTpFornecedor" />
+      <PropertyRef Name="idTpManutencao" />
     </Key>
-    <Property Name="idTpFornecedor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="dsTpFornecedor" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="dtCriacao" Type="datetime" />
-    <Property Name="status" Type="tinyint" />
-  </EntityType>
-  <EntityType Name="TpFuncionario">
-    <Key>
-      <PropertyRef Name="idTpFuncionario" />
-    </Key>
-    <Property Name="idTpFuncionario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="dsTpFuncionario" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="idTpManutencao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="dsTpManutencao" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="observacao" Type="nvarchar" Nullable="false" MaxLength="200" />
     <Property Name="status" Type="tinyint" />
     <Property Name="dtCriacao" Type="datetime" />
   </EntityType>
@@ -537,7 +437,6 @@
       <PropertyRef Name="idVenda" />
     </Key>
     <Property Name="idVenda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="idCliente" Type="int" Nullable="false" />
     <Property Name="valorVenda" Type="money" Nullable="false" />
     <Property Name="qtdParcelas" Type="int" Nullable="false" />
     <Property Name="dtVenda" Type="date" Nullable="false" />
@@ -613,18 +512,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Cliente_Cidade">
-    <End Role="Cidade" Type="WebfitnessDBModel.Store.Cidade" Multiplicity="1" />
-    <End Role="Cliente" Type="WebfitnessDBModel.Store.Cliente" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Cidade">
-        <PropertyRef Name="idCidade" />
-      </Principal>
-      <Dependent Role="Cliente">
-        <PropertyRef Name="idCidade" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Compra_Fornecedor">
     <End Role="Fornecedor" Type="WebfitnessDBModel.Store.Fornecedor" Multiplicity="0..1" />
     <End Role="Compra" Type="WebfitnessDBModel.Store.Compra" Multiplicity="*" />
@@ -661,54 +548,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Conserto_Fornecedor">
-    <End Role="Fornecedor" Type="WebfitnessDBModel.Store.Fornecedor" Multiplicity="1" />
-    <End Role="Conserto" Type="WebfitnessDBModel.Store.Conserto" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Fornecedor">
-        <PropertyRef Name="idFornecedor" />
-      </Principal>
-      <Dependent Role="Conserto">
-        <PropertyRef Name="idFornecedor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Conserto_TpConserto">
-    <End Role="TpConserto" Type="WebfitnessDBModel.Store.TpConserto" Multiplicity="1" />
-    <End Role="Conserto" Type="WebfitnessDBModel.Store.Conserto" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TpConserto">
-        <PropertyRef Name="idTpConserto" />
-      </Principal>
-      <Dependent Role="Conserto">
-        <PropertyRef Name="idTpConserto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ConsertoEquipamento_Conserto">
-    <End Role="Conserto" Type="WebfitnessDBModel.Store.Conserto" Multiplicity="1" />
-    <End Role="ConsertoEquipamento" Type="WebfitnessDBModel.Store.ConsertoEquipamento" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Conserto">
-        <PropertyRef Name="idConserto" />
-      </Principal>
-      <Dependent Role="ConsertoEquipamento">
-        <PropertyRef Name="idConserto" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_ConsertoEquipamento_Equipamento">
-    <End Role="Equipamento" Type="WebfitnessDBModel.Store.Equipamento" Multiplicity="1" />
-    <End Role="ConsertoEquipamento" Type="WebfitnessDBModel.Store.ConsertoEquipamento" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Equipamento">
-        <PropertyRef Name="idEquipamento" />
-      </Principal>
-      <Dependent Role="ConsertoEquipamento">
-        <PropertyRef Name="idEquipamento" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Equipamento_Fornecedor">
     <End Role="Fornecedor" Type="WebfitnessDBModel.Store.Fornecedor" Multiplicity="1" />
     <End Role="Equipamento" Type="WebfitnessDBModel.Store.Equipamento" Multiplicity="*" />
@@ -718,18 +557,6 @@
       </Principal>
       <Dependent Role="Equipamento">
         <PropertyRef Name="idFornecedor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Equipamento_TpEquipamento">
-    <End Role="TpEquipamento" Type="WebfitnessDBModel.Store.TpEquipamento" Multiplicity="1" />
-    <End Role="Equipamento" Type="WebfitnessDBModel.Store.Equipamento" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TpEquipamento">
-        <PropertyRef Name="idTpEquipamento" />
-      </Principal>
-      <Dependent Role="Equipamento">
-        <PropertyRef Name="idTpEquipamento" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -829,18 +656,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Fornecedor_TpFornecedor">
-    <End Role="TpFornecedor" Type="WebfitnessDBModel.Store.TpFornecedor" Multiplicity="1" />
-    <End Role="Fornecedor" Type="WebfitnessDBModel.Store.Fornecedor" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TpFornecedor">
-        <PropertyRef Name="idTpFornecedor" />
-      </Principal>
-      <Dependent Role="Fornecedor">
-        <PropertyRef Name="idTpFornecedor" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Funcionario_Cidade">
     <End Role="Cidade" Type="WebfitnessDBModel.Store.Cidade" Multiplicity="1" />
     <End Role="Funcionario" Type="WebfitnessDBModel.Store.Funcionario" Multiplicity="*" />
@@ -850,42 +665,6 @@
       </Principal>
       <Dependent Role="Funcionario">
         <PropertyRef Name="idCidade" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Funcionario_TpFuncionario">
-    <End Role="TpFuncionario" Type="WebfitnessDBModel.Store.TpFuncionario" Multiplicity="1" />
-    <End Role="Funcionario" Type="WebfitnessDBModel.Store.Funcionario" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TpFuncionario">
-        <PropertyRef Name="idTpFuncionario" />
-      </Principal>
-      <Dependent Role="Funcionario">
-        <PropertyRef Name="idTpFuncionario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_FuncionarioPermissao_Funcionario">
-    <End Role="Funcionario" Type="WebfitnessDBModel.Store.Funcionario" Multiplicity="1" />
-    <End Role="FuncionarioPermissao" Type="WebfitnessDBModel.Store.FuncionarioPermissao" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Funcionario">
-        <PropertyRef Name="idFuncionario" />
-      </Principal>
-      <Dependent Role="FuncionarioPermissao">
-        <PropertyRef Name="idFuncionario" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_FuncionarioPermissao_Permissao">
-    <End Role="Permissao" Type="WebfitnessDBModel.Store.Permissao" Multiplicity="1" />
-    <End Role="FuncionarioPermissao" Type="WebfitnessDBModel.Store.FuncionarioPermissao" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Permissao">
-        <PropertyRef Name="idPermissao" />
-      </Principal>
-      <Dependent Role="FuncionarioPermissao">
-        <PropertyRef Name="idPermissao" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -937,6 +716,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Manutencao_Fornecedor">
+    <End Role="Fornecedor" Type="WebfitnessDBModel.Store.Fornecedor" Multiplicity="1" />
+    <End Role="Manutencao" Type="WebfitnessDBModel.Store.Manutencao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fornecedor">
+        <PropertyRef Name="idFornecedor" />
+      </Principal>
+      <Dependent Role="Manutencao">
+        <PropertyRef Name="idFornecedor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManutencaoEquipamento_Equipamento">
+    <End Role="Equipamento" Type="WebfitnessDBModel.Store.Equipamento" Multiplicity="1" />
+    <End Role="ManutencaoEquipamento" Type="WebfitnessDBModel.Store.ManutencaoEquipamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipamento">
+        <PropertyRef Name="idEquipamento" />
+      </Principal>
+      <Dependent Role="ManutencaoEquipamento">
+        <PropertyRef Name="idEquipamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ManutencaoEquipamento_Manutencao">
+    <End Role="Manutencao" Type="WebfitnessDBModel.Store.Manutencao" Multiplicity="1" />
+    <End Role="ManutencaoEquipamento" Type="WebfitnessDBModel.Store.ManutencaoEquipamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Manutencao">
+        <PropertyRef Name="idManutencao" />
+      </Principal>
+      <Dependent Role="ManutencaoEquipamento">
+        <PropertyRef Name="idManutencao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Uf_Pais">
     <End Role="Pais" Type="WebfitnessDBModel.Store.Pais" Multiplicity="1" />
     <End Role="Uf" Type="WebfitnessDBModel.Store.Uf" Multiplicity="*" />
@@ -946,18 +761,6 @@
       </Principal>
       <Dependent Role="Uf">
         <PropertyRef Name="idPais" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Venda_Cliente">
-    <End Role="Cliente" Type="WebfitnessDBModel.Store.Cliente" Multiplicity="1" />
-    <End Role="Venda" Type="WebfitnessDBModel.Store.Venda" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Cliente">
-        <PropertyRef Name="idCliente" />
-      </Principal>
-      <Dependent Role="Venda">
-        <PropertyRef Name="idCliente" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

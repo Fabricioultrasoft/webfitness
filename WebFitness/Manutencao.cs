@@ -12,19 +12,22 @@ namespace WebFitness
     using System;
     using System.Collections.Generic;
     
-    public partial class TpConserto
+    public partial class Manutencao
     {
-        public TpConserto()
+        public Manutencao()
         {
-            this.Conserto = new HashSet<Conserto>();
+            this.ManutencaoEquipamento = new HashSet<ManutencaoEquipamento>();
         }
     
-        public int idTpConserto { get; set; }
-        public string dsTpConserto { get; set; }
-        public string observacao { get; set; }
-        public Nullable<byte> status { get; set; }
+        public int idManutencao { get; set; }
+        public int idFornecedor { get; set; }
+        public int idTpManutencao { get; set; }
+        public decimal valorManutencao { get; set; }
+        public int qtdParcelas { get; set; }
+        public System.DateTime dtManutencao { get; set; }
         public Nullable<System.DateTime> dtCriacao { get; set; }
     
-        public virtual ICollection<Conserto> Conserto { get; set; }
+        public virtual Fornecedor Fornecedor { get; set; }
+        public virtual ICollection<ManutencaoEquipamento> ManutencaoEquipamento { get; set; }
     }
 }

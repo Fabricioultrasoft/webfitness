@@ -17,7 +17,6 @@ namespace WebFitness
         public Cidade()
         {
             this.Aluno = new HashSet<Aluno>();
-            this.Cliente = new HashSet<Cliente>();
             this.Fornecedor = new HashSet<Fornecedor>();
             this.Funcionario = new HashSet<Funcionario>();
         }
@@ -30,7 +29,6 @@ namespace WebFitness
     
         public virtual ICollection<Aluno> Aluno { get; set; }
         public virtual Uf Uf { get; set; }
-        public virtual ICollection<Cliente> Cliente { get; set; }
         public virtual ICollection<Fornecedor> Fornecedor { get; set; }
         public virtual ICollection<Funcionario> Funcionario { get; set; }
     }

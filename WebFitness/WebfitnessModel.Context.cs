@@ -29,11 +29,8 @@ namespace WebFitness
         public DbSet<AlunoAula> AlunoAula { get; set; }
         public DbSet<Aula> Aula { get; set; }
         public DbSet<Cidade> Cidade { get; set; }
-        public DbSet<Cliente> Cliente { get; set; }
         public DbSet<Compra> Compra { get; set; }
         public DbSet<CompraEquipamento> CompraEquipamento { get; set; }
-        public DbSet<Conserto> Conserto { get; set; }
-        public DbSet<ConsertoEquipamento> ConsertoEquipamento { get; set; }
         public DbSet<Contato> Contato { get; set; }
         public DbSet<Equipamento> Equipamento { get; set; }
         public DbSet<EquipamentoAula> EquipamentoAula { get; set; }
@@ -42,19 +39,16 @@ namespace WebFitness
         public DbSet<Ficha> Ficha { get; set; }
         public DbSet<Fornecedor> Fornecedor { get; set; }
         public DbSet<Funcionario> Funcionario { get; set; }
-        public DbSet<FuncionarioPermissao> FuncionarioPermissao { get; set; }
         public DbSet<HistExercicioAluno> HistExercicioAluno { get; set; }
         public DbSet<HistPgtoAluno> HistPgtoAluno { get; set; }
         public DbSet<HistPgtoFuncionario> HistPgtoFuncionario { get; set; }
         public DbSet<HistSalarioFuncionario> HistSalarioFuncionario { get; set; }
+        public DbSet<Manutencao> Manutencao { get; set; }
+        public DbSet<ManutencaoEquipamento> ManutencaoEquipamento { get; set; }
         public DbSet<Pais> Pais { get; set; }
-        public DbSet<Permissao> Permissao { get; set; }
         public DbSet<TpAula> TpAula { get; set; }
-        public DbSet<TpConserto> TpConserto { get; set; }
-        public DbSet<TpEquipamento> TpEquipamento { get; set; }
         public DbSet<TpExercicio> TpExercicio { get; set; }
-        public DbSet<TpFornecedor> TpFornecedor { get; set; }
-        public DbSet<TpFuncionario> TpFuncionario { get; set; }
+        public DbSet<TpManutencao> TpManutencao { get; set; }
         public DbSet<Uf> Uf { get; set; }
         public DbSet<Venda> Venda { get; set; }
         public DbSet<VendaEquipamento> VendaEquipamento { get; set; }

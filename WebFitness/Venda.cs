@@ -20,13 +20,11 @@ namespace WebFitness
         }
     
         public int idVenda { get; set; }
-        public int idCliente { get; set; }
         public decimal valorVenda { get; set; }
         public int qtdParcelas { get; set; }
         public System.DateTime dtVenda { get; set; }
         public Nullable<System.DateTime> dtCriacao { get; set; }
     
-        public virtual Cliente Cliente { get; set; }
         public virtual ICollection<VendaEquipamento> VendaEquipamento { get; set; }
     }
 }
