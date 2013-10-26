@@ -16,7 +16,6 @@ namespace WebFitness
     {
         public Funcionario()
         {
-            this.FuncionarioPermissao = new HashSet<FuncionarioPermissao>();
             this.HistPgtoFuncionario = new HashSet<HistPgtoFuncionario>();
             this.HistSalarioFuncionario = new HashSet<HistSalarioFuncionario>();
         }
@@ -40,8 +39,6 @@ namespace WebFitness
         public string senha { get; set; }
     
         public virtual Cidade Cidade { get; set; }
-        public virtual TpFuncionario TpFuncionario { get; set; }
-        public virtual ICollection<FuncionarioPermissao> FuncionarioPermissao { get; set; }
         public virtual ICollection<HistPgtoFuncionario> HistPgtoFuncionario { get; set; }
         public virtual ICollection<HistSalarioFuncionario> HistSalarioFuncionario { get; set; }
     }

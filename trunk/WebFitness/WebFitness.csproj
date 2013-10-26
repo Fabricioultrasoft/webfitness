@@ -133,25 +133,21 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
     <Compile Include="Areas\Admin\Controllers\TipoAulaController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TipoManutencaoController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TipoExercicioController.cs" />
     <Compile Include="Aula.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Cidade.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Cliente.cs">
-      <DependentUpon>WebfitnessModel.tt</DependentUpon>
-    </Compile>
+    <Compile Include="classes\generated\Mail.cs" />
+    <Compile Include="classes\Mail.cs" />
+    <Compile Include="classes\_Enum.cs" />
     <Compile Include="Compra.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CompraEquipamento.cs">
-      <DependentUpon>WebfitnessModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Conserto.cs">
-      <DependentUpon>WebfitnessModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="ConsertoEquipamento.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Contato.cs">
@@ -178,9 +174,6 @@
     <Compile Include="Funcionario.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="FuncionarioPermissao.cs">
-      <DependentUpon>WebfitnessModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,29 +189,23 @@
     <Compile Include="HistSalarioFuncionario.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Pais.cs">
+    <Compile Include="Manutencao.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Permissao.cs">
+    <Compile Include="ManutencaoEquipamento.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pais.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TpAula.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TpConserto.cs">
-      <DependentUpon>WebfitnessModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TpEquipamento.cs">
-      <DependentUpon>WebfitnessModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="TpExercicio.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="TpFornecedor.cs">
-      <DependentUpon>WebfitnessModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="TpFuncionario.cs">
+    <Compile Include="TpManutencao.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Uf.cs">
@@ -333,12 +320,6 @@
     <Content Include="Areas\Admin\Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WebFitnessLib\WebFitnessLib.csproj">
-      <Project>{1639ac86-035f-497a-b817-4f8ed744b482}</Project>
-      <Name>WebFitnessLib</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EntityDeploy Include="WebfitnessModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>WebfitnessModel.Designer.cs</LastGenOutput>
@@ -376,6 +357,24 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\admin\base\jquery.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\TipoExercicio\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\TipoExercicio\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\TipoExercicio\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\TipoManutencao\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\TipoManutencao\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\TipoManutencao\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

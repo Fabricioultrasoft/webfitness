@@ -49,9 +49,7 @@ C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\Sy
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.Deployment.dll
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.dll
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.Razor.dll
-C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\WebFitnessLib.dll
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\WebGrease.dll
-C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\WebFitnessLib.pdb
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\EntityFramework.xml
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\Newtonsoft.Json.xml
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Net.Http.Formatting.xml

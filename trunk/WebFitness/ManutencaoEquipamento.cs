@@ -12,18 +12,14 @@ namespace WebFitness
     using System;
     using System.Collections.Generic;
     
-    public partial class TpEquipamento
+    public partial class ManutencaoEquipamento
     {
-        public TpEquipamento()
-        {
-            this.Equipamento = new HashSet<Equipamento>();
-        }
-    
-        public int idTpEquipamento { get; set; }
-        public string dsTpEquipamento { get; set; }
-        public Nullable<byte> status { get; set; }
+        public int idManutencao { get; set; }
+        public int idEquipamento { get; set; }
+        public int qtdEquipamentos { get; set; }
         public Nullable<System.DateTime> dtCriacao { get; set; }
     
-        public virtual ICollection<Equipamento> Equipamento { get; set; }
+        public virtual Equipamento Equipamento { get; set; }
+        public virtual Manutencao Manutencao { get; set; }
     }
 }

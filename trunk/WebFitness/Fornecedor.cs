@@ -17,8 +17,8 @@ namespace WebFitness
         public Fornecedor()
         {
             this.Compra = new HashSet<Compra>();
-            this.Conserto = new HashSet<Conserto>();
             this.Equipamento = new HashSet<Equipamento>();
+            this.Manutencao = new HashSet<Manutencao>();
         }
     
         public int idFornecedor { get; set; }
@@ -36,8 +36,7 @@ namespace WebFitness
     
         public virtual Cidade Cidade { get; set; }
         public virtual ICollection<Compra> Compra { get; set; }
-        public virtual ICollection<Conserto> Conserto { get; set; }
         public virtual ICollection<Equipamento> Equipamento { get; set; }
-        public virtual TpFornecedor TpFornecedor { get; set; }
+        public virtual ICollection<Manutencao> Manutencao { get; set; }
     }
 }

@@ -66,8 +66,7 @@
                 <!-- / Mobile Menu Button -->
 
                 <!-- / Logo / Brand Name -->
-                <a class="brand" href="#"><i class="icon-leaf"></i>Web Fitness - <b>Painel Administrativo</b></a>
-                <!--@Html.ActionLink("<i class='icon-leaf'></i>Web Fitness - <b>Painel Administrativo</b>", "Dashboard", null, new { @class = "brand"})-->
+                <a class="brand" href="~/Admin/"><i class="icon-leaf"></i>Web Fitness - <b>Painel Administrativo</b></a>
                 <!-- / Logo / Brand Name -->
 
                 <!-- User Navigation -->
@@ -134,7 +133,7 @@
                 <ul class="nav">
 
                     <!-- Main Navigation: Dashboard -->
-                    <li class="active"><a href="#"><i class="icon-align-justify"></i>Dashboard</a></li>
+                    <li class="active">@Html.ActionLink("Dashboard", "Dashboard", new { @class="icon-align-justify" })</li>
                     <!-- / Main Navigation: Dashboard -->
 
                     <!-- Main Navigation: General -->
@@ -186,10 +185,6 @@
                         </ul>
                     </li>
                     <!-- / Main Navigation: Components -->
-
-                    <!-- Main Navigation: Gallery -->
-                    <li><a href="gallery.html"><i class="icon-picture"></i>Gallery</a></li>
-                    <!-- / Main Navigation: Gallery -->
 
                 </ul>
                 <!-- / Main Navigation: Nav -->

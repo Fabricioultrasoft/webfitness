@@ -12,18 +12,12 @@ namespace WebFitness
     using System;
     using System.Collections.Generic;
     
-    public partial class TpFornecedor
+    public partial class TpManutencao
     {
-        public TpFornecedor()
-        {
-            this.Fornecedor = new HashSet<Fornecedor>();
-        }
-    
-        public int idTpFornecedor { get; set; }
-        public string dsTpFornecedor { get; set; }
-        public Nullable<System.DateTime> dtCriacao { get; set; }
+        public int idTpManutencao { get; set; }
+        public string dsTpManutencao { get; set; }
+        public string observacao { get; set; }
         public Nullable<byte> status { get; set; }
-    
-        public virtual ICollection<Fornecedor> Fornecedor { get; set; }
+        public Nullable<System.DateTime> dtCriacao { get; set; }
     }
 }

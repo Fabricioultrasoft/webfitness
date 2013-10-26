@@ -8,21 +8,22 @@ using System.Web.Mvc;
 
 namespace WebFitness.Areas.Admin.Controllers
 {
-    public class TipoAulaController : Controller
+    public class TipoExercicioController : Controller
     {
         private WebfitnessDBEntities db = new WebfitnessDBEntities();
-        private String controller = "Tipo Aula";
+        private String controller = "Tipo Exercício";
+
         //
-        // GET: /Admin/TipoAula/
+        // GET: /Admin/TipoEquipamento/
 
         public ActionResult Index()
         {
             @ViewBag.Controller = controller;
-            return View(db.TpAula.ToList());
+            return View(db.TpExercicio.ToList());
         }
 
         //
-        // GET: /Admin/TipoAula/Create
+        // GET: /Admin/TipoEquipamento/Create
 
         public ActionResult Create()
         {
@@ -31,88 +32,91 @@ namespace WebFitness.Areas.Admin.Controllers
         }
 
         //
-        // POST: /Admin/TipoAula/Create
+        // POST: /Admin/TipoEquipamento/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(TpAula tpaula)
+        public ActionResult Create(TpExercicio tpexercicio)
         {
+            @ViewBag.Controller = controller;
+
+            tpexercicio.dtCriacao = DateTime.Now;
+            tpexercicio.status = (byte) Status.Ativo;
+            tpexercicio.idTpExercicio = 1;
+
             if (ModelState.IsValid)
             {
-                tpaula.dtCriacao = DateTime.Now;
-                tpaula.idTpAula = 1;
-                tpaula.status = (byte) Status.Ativo;
-
-                db.TpAula.Add(tpaula);
+                db.TpExercicio.Add(tpexercicio);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(tpaula);
+            return View(tpexercicio);
         }
 
         //
-        // GET: /Admin/TipoAula/Edit/5
+        // GET: /Admin/TipoEquipamento/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
             @ViewBag.Controller = controller;
-
-            TpAula tpaula = db.TpAula.Find(id);
-            if (tpaula == null)
+            TpExercicio tpexercicio = db.TpExercicio.Find(id);
+            if (tpexercicio == null)
             {
                 return HttpNotFound();
             }
-            return View(tpaula);
+            return View(tpexercicio);
         }
 
         //
-        // POST: /Admin/TipoAula/Edit/5
+        // POST: /Admin/TipoEquipamento/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(TpAula tpaula)
+        public ActionResult Edit(TpExercicio tpexercicio)
         {
             @ViewBag.Controller = controller;
-
             if (ModelState.IsValid)
             {
-                db.Entry(tpaula).State = EntityState.Modified;
+                db.Entry(tpexercicio).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(tpaula);
+            return View(tpexercicio);
         }
 
         //
-        // GET: /Admin/TipoAula/Inactive/5
+        // GET: /Admin/TipoEquipamento/Inactive/5
 
         public ActionResult Inactive(int id = 0)
         {
             @ViewBag.Controller = controller;
 
-            TpAula tpaula = db.TpAula.Find(id);
-            if (tpaula == null)
+            TpExercicio tpexercicio = db.TpExercicio.Find(id);
+
+            if (tpexercicio == null)
             {
                 return HttpNotFound();
             }
-            tpaula.status = (byte) Status.Inativo;
+            tpexercicio.status = (byte) Status.Inativo;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         //
-        // GET: /Admin/TipoAula/Active/5
+        // GET: /Admin/TipoEquipamento/Active/5
+
         public ActionResult Active(int id = 0)
         {
             @ViewBag.Controller = controller;
 
-            TpAula tpaula = db.TpAula.Find(id);
-            if (tpaula == null)
+            TpExercicio tpexercicio = db.TpExercicio.Find(id);
+
+            if (tpexercicio == null)
             {
                 return HttpNotFound();
             }
-            tpaula.status = (byte) Status.Ativo;
+            tpexercicio.status = (byte) Status.Ativo;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

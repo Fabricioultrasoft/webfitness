@@ -1,4 +1,4 @@
-﻿@model WebFitness.TpAula
+﻿@model WebFitness.TpExercicio
 
 @{
     ViewBag.Title = "Editar";
@@ -8,23 +8,24 @@
     <div class="top-bar">
         <h3>
             <i class="icon-cog"></i>
-            Alteração de Tipo de Aula
+            Alteração de Tipo de Exercício
         </h3>
     </div>
     <div class="well no-padding">
-        @using (Html.BeginForm("Edit", "TipoAula", FormMethod.Post, new { @class = "form-horizontal" }))
+        @using (Html.BeginForm("Edit", "TipoExercicio", FormMethod.Post, new { @class = "form-horizontal" }))
         {
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
 
-            @Html.HiddenFor(model => model.idTpAula)
-
+    
+            @Html.HiddenFor(model => model.idTpExercicio)
+            
             <div class="control-group">
-                @Html.LabelFor(model => model.dsTpAula, new { @class = "control-label" })
-
+                @Html.LabelFor(model => model.idTpExercicio, new { @class = "control-label" })
                 <div class="controls">
-                    @Html.EditorFor(model => model.dsTpAula, new { @class ="span6 m-wrap" })
-                    @Html.ValidationMessageFor(model => model.dsTpAula)
+                    @Html.EditorFor(model => model.dsTpExercicio, new { @class = "span6 m-wrap" })
+
+                    @Html.ValidationMessageFor(model => model.dsTpExercicio)
                 </div>
             </div>
             

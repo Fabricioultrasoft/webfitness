@@ -1,11 +1,10 @@
-﻿@using WebFitnessLib
-@model IEnumerable<WebFitness.TpAula>
+﻿@model IEnumerable<WebFitness.TpExercicio>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Tipos de Aulas</h2>
+<h2>Tipo de Exercício</h2>
 
 <p>
     @Html.ActionLink("Cadastrar", "Create", null, new { @class = "btn btn-large btn-primary" })
@@ -15,8 +14,8 @@
         <table class="data-table">
             <thead>
                 <tr>
-                    <th>@Html.DisplayNameFor(model => model.idTpAula)</th>
-                    <th>@Html.DisplayNameFor(model => model.dsTpAula)</th>
+                    <th>@Html.DisplayNameFor(model => model.idTpExercicio)</th>
+                    <th>@Html.DisplayNameFor(model => model.dsTpExercicio)</th>
                     <th>@Html.DisplayNameFor(model => model.status)</th>
                     <th>@Html.DisplayNameFor(model => model.dtCriacao)</th>
                     <th class="right">Editar</th>
@@ -27,12 +26,12 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.idTpAula)</td>
-                        <td>@Html.DisplayFor(modelItem => item.dsTpAula)</td>
+                        <td>@Html.DisplayFor(modelItem => item.idTpExercicio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.dsTpExercicio)</td>
                         <td>
-                            @if (item.status == (byte) WebFitness.Status.Ativo )
+                            @if (item.status == (byte)WebFitness.Status.Ativo)
                             {
-                                <span class="label label-success">@WebFitness.Status.Ativo</span>
+                                <span class="label label-success label-height">@WebFitness.Status.Ativo</span>
                             }
                             else
                             {
@@ -42,23 +41,23 @@
                         </td>
                         <td>@Html.DisplayFor(modelItem => item.dtCriacao)</td>
                         <td class="right">
-                            
-                            @Html.ActionLink("Editar", "Edit", new { id = item.idTpAula }, new { @class = "btn btn-info" })
-                            
-                            @if (item.status == (byte) WebFitness.Status.Ativo )
+
+                            @Html.ActionLink("Editar", "Edit", new { id = item.idTpExercicio }, new { @class = "btn btn-info" })
+
+                            @if (item.status == (byte) WebFitness.Status.Ativo)
                             {
-                                @Html.ActionLink("Inativar", "Inactive", new { id = item.idTpAula }, new { @class = "btn btn-danger" })
+                                @Html.ActionLink("Inativar", "Inactive", new { id = item.idTpExercicio }, new { @class = "btn btn-danger" })
                             }
                             else
                             {
-                                @Html.ActionLink("Ativar", "Active", new { id = item.idTpAula }, new { @class = "btn btn-success" })
+                                @Html.ActionLink("Ativar", "Active", new { id = item.idTpExercicio }, new { @class = "btn btn-success" })
                             }
-                            
+
                         </td>
                     </tr>
                 }
             </tbody>
-
         </table>
     </div>
 </div>
+
