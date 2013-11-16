@@ -17,7 +17,7 @@
         }
 
         if ($('[name="cnpj"]')) {
-            if (!validarCPF($('[name="cnpj"]'))) {
+            if (!validarCNPJ($('[name="cnpj"]'))) {
                 return false;
             }
         }

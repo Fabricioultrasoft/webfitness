@@ -27,7 +27,7 @@
                 {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.dsFornecedor)</td>
-                        <td>@Html.LabelForModel(item.telefone, new { @class = "exibeCnpj" })</td>
+                        <td>@Html.LabelForModel(item.cnpj, new { @class = "exibeCnpj" })</td>
                         <td>@Html.LabelForModel(item.telefone, new { @class = "exibeTel" })</td>
                         <td>
                             @if (item.status == (byte)WebFitness.Status.Ativo)

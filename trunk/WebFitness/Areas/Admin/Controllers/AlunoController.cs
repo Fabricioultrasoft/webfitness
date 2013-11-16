@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity.Infrastructure;
 using WebFitness.classes;
 
 namespace WebFitness.Areas.Admin.Controllers
@@ -55,11 +56,12 @@ namespace WebFitness.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Aluno aluno)
         {
+
             @ViewBag.Controller = controller;
             aluno.dtCriacao = DateTime.Now;
             aluno.status    = (byte)Status.Ativo;
             aluno.idAluno   = 1;
-            aluno.senha     = Validation.GetMD5Hash(aluno.senha);
+            aluno.senha = Validation.GetMD5Hash(aluno.senha);
 
             if (ModelState.IsValid)
             {
@@ -95,9 +97,25 @@ namespace WebFitness.Areas.Admin.Controllers
         public ActionResult Edit(Aluno aluno)
         {
             @ViewBag.Controller = controller;
+
             if (ModelState.IsValid)
             {
                 db.Entry(aluno).State = EntityState.Modified;
+                //
+                if (aluno.senha != null)
+                {
+                    aluno.senha = Validation.GetMD5Hash(aluno.senha);
+                }
+                else
+                {
+                    var rs = from alunoTmp in db.Aluno where alunoTmp.idAluno == aluno.idAluno select alunoTmp.senha;
+
+                    foreach (var it in rs)
+                    {
+                        aluno.senha = it.ToString();
+                    }
+                }
+                //
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
