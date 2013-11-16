@@ -1,0 +1,99 @@
+﻿@model WebFitness.Fornecedor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Fornecedor</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idFornecedor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idFornecedor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dsFornecedor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dsFornecedor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cnpj)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cnpj)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.inscrEstadual)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.inscrEstadual)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.rua)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.rua)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.bairro)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bairro)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefone)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefone)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dtCriacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dtCriacao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Cidade.dsCidade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Cidade.dsCidade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idTpFornecedor)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idTpFornecedor)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.status)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

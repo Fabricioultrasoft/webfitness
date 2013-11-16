@@ -131,7 +131,9 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AlunoController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FornecedorController.cs" />
     <Compile Include="Areas\Admin\Controllers\TipoAulaController.cs" />
     <Compile Include="Areas\Admin\Controllers\TipoManutencaoController.cs" />
     <Compile Include="Areas\Admin\Controllers\TipoExercicioController.cs" />
@@ -141,13 +143,11 @@
     <Compile Include="Cidade.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="classes\generated\Mail.cs" />
-    <Compile Include="classes\Mail.cs" />
-    <Compile Include="classes\_Enum.cs" />
+    <Compile Include="Classes\generated\Mail.cs" />
+    <Compile Include="Classes\Mail.cs" />
+    <Compile Include="Classes\Validation.cs" />
+    <Compile Include="Classes\_Enum.cs" />
     <Compile Include="Compra.cs">
-      <DependentUpon>WebfitnessModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="CompraEquipamento.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Contato.cs">
@@ -192,9 +192,6 @@
     <Compile Include="Manutencao.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ManutencaoEquipamento.cs">
-      <DependentUpon>WebfitnessModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Pais.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
@@ -212,9 +209,6 @@
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Venda.cs">
-      <DependentUpon>WebfitnessModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="VendaEquipamento.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
     <Compile Include="WebfitnessModel.Context.cs">
@@ -257,6 +251,7 @@
     <Content Include="Images\admin\icons.png" />
     <Content Include="Images\admin\loader.gif" />
     <Content Include="Images\admin\pattern.png" />
+    <Content Include="Scripts\admin\base\admin.js" />
     <Content Include="Scripts\admin\base\analytics.js" />
     <Content Include="Scripts\admin\base\avocado-custom-predom.js" />
     <Content Include="Scripts\admin\base\avocado-custom.js" />
@@ -279,6 +274,7 @@
     <Content Include="Scripts\admin\base\jquery.hotkeys.js" />
     <Content Include="Scripts\admin\base\jquery.isotope.min.js" />
     <Content Include="Scripts\admin\base\jquery.jpanelmenu.min.js" />
+    <Content Include="Scripts\admin\base\jquery.mask.js" />
     <Content Include="Scripts\admin\base\jquery.pajinate.js" />
     <Content Include="Scripts\admin\base\jquery.prism.min.js" />
     <Content Include="Scripts\admin\base\jquery1.8.1.min.js" />
@@ -294,11 +290,9 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Content\themes\base\css\" />
     <Folder Include="Controllers\" />
     <Folder Include="Images\website\" />
-    <Folder Include="Models\" />
     <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
@@ -375,6 +369,33 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\TipoManutencao\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Aluno\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Aluno\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Aluno\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Aluno\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Fornecedor\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Fornecedor\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Fornecedor\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Fornecedor\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Fornecedor\Delete.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

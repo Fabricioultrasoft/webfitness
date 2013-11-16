@@ -1,0 +1,124 @@
+﻿@model WebFitness.Fornecedor
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Fornecedor</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idFornecedor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idFornecedor)
+            @Html.ValidationMessageFor(model => model.idFornecedor)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dsFornecedor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dsFornecedor)
+            @Html.ValidationMessageFor(model => model.dsFornecedor)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cnpj)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cnpj)
+            @Html.ValidationMessageFor(model => model.cnpj)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.inscrEstadual)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.inscrEstadual)
+            @Html.ValidationMessageFor(model => model.inscrEstadual)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.rua)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.rua)
+            @Html.ValidationMessageFor(model => model.rua)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.bairro)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.bairro)
+            @Html.ValidationMessageFor(model => model.bairro)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.email)
+            @Html.ValidationMessageFor(model => model.email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telefone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telefone)
+            @Html.ValidationMessageFor(model => model.telefone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dtCriacao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dtCriacao)
+            @Html.ValidationMessageFor(model => model.dtCriacao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idCidade, "Cidade")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("idCidade", String.Empty)
+            @Html.ValidationMessageFor(model => model.idCidade)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.idTpFornecedor)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.idTpFornecedor)
+            @Html.ValidationMessageFor(model => model.idTpFornecedor)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.status)
+            @Html.ValidationMessageFor(model => model.status)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -14,11 +14,6 @@ namespace WebFitness
     
     public partial class Manutencao
     {
-        public Manutencao()
-        {
-            this.ManutencaoEquipamento = new HashSet<ManutencaoEquipamento>();
-        }
-    
         public int idManutencao { get; set; }
         public int idFornecedor { get; set; }
         public int idTpManutencao { get; set; }
@@ -26,8 +21,10 @@ namespace WebFitness
         public int qtdParcelas { get; set; }
         public System.DateTime dtManutencao { get; set; }
         public Nullable<System.DateTime> dtCriacao { get; set; }
+        public int idEquipamento { get; set; }
     
+        public virtual Equipamento Equipamento { get; set; }
         public virtual Fornecedor Fornecedor { get; set; }
-        public virtual ICollection<ManutencaoEquipamento> ManutencaoEquipamento { get; set; }
+        public virtual TpManutencao TpManutencao { get; set; }
     }
 }

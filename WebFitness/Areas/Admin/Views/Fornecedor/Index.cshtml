@@ -1,10 +1,10 @@
-﻿@model IEnumerable<WebFitness.TpAula>
+﻿@model IEnumerable<WebFitness.Fornecedor>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Tipos de Aulas</h2>
+<h2>Fornecedor</h2>
 
 <p>
     @Html.ActionLink("Cadastrar", "Create", null, new { @class = "btn btn-large btn-primary" })
@@ -14,10 +14,10 @@
         <table class="data-table">
             <thead>
                 <tr>
-                    <th>@Html.DisplayNameFor(model => model.idTpAula)</th>
-                    <th>@Html.DisplayNameFor(model => model.dsTpAula)</th>
+                    <th>@Html.DisplayNameFor(model => model.dsFornecedor)</th>
+                    <th>@Html.DisplayNameFor(model => model.cnpj)</th>
+                    <th>@Html.DisplayNameFor(model => model.telefone)</th>
                     <th>@Html.DisplayNameFor(model => model.status)</th>
-                    <th>@Html.DisplayNameFor(model => model.dtCriacao)</th>
                     <th class="right">Editar</th>
                 </tr>
             </thead>
@@ -26,10 +26,11 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.idTpAula)</td>
-                        <td>@Html.DisplayFor(modelItem => item.dsTpAula)</td>
+                        <td>@Html.DisplayFor(modelItem => item.dsFornecedor)</td>
+                        <td>@Html.LabelForModel(item.telefone, new { @class = "exibeCnpj" })</td>
+                        <td>@Html.LabelForModel(item.telefone, new { @class = "exibeTel" })</td>
                         <td>
-                            @if (item.status == (byte) WebFitness.Status.Ativo )
+                            @if (item.status == (byte)WebFitness.Status.Ativo)
                             {
                                 <span class="label label-success">@WebFitness.Status.Ativo</span>
                             }
@@ -39,25 +40,23 @@
                             }
 
                         </td>
-                        <td>@Html.DisplayFor(modelItem => item.dtCriacao)</td>
                         <td class="right">
-                            
-                            @Html.ActionLink("Editar", "Edit", new { id = item.idTpAula }, new { @class = "btn btn-info" })
-                            
-                            @if (item.status == (byte) WebFitness.Status.Ativo )
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.idFornecedor }, new { @class = "btn" })
+
+                            @Html.ActionLink("Editar", "Edit", new { id = item.idFornecedor }, new { @class = "btn btn-info" })
+
+                            @if (item.status == (byte)WebFitness.Status.Ativo)
                             {
-                                @Html.ActionLink("Inativar", "Inactive", new { id = item.idTpAula }, new { @class = "btn btn-danger" })
+                                @Html.ActionLink("Inativar", "Inactive", new { id = item.idFornecedor }, new { @class = "btn btn-danger" })
                             }
                             else
                             {
-                                @Html.ActionLink("Ativar", "Active", new { id = item.idTpAula }, new { @class = "btn btn-success" })
+                                @Html.ActionLink("Ativar", "Active", new { id = item.idFornecedor }, new { @class = "btn btn-success" })
                             }
-                            
                         </td>
                     </tr>
                 }
             </tbody>
-
         </table>
     </div>
 </div>
