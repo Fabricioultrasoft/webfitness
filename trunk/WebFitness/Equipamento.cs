@@ -16,11 +16,11 @@ namespace WebFitness
     {
         public Equipamento()
         {
-            this.CompraEquipamento = new HashSet<CompraEquipamento>();
+            this.Compra = new HashSet<Compra>();
             this.EquipamentoAula = new HashSet<EquipamentoAula>();
             this.ExercicioEquipamento = new HashSet<ExercicioEquipamento>();
-            this.ManutencaoEquipamento = new HashSet<ManutencaoEquipamento>();
-            this.VendaEquipamento = new HashSet<VendaEquipamento>();
+            this.Manutencao = new HashSet<Manutencao>();
+            this.Venda = new HashSet<Venda>();
         }
     
         public int idEquipamento { get; set; }
@@ -30,11 +30,11 @@ namespace WebFitness
         public int idTpEquipamento { get; set; }
         public int idFornecedor { get; set; }
     
-        public virtual ICollection<CompraEquipamento> CompraEquipamento { get; set; }
+        public virtual ICollection<Compra> Compra { get; set; }
         public virtual Fornecedor Fornecedor { get; set; }
         public virtual ICollection<EquipamentoAula> EquipamentoAula { get; set; }
         public virtual ICollection<ExercicioEquipamento> ExercicioEquipamento { get; set; }
-        public virtual ICollection<ManutencaoEquipamento> ManutencaoEquipamento { get; set; }
-        public virtual ICollection<VendaEquipamento> VendaEquipamento { get; set; }
+        public virtual ICollection<Manutencao> Manutencao { get; set; }
+        public virtual ICollection<Venda> Venda { get; set; }
     }
 }

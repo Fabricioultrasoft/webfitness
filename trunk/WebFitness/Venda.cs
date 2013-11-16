@@ -14,17 +14,13 @@ namespace WebFitness
     
     public partial class Venda
     {
-        public Venda()
-        {
-            this.VendaEquipamento = new HashSet<VendaEquipamento>();
-        }
-    
         public int idVenda { get; set; }
         public decimal valorVenda { get; set; }
         public int qtdParcelas { get; set; }
         public System.DateTime dtVenda { get; set; }
         public Nullable<System.DateTime> dtCriacao { get; set; }
+        public int idEquipamento { get; set; }
     
-        public virtual ICollection<VendaEquipamento> VendaEquipamento { get; set; }
+        public virtual Equipamento Equipamento { get; set; }
     }
 }

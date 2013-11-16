@@ -30,7 +30,6 @@ namespace WebFitness
         public DbSet<Aula> Aula { get; set; }
         public DbSet<Cidade> Cidade { get; set; }
         public DbSet<Compra> Compra { get; set; }
-        public DbSet<CompraEquipamento> CompraEquipamento { get; set; }
         public DbSet<Contato> Contato { get; set; }
         public DbSet<Equipamento> Equipamento { get; set; }
         public DbSet<EquipamentoAula> EquipamentoAula { get; set; }
@@ -44,13 +43,11 @@ namespace WebFitness
         public DbSet<HistPgtoFuncionario> HistPgtoFuncionario { get; set; }
         public DbSet<HistSalarioFuncionario> HistSalarioFuncionario { get; set; }
         public DbSet<Manutencao> Manutencao { get; set; }
-        public DbSet<ManutencaoEquipamento> ManutencaoEquipamento { get; set; }
         public DbSet<Pais> Pais { get; set; }
         public DbSet<TpAula> TpAula { get; set; }
         public DbSet<TpExercicio> TpExercicio { get; set; }
         public DbSet<TpManutencao> TpManutencao { get; set; }
         public DbSet<Uf> Uf { get; set; }
         public DbSet<Venda> Venda { get; set; }
-        public DbSet<VendaEquipamento> VendaEquipamento { get; set; }
     }
 }

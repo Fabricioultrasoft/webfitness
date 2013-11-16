@@ -1,0 +1,128 @@
+﻿@model WebFitness.Aluno
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<div class="span7">
+    <div class="top-bar">
+        <h3>
+            <i class="icon-cog"></i>
+            Cadastro Alunos
+        </h3>
+    </div>
+    <div class="well no-padding">
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.nome, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.nome)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.cpf, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.LabelForModel(Model.cpf, new { @class = "exibeCpf" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.telefone, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.LabelForModel(Model.telefone, new { @class = "exibeTel" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.email, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.email)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.rua, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.rua)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.bairro, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.bairro)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.sexo, new { @class = "control-label" })
+
+            <div class="controls">
+                @if (Model.sexo == "M")
+                {
+                    @Html.Label("Masculino");
+                }
+                else
+                {
+                    @Html.Label("Feminino");
+                }
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.aniversario, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.aniversario)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.dtCriacao, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.dtCriacao)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.status, new { @class = "control-label" })
+
+            <div class="controls">
+                @if(Model.status == (byte) WebFitness.Status.Ativo){
+                    @Html.Label("Ativo");
+                }
+                else
+                {
+                    @Html.Label("Inativo");
+                }
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.Cidade.dsCidade, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.Cidade.dsCidade)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.login, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.login)
+            </div>
+        </div>
+        <div class="form-actions">
+            @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-danger" })
+        </div>
+    </div>
+</div>

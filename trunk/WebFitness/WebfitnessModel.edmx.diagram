@@ -5,34 +5,32 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="20189c79241349b0ae47875a4c1be50a" Name="Diagram1" ZoomLevel="64">
-        <EntityTypeShape EntityType="WebfitnessDBModel.Aluno" Width="1.5" PointX="5.439700710326294" PointY="26.310075146290508" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.AlunoAula" Width="1.5" PointX="6.2240586235299977" PointY="15.548481799451858" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Aula" Width="1.5" PointX="0.63564970746433813" PointY="25.588234615320449" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Cidade" Width="1.5" PointX="2.7720298537854244" PointY="20.897449845866046" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Compra" Width="1.5" PointX="11.2329210225646" PointY="13.742230347237657" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.CompraEquipamento" Width="1.5" PointX="4.09093222026291" PointY="13.097267902035856" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Contato" Width="1.5" PointX="8.1378814317928079" PointY="24.572112750528433" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Equipamento" Width="1.5" PointX="4.6958243719748332" PointY="23.903032388492967" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.EquipamentoAula" Width="1.5" PointX="8.531791743138708" PointY="4.2933314313615352" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Exercicio" Width="1.5" PointX="3.2482890557722603" PointY="19.599739590473352" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.ExercicioEquipamento" Width="1.5" PointX="1.2568100435923832" PointY="19.445707464332557" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Ficha" Width="1.5" PointX="7.9679673239439568" PointY="7.1394781205521332" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Fornecedor" Width="1.5" PointX="4.0784333832927206" PointY="20.083238953763264" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Funcionario" Width="1.5" PointX="6.8815891439475072" PointY="31.64406961186047" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.HistExercicioAluno" Width="1.5" PointX="6.2451096392446708" PointY="16.155269034279168" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.HistPgtoAluno" Width="1.5" PointX="2.9354463326444131" PointY="23.444131102154092" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.HistPgtoFuncionario" Width="1.5" PointX="4.0650322735612434" PointY="7.0869850996355455" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.HistSalarioFuncionario" Width="1.5" PointX="4.1619912964114878" PointY="11.439759975038356" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Manutencao" Width="1.5" PointX="7.9480993188675955" PointY="3.8187153506179876" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.ManutencaoEquipamento" Width="1.5" PointX="2.3132149904562231" PointY="12.410033544716441" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Pais" Width="1.5" PointX="1.673519327153228" PointY="23.175178002182012" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.TpAula" Width="1.5" PointX="11.013242963241991" PointY="26.98357337479646" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.TpExercicio" Width="1.5" PointX="5.0033065103941166" PointY="6.8016649814330341" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.TpManutencao" Width="1.5" PointX="2.7134359361200762" PointY="19.775970647007213" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Uf" Width="1.5" PointX="3.9173639658453707" PointY="8.8685049157908669" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.Venda" Width="1.5" PointX="6.2129212479167251" PointY="5.9416186986219222" />
-        <EntityTypeShape EntityType="WebfitnessDBModel.VendaEquipamento" Width="1.5" PointX="5.7458439849996212" PointY="6.4242059469335739" />
-        <AssociationConnector Association="WebfitnessDBModel.FK_Aluno_Cidade" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Aluno" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.AlunoAula" Width="1.5" PointX="2.875" PointY="0.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Aula" Width="1.5" PointX="4.875" PointY="0.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Cidade" Width="1.5" PointX="4.875" PointY="3" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Compra" Width="1.5" PointX="5.875" PointY="5.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Contato" Width="1.5" PointX="9.375" PointY="10.125" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Equipamento" Width="1.5" PointX="8" PointY="5.625" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.EquipamentoAula" Width="1.75" PointX="8.75" PointY="1.25" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Exercicio" Width="1.5" PointX="10.875" PointY="3.75" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.ExercicioEquipamento" Width="1.5" PointX="10" PointY="6.125" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Ficha" Width="1.5" PointX="0.5" PointY="4.25" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Fornecedor" Width="1.5" PointX="2.625" PointY="5.75" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Funcionario" Width="1.5" PointX="5.125" PointY="8.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.HistExercicioAluno" Width="1.75" PointX="0.5" PointY="7" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.HistPgtoAluno" Width="1.5" PointX="2.875" PointY="2.125" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.HistPgtoFuncionario" Width="2" PointX="2.75" PointY="10.25" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.HistSalarioFuncionario" Width="2.125" PointX="0.5" PointY="9.25" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Manutencao" Width="1.5" PointX="7.125" PointY="8.125" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Pais" Width="1.5" PointX="9.125" PointY="3.25" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.TpAula" Width="1.5" PointX="6.875" PointY="0.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.TpExercicio" Width="1.5" PointX="10.875" PointY="1.125" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.TpManutencao" Width="1.5" PointX="6.875" PointY="10.875" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Uf" Width="1.5" PointX="6.875" PointY="2.5" />
+        <EntityTypeShape EntityType="WebfitnessDBModel.Venda" Width="1.5" PointX="10" PointY="7.75" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Aluno_Cidade" ManuallyRouted="false" >
+        </AssociationConnector>
         <AssociationConnector Association="WebfitnessDBModel.FK_AlunoAula_Aluno" />
         <AssociationConnector Association="WebfitnessDBModel.FK_Ficha_Aluno" />
         <AssociationConnector Association="WebfitnessDBModel.FK_HistPgtoAluno_Aluno" />
@@ -40,26 +38,27 @@
         <AssociationConnector Association="WebfitnessDBModel.FK_Aula_TpAula" />
         <AssociationConnector Association="WebfitnessDBModel.FK_EquipamentoAula_Aula" />
         <AssociationConnector Association="WebfitnessDBModel.FK_Cidade_Uf" />
-        <AssociationConnector Association="WebfitnessDBModel.FK_Fornecedor_Cidade" />
-        <AssociationConnector Association="WebfitnessDBModel.FK_Funcionario_Cidade" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Fornecedor_Cidade" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="WebfitnessDBModel.FK_Funcionario_Cidade" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="WebfitnessDBModel.FK_Compra_Equipamento" />
         <AssociationConnector Association="WebfitnessDBModel.FK_Compra_Fornecedor" />
-        <AssociationConnector Association="WebfitnessDBModel.FK_CompraEquipamento_Compra" />
-        <AssociationConnector Association="WebfitnessDBModel.FK_CompraEquipamento_Equipamento" />
         <AssociationConnector Association="WebfitnessDBModel.FK_Equipamento_Fornecedor" />
         <AssociationConnector Association="WebfitnessDBModel.FK_EquipamentoAula_Equipamento" />
         <AssociationConnector Association="WebfitnessDBModel.FK_ExercicioEquipamento_Equipamento" />
-        <AssociationConnector Association="WebfitnessDBModel.FK_ManutencaoEquipamento_Equipamento" />
-        <AssociationConnector Association="WebfitnessDBModel.FK_VendaEquipamento_Equipamento" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Manutencao_Equipamento" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Venda_Equipamento" />
         <AssociationConnector Association="WebfitnessDBModel.FK_Exercicio_TpExercicio" />
         <AssociationConnector Association="WebfitnessDBModel.FK_ExercicioEquipamento_Exercicio" />
-        <AssociationConnector Association="WebfitnessDBModel.FK_Ficha_Exercicio" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Ficha_Exercicio" ></AssociationConnector>
         <AssociationConnector Association="WebfitnessDBModel.FK_HistExercicioAluno_Ficha" />
-        <AssociationConnector Association="WebfitnessDBModel.FK_Manutencao_Fornecedor" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Manutencao_Fornecedor" ManuallyRouted="false" >
+        </AssociationConnector>
         <AssociationConnector Association="WebfitnessDBModel.FK_HistPgtoFuncionario_Funcionario" />
         <AssociationConnector Association="WebfitnessDBModel.FK_HistSalarioFuncionario_Funcionario" />
-        <AssociationConnector Association="WebfitnessDBModel.FK_ManutencaoEquipamento_Manutencao" />
         <AssociationConnector Association="WebfitnessDBModel.FK_Uf_Pais" />
-        <AssociationConnector Association="WebfitnessDBModel.FK_VendaEquipamento_Venda" />
+        <AssociationConnector Association="WebfitnessDBModel.FK_Manutencao_TpManutencao" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

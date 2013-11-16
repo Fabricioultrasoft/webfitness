@@ -30,6 +30,8 @@
 
     <!-- JavaScript/jQuery, Pre-DOM -->
     <script src="~/Scripts/admin/base/jquery1.9.1.min.js"></script>
+    <script src="~/Scripts/admin/base/jquery.mask.js"></script>
+    <script src="~/Scripts/admin/base/admin.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
     <script src="~/Scripts/admin/base/excanvas.min.js"></script>
     <script src="~/Scripts/admin/base/jquery.flot.js"></script>
@@ -66,7 +68,7 @@
                 <!-- / Mobile Menu Button -->
 
                 <!-- / Logo / Brand Name -->
-                <a class="brand" href="~/Admin/"><i class="icon-leaf"></i>Web Fitness - <b>Painel Administrativo</b></a>
+                <a class="brand" href="~/Admin/">Web Fitness - <b>Painel Administrativo</b></a>
                 <!-- / Logo / Brand Name -->
 
                 <!-- User Navigation -->
@@ -99,24 +101,6 @@
         </div>
         <!-- / Top Fixed Bar: Navbar Inner -->
 
-        <!-- Top Fixed Bar: Breadcrumb -->
-        <div class="breadcrumb clearfix">
-
-            <!-- Top Fixed Bar: Breadcrumb Container -->
-            <div class="container">
-
-                <!-- Top Fixed Bar: Breadcrumb Location -->
-                <ul class="pull-left">
-                    <li><a href="#"><i class="icon-home"></i>Home</a> <span class="divider">/</span></li>
-                    <li class="active"><a href="#"><i class="icon-align-justify"></i>Dashboard</a></li>
-                </ul>
-                <!-- / Top Fixed Bar: Breadcrumb Location -->
-            </div>
-            <!-- / Top Fixed Bar: Breadcrumb Container -->
-
-        </div>
-        <!-- / Top Fixed Bar: Breadcrumb -->
-
     </div>
     <!-- / Top Fixed Bar -->
 
@@ -133,36 +117,36 @@
                 <ul class="nav">
 
                     <!-- Main Navigation: Dashboard -->
-                    <li class="active">@Html.ActionLink("Dashboard", "Dashboard", new { @class="icon-align-justify" })</li>
+                    <li class="dropdown-toggle">@Html.ActionLink("Dashboard", "Index", "Dashboard")</li>
                     <!-- / Main Navigation: Dashboard -->
 
                     <!-- Main Navigation: General -->
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <i class="icon-th"></i>General <b class="caret"></b>
+                            <i class="icon-cogs"></i>Parametrizações <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="grid.html"><i class="icon-th"></i>Grid</a></li>
-                            <li><a href="icons.html"><i class="icon-circle"></i>Icons</a></li>
-                            <li><a href="typography.html"><i class="icon-font"></i>Typography</a></li>
-                            <li><a href="buttons.html"><i class="icon-circle-blank"></i>Buttons</a></li>
+                            <li>@Html.ActionLink("Tipo Aula", "Index", "TipoAula")</li>
+                            <li>@Html.ActionLink("Tipo Exercicio", "Index", "TipoExercicio")</li>
+                            <li>@Html.ActionLink("Tipo Manutenção", "Index", "TipoManutencao")</li>
                         </ul>
                     </li>
                     <!-- / Main Navigation: General -->
 
                     <!-- Main Navigation: UI Elements -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-magic"></i>UI Elements <b class="caret"></b>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="icon-book"></i>Cadastros <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="forms.html"><i class="icon-check"></i>Forms</a></li>
-                            <li><a href="wysiwyg.html"><i class="icon-edit"></i>WYSIWYG</a></li>
-                            <li><a href="tabs.html"><i class="icon-th-large"></i>Tabs / Accordion</a></li>
+                            <li>@Html.ActionLink("Aluno", "Index", "Aluno")</li>
+                            <li>@Html.ActionLink("Fornecedor", "Index", "Fornecedor")</li>
                         </ul>
                     </li>
                     <!-- / Main Navigation: UI Elements -->
 
                     <!-- Main Navigation: Components -->
+                    <!--
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="icon-th-large"></i>Components <b class="caret"></b>
@@ -184,6 +168,7 @@
                             </li>
                         </ul>
                     </li>
+                    -->
                     <!-- / Main Navigation: Components -->
 
                 </ul>

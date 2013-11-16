@@ -14,10 +14,17 @@ namespace WebFitness
     
     public partial class TpManutencao
     {
+        public TpManutencao()
+        {
+            this.Manutencao = new HashSet<Manutencao>();
+        }
+    
         public int idTpManutencao { get; set; }
         public string dsTpManutencao { get; set; }
         public string observacao { get; set; }
         public Nullable<byte> status { get; set; }
         public Nullable<System.DateTime> dtCriacao { get; set; }
+    
+        public virtual ICollection<Manutencao> Manutencao { get; set; }
     }
 }

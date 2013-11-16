@@ -58,22 +58,13 @@
     <EntitySetMapping Name="Compra">
       <EntityTypeMapping TypeName="WebfitnessDBModel.Compra">
         <MappingFragment StoreEntitySet="Compra">
+          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
           <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
           <ScalarProperty Name="dtVenda" ColumnName="dtVenda" />
           <ScalarProperty Name="qtdParcelas" ColumnName="qtdParcelas" />
           <ScalarProperty Name="valorCompra" ColumnName="valorCompra" />
           <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
           <ScalarProperty Name="idCompra" ColumnName="idCompra" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CompraEquipamento">
-      <EntityTypeMapping TypeName="WebfitnessDBModel.CompraEquipamento">
-        <MappingFragment StoreEntitySet="CompraEquipamento">
-          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
-          <ScalarProperty Name="qtdCompra" ColumnName="qtdCompra" />
-          <ScalarProperty Name="idCompra" ColumnName="idCompra" />
-          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -147,7 +138,6 @@
       <EntityTypeMapping TypeName="WebfitnessDBModel.Fornecedor">
         <MappingFragment StoreEntitySet="Fornecedor">
           <ScalarProperty Name="status" ColumnName="status" />
-          <ScalarProperty Name="idTpFornecedor" ColumnName="idTpFornecedor" />
           <ScalarProperty Name="idCidade" ColumnName="idCidade" />
           <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
           <ScalarProperty Name="telefone" ColumnName="telefone" />
@@ -238,22 +228,13 @@
     <EntitySetMapping Name="Manutencao">
       <EntityTypeMapping TypeName="WebfitnessDBModel.Manutencao">
         <MappingFragment StoreEntitySet="Manutencao">
+          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
           <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
           <ScalarProperty Name="dtManutencao" ColumnName="dtManutencao" />
           <ScalarProperty Name="qtdParcelas" ColumnName="qtdParcelas" />
           <ScalarProperty Name="valorManutencao" ColumnName="valorManutencao" />
           <ScalarProperty Name="idTpManutencao" ColumnName="idTpManutencao" />
           <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
-          <ScalarProperty Name="idManutencao" ColumnName="idManutencao" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ManutencaoEquipamento">
-      <EntityTypeMapping TypeName="WebfitnessDBModel.ManutencaoEquipamento">
-        <MappingFragment StoreEntitySet="ManutencaoEquipamento">
-          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
-          <ScalarProperty Name="qtdEquipamentos" ColumnName="qtdEquipamentos" />
-          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
           <ScalarProperty Name="idManutencao" ColumnName="idManutencao" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -315,20 +296,11 @@
     <EntitySetMapping Name="Venda">
       <EntityTypeMapping TypeName="WebfitnessDBModel.Venda">
         <MappingFragment StoreEntitySet="Venda">
+          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
           <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
           <ScalarProperty Name="dtVenda" ColumnName="dtVenda" />
           <ScalarProperty Name="qtdParcelas" ColumnName="qtdParcelas" />
           <ScalarProperty Name="valorVenda" ColumnName="valorVenda" />
-          <ScalarProperty Name="idVenda" ColumnName="idVenda" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="VendaEquipamento">
-      <EntityTypeMapping TypeName="WebfitnessDBModel.VendaEquipamento">
-        <MappingFragment StoreEntitySet="VendaEquipamento">
-          <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
-          <ScalarProperty Name="qtdVenda" ColumnName="qtdVenda" />
-          <ScalarProperty Name="idEquipamento" ColumnName="idEquipamento" />
           <ScalarProperty Name="idVenda" ColumnName="idVenda" />
         </MappingFragment>
       </EntityTypeMapping>

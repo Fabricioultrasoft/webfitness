@@ -31,7 +31,6 @@ namespace WebFitness
         public string telefone { get; set; }
         public Nullable<System.DateTime> dtCriacao { get; set; }
         public int idCidade { get; set; }
-        public int idTpFornecedor { get; set; }
         public Nullable<byte> status { get; set; }
     
         public virtual Cidade Cidade { get; set; }
