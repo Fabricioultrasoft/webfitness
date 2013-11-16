@@ -61,6 +61,6 @@ C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\Sy
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.xml
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\bin\System.Web.WebPages.Razor.xml
-C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\obj\Debug\WebFitness.csprojResolveAssemblyReference.cache
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\obj\Debug\WebFitness.dll
 C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\obj\Debug\WebFitness.pdb
+C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitness\obj\Debug\WebFitness.csprojResolveAssemblyReference.cache
