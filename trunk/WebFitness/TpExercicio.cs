@@ -11,17 +11,27 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TpExercicio
     {
         public TpExercicio()
         {
             this.Exercicio = new HashSet<Exercicio>();
         }
-    
+
+        [Display(Name = "Código")]
         public int idTpExercicio { get; set; }
+
+        [Display(Name = "Descrição")]
+        [Required(ErrorMessage = "Descrição é obrigatoria!")]
+        [StringLength(100, ErrorMessage = "Descrição deve ter no máximo 100 caracteres!")]
         public string dsTpExercicio { get; set; }
+
+        [Display(Name = "Status")]
         public Nullable<byte> status { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
     
         public virtual ICollection<Exercicio> Exercicio { get; set; }

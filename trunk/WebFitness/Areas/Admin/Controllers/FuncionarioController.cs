@@ -9,37 +9,37 @@ using WebFitness.classes;
 
 namespace WebFitness.Areas.Admin.Controllers
 {
-    public class FornecedorController : Controller
+    public class FuncionarioController : Controller
     {
         private WebfitnessDBEntities db = new WebfitnessDBEntities();
-        private String controller = "Fornecedor";
+        private String controller = "Funcionário";
 
         //
-        // GET: /Admin/Fornecedor/
+        // GET: /Admin/Funcionario/
 
         public ActionResult Index()
         {
             @ViewBag.Controller = controller;
-            var fornecedor = db.Fornecedor.Include(f => f.Cidade);
-            return View(fornecedor.ToList());
+            var funcionario = db.Funcionario.Include(f => f.Cidade);
+            return View(funcionario.ToList());
         }
 
         //
-        // GET: /Admin/Fornecedor/Details/5
+        // GET: /Admin/Funcionario/Details/5
 
         public ActionResult Details(int id = 0)
         {
             @ViewBag.Controller = controller;
-            Fornecedor fornecedor = db.Fornecedor.Find(id);
-            if (fornecedor == null)
+            Funcionario funcionario = db.Funcionario.Find(id);
+            if (funcionario == null)
             {
                 return HttpNotFound();
             }
-            return View(fornecedor);
+            return View(funcionario);
         }
 
         //
-        // GET: /Admin/Fornecedor/Create
+        // GET: /Admin/Funcionario/Create
 
         public ActionResult Create()
         {
@@ -49,65 +49,84 @@ namespace WebFitness.Areas.Admin.Controllers
         }
 
         //
-        // POST: /Admin/Fornecedor/Create
+        // POST: /Admin/Funcionario/Create
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Fornecedor fornecedor)
+        public ActionResult Create(Funcionario funcionario)
         {
             @ViewBag.Controller = controller;
-            fornecedor.dtCriacao = DateTime.Now;
-            fornecedor.status = (byte) Status.Ativo;
-            fornecedor.idFornecedor = 1;
-            fornecedor.dsFornecedor = Validation.SyntaxName(fornecedor.dsFornecedor);
+            funcionario.dtCriacao = DateTime.Now;
+            funcionario.status = (byte)Status.Ativo;
+            funcionario.idFuncionario = 1;
+            funcionario.senha = Validation.GetMD5Hash(funcionario.senha);
+            funcionario.nome = Validation.SyntaxName(funcionario.nome);
 
             if (ModelState.IsValid)
             {
-                db.Fornecedor.Add(fornecedor);
+                db.Funcionario.Add(funcionario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.idCidade = new SelectList(db.Cidade, "idCidade", "dsCidade", fornecedor.idCidade);
-            return View(fornecedor);
+            ViewBag.idCidade = new SelectList(db.Cidade, "idCidade", "dsCidade", funcionario.idCidade);
+            return View(funcionario);
         }
 
         //
-        // GET: /Admin/Fornecedor/Edit/5
+        // GET: /Admin/Funcionario/Edit/5
 
         public ActionResult Edit(int id = 0)
         {
             @ViewBag.Controller = controller;
-            Fornecedor fornecedor = db.Fornecedor.Find(id);
-            if (fornecedor == null)
+            Funcionario funcionario = db.Funcionario.Find(id);
+            if (funcionario == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.idCidade = new SelectList(db.Cidade, "idCidade", "dsCidade", fornecedor.idCidade);
-            return View(fornecedor);
+            ViewBag.idCidade = new SelectList(db.Cidade, "idCidade", "dsCidade", funcionario.idCidade);
+            return View(funcionario);
         }
 
         //
-        // POST: /Admin/Fornecedor/Edit/5
+        // POST: /Admin/Funcionario/Edit/5
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Fornecedor fornecedor)
+        public ActionResult Edit(Funcionario funcionario)
         {
             @ViewBag.Controller = controller;
-            fornecedor.dsFornecedor = Validation.SyntaxName(fornecedor.dsFornecedor);
+            
             if (ModelState.IsValid)
             {
-                db.Entry(fornecedor).State = EntityState.Modified;
+                db.Entry(funcionario).State = EntityState.Modified;
+
+                if (funcionario.senha != null)
+                {
+                    funcionario.senha = Validation.GetMD5Hash(funcionario.senha);
+                }
+                else
+                {
+                    var rs = from funcionarioTmp in db.Funcionario where funcionarioTmp.idFuncionario == funcionario.idFuncionario select funcionarioTmp.senha;
+
+                    foreach (var item in rs)
+                    {
+                        funcionario.senha = item.ToString();
+                    }
+
+                }
+
+                funcionario.nome = Validation.SyntaxName(funcionario.nome);
+
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.idCidade = new SelectList(db.Cidade, "idCidade", "dsCidade", fornecedor.idCidade);
-            return View(fornecedor);
+            ViewBag.idCidade = new SelectList(db.Cidade, "idCidade", "dsCidade", funcionario.idCidade);
+            return View(funcionario);
         }
 
         //
-        // GET: /Admin/Aluno/Inactive/5
+        // GET: /Admin/Funcionario/Delete/5
 
         public ActionResult Inactive(int id = 0)
         {
@@ -137,7 +156,7 @@ namespace WebFitness.Areas.Admin.Controllers
                 return HttpNotFound();
             }
 
-            fornecedor.status = (byte)Status.Ativo;
+            fornecedor.status = (byte) Status.Ativo;
             db.SaveChanges();
 
             return RedirectToAction("Index");

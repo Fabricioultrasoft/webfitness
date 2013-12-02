@@ -285,6 +285,7 @@
     <NavigationProperty Name="Aluno" Relationship="WebfitnessDBModel.FK_Ficha_Aluno" FromRole="Ficha" ToRole="Aluno" />
     <NavigationProperty Name="Exercicio" Relationship="WebfitnessDBModel.FK_Ficha_Exercicio" FromRole="Ficha" ToRole="Exercicio" />
     <NavigationProperty Name="HistExercicioAluno" Relationship="WebfitnessDBModel.FK_HistExercicioAluno_Ficha" FromRole="Ficha" ToRole="HistExercicioAluno" />
+    <Property Type="Byte" Name="status" Nullable="false" />
   </EntityType>
   <EntityType Name="Fornecedor">
     <Key>
@@ -317,7 +318,7 @@
     <Property Type="String" Name="email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="rua" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="bairro" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Type="String" Name="cep" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="cep" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="ctps" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Type="String" Name="sexo" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
     <Property Type="DateTime" Name="aniversario" Nullable="false" Precision="0" />

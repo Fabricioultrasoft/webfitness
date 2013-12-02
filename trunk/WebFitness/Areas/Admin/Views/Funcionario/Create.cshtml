@@ -1,26 +1,22 @@
-﻿@model WebFitness.Aluno
+﻿@model WebFitness.Funcionario
 
 @{
-    ViewBag.Title = "Editar";
+    ViewBag.Title = "Cadastrar";
 }
 
 <div class="span7">
     <div class="top-bar">
         <h3>
             <i class="icon-cog"></i>
-            Cadastro Alunos
+            Cadastro Funcionários
         </h3>
     </div>
     <div class="well no-padding">
-        @using (Html.BeginForm("Edit", "Aluno", FormMethod.Post, new { @class = "form-horizontal" }))
+        @using (Html.BeginForm("Create", "Funcionario", FormMethod.Post, new { @class = "form-horizontal" }))
         {    
             @Html.AntiForgeryToken()
             @Html.ValidationSummary(true)
 
-            @Html.HiddenFor(model => model.idAluno)
-            @Html.HiddenFor(model => model.dtCriacao)
-            @Html.HiddenFor(model => model.login)
-            
             <div class="control-group">
                 @Html.LabelFor(model => model.nome, new { @class = "control-label" })
 
@@ -74,6 +70,24 @@
                     @Html.ValidationMessageFor(model => model.bairro)
                 </div>
             </div>
+            
+            <div class="control-group">
+                @Html.LabelFor(model => model.cep, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.cep, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.cep)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.ctps, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.ctps, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.ctps)
+                </div>
+            </div>
 
             <div class="control-group">
                 @Html.LabelFor(model => model.sexo, new { @class = "control-label" })
@@ -81,7 +95,6 @@
                 <div class="controls">
                     <label class="radio"><span>@Html.RadioButtonFor(model => model.sexo, 'M')</span> Masculino</label>
                     <label class="radio"><span>@Html.RadioButtonFor(model => model.sexo, 'F')</span> Feminino</label>
-                    @Html.ValidationMessageFor(model => model.sexo
                 </div>
             </div>
 
@@ -95,8 +108,18 @@
             </div>
             
             <div class="control-group">
+                @Html.LabelFor(model => model.idTpFuncionario, new { @class = "control-label" })
+
+                <div class="controls">
+                    @*<label class="radio"><span>@Html.RadioButtonFor(model => model.idTpFuncionario, WebFitness.TipoFunacionario.Administrador)</span> @WebFitness.TipoFunacionario.Administrador</label>*@
+                    <label class="radio"><span>@Html.RadioButtonFor(model => model.idTpFuncionario, (byte)WebFitness.TipoFunacionario.Instrutor)</span> @WebFitness.TipoFunacionario.Instrutor</label>
+                    <label class="radio"><span>@Html.RadioButtonFor(model => model.idTpFuncionario, (byte)WebFitness.TipoFunacionario.Recepcionista)</span> @WebFitness.TipoFunacionario.Recepcionista</label>
+                </div>
+            </div>
+            
+            <div class="control-group">
                 @Html.LabelFor(model => model.idCidade, new { @class = "control-label" })
-                
+
                 <div class="controls">
                     @Html.DropDownList("idCidade", String.Empty)
                     @Html.ValidationMessageFor(model => model.idCidade)
@@ -104,24 +127,23 @@
             </div>
 
             <div class="control-group">
-                @Html.LabelFor(model => model.senha, new { @class = "control-label" })
+                @Html.LabelFor(model => model.login, new { @class = "control-label" })
 
                 <div class="controls">
-                    @*@Html.PasswordFor(model => model.senha, new { @class = "span3 m-wrap" })*@
-                    <input type="password" name="senha" id="senha" class="span3 m-wrap" />
-                    @Html.ValidationMessageFor(model => model.senha)
+                    @Html.EditorFor(model => model.login, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.login)
                 </div>
             </div>
 
             <div class="control-group">
-                @Html.LabelFor(model => model.status, new { @class = "control-label" })
+                @Html.LabelFor(model => model.senha, new { @class = "control-label" })
 
                 <div class="controls">
-                    <label class="radio"><span>@Html.RadioButtonFor(model => model.status, (byte) WebFitness.Status.Ativo)</span> @WebFitness.Status.Ativo</label>
-                    <label class="radio"><span>@Html.RadioButtonFor(model => model.status, (byte) WebFitness.Status.Inativo)</span> @WebFitness.Status.Inativo</label>
+                    @Html.PasswordFor(model => model.senha, new { @class = "span3 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.senha)
                 </div>
             </div>
-            
+
             <div class="form-actions">
                 <input type="submit" class="btn btn-success" name="enviar" value="Salvar" />
                 @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger" })

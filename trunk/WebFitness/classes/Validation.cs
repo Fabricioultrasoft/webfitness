@@ -14,6 +14,8 @@ namespace WebFitness.classes
         {
             MD5CryptoServiceProvider md5ServiceProdivder = new MD5CryptoServiceProvider();
 
+            value = value == null ? "" : value;
+
             byte[] data = System.Text.Encoding.ASCII.GetBytes(value);
             data = md5ServiceProdivder.ComputeHash(data);
 
@@ -22,6 +24,30 @@ namespace WebFitness.classes
                 hashedValue.Append(data[i].ToString("x2"));
 
             return hashedValue.ToString();
+        }
+
+        public static string SyntaxName(string value)
+        {
+            if (value == null)
+            {
+                return null;
+            }
+
+            value = value.ToLower();
+            StringBuilder valueTmp = new StringBuilder();
+            string returnValue;
+            string[] split = value.Split(new Char[] { ' ', ',', '.', ':', '\t' });
+
+            foreach (string s in split)
+            {
+                string firstWord = s.Substring(0, 1).ToUpper();
+                valueTmp.Append(firstWord);
+                valueTmp.Append(s.Substring(1));
+                valueTmp.Append(" ");
+            }
+            returnValue = valueTmp.ToString().Substring(0, valueTmp.ToString().Length - 1);
+
+            return returnValue;
         }
 
     }

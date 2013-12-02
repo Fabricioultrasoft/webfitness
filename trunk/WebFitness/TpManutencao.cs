@@ -11,18 +11,32 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TpManutencao
     {
         public TpManutencao()
         {
             this.Manutencao = new HashSet<Manutencao>();
         }
-    
+
+        [Display(Name = "Código")]
         public int idTpManutencao { get; set; }
+
+        [Display(Name = "Descrição")]
+        [Required(ErrorMessage = "Descrição é obrigatoria!")]
+        [StringLength(100, ErrorMessage = "Descrição deve ter no máximo 100 caracteres!")]
         public string dsTpManutencao { get; set; }
+
+        [Display(Name = "Observação")]
+        [Required(ErrorMessage = "Observação é obrigatoria!")]
+        [StringLength(200, ErrorMessage = "Observação deve ter no máximo 200 caracteres!")]
         public string observacao { get; set; }
+
+        [Display(Name = "Status")]
         public Nullable<byte> status { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
     
         public virtual ICollection<Manutencao> Manutencao { get; set; }

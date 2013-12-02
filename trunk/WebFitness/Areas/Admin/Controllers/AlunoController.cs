@@ -62,6 +62,7 @@ namespace WebFitness.Areas.Admin.Controllers
             aluno.status    = (byte)Status.Ativo;
             aluno.idAluno   = 1;
             aluno.senha = Validation.GetMD5Hash(aluno.senha);
+            aluno.nome = Validation.SyntaxName(aluno.nome);
 
             if (ModelState.IsValid)
             {
@@ -97,6 +98,7 @@ namespace WebFitness.Areas.Admin.Controllers
         public ActionResult Edit(Aluno aluno)
         {
             @ViewBag.Controller = controller;
+            aluno.nome = Validation.SyntaxName(aluno.nome);
 
             if (ModelState.IsValid)
             {
@@ -108,12 +110,13 @@ namespace WebFitness.Areas.Admin.Controllers
                 }
                 else
                 {
-                    var rs = from alunoTmp in db.Aluno where alunoTmp.idAluno == aluno.idAluno select alunoTmp.senha;
+                    var rs = from alunoTmp in db.Aluno 
+                             where alunoTmp.idAluno == aluno.idAluno
+                             select alunoTmp.senha;
 
-                    foreach (var it in rs)
-                    {
-                        aluno.senha = it.ToString();
-                    }
+                    foreach(var item in rs)
+                        aluno.senha = item.ToString();
+
                 }
                 //
                 db.SaveChanges();
