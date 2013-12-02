@@ -1,124 +1,111 @@
 ﻿@model WebFitness.Fornecedor
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar";
 }
 
-<h2>Edit</h2>
+<div class="span7">
+    <div class="top-bar">
+        <h3>
+            <i class="icon-cog"></i>
+            Cadastro Fornecedor
+        </h3>
+    </div>
+    <div class="well no-padding">
+        @using (Html.BeginForm("Edit", "Fornecedor", FormMethod.Post, new { @class = "form-horizontal" }))
+        {    
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+    
+            @Html.HiddenFor(model => model.idFornecedor)
 
-@using (Html.BeginForm()) {
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
+            <div class="control-group">
+                @Html.LabelFor(model => model.dsFornecedor, new { @class = "control-label" })
 
-    <fieldset>
-        <legend>Fornecedor</legend>
+                <div class="controls">
+                    @Html.EditorFor(model => model.dsFornecedor, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.dsFornecedor)
+                </div>
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.idFornecedor)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.idFornecedor)
-            @Html.ValidationMessageFor(model => model.idFornecedor)
-        </div>
+            <div class="control-group">
+                @Html.LabelFor(model => model.cnpj, new { @class = "control-label" })
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.dsFornecedor)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.dsFornecedor)
-            @Html.ValidationMessageFor(model => model.dsFornecedor)
-        </div>
+                <div class="controls">
+                    @Html.EditorFor(model => model.cnpj, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.cnpj)
+                </div>
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.cnpj)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.cnpj)
-            @Html.ValidationMessageFor(model => model.cnpj)
-        </div>
+            <div class="control-group">
+                @Html.LabelFor(model => model.inscrEstadual, new { @class = "control-label" })
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.inscrEstadual)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.inscrEstadual)
-            @Html.ValidationMessageFor(model => model.inscrEstadual)
-        </div>
+                <div class="controls">
+                    @Html.EditorFor(model => model.inscrEstadual, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.inscrEstadual)
+                </div>
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.rua)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.rua)
-            @Html.ValidationMessageFor(model => model.rua)
-        </div>
+            <div class="control-group">
+                @Html.LabelFor(model => model.rua, new { @class = "control-label" })
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.bairro)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.bairro)
-            @Html.ValidationMessageFor(model => model.bairro)
-        </div>
+                <div class="controls">
+                    @Html.EditorFor(model => model.rua, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.rua)
+                </div>
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.email)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.email)
-            @Html.ValidationMessageFor(model => model.email)
-        </div>
+            <div class="control-group">
+                @Html.LabelFor(model => model.bairro, new { @class = "control-label" })
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.telefone)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.telefone)
-            @Html.ValidationMessageFor(model => model.telefone)
-        </div>
+                <div class="controls">
+                    @Html.EditorFor(model => model.bairro, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.bairro)
+                </div>
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.dtCriacao)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.dtCriacao)
-            @Html.ValidationMessageFor(model => model.dtCriacao)
-        </div>
+            <div class="control-group">
+                @Html.LabelFor(model => model.email, new { @class = "control-label" })
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.idCidade, "Cidade")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("idCidade", String.Empty)
-            @Html.ValidationMessageFor(model => model.idCidade)
-        </div>
+                <div class="controls">
+                    @Html.EditorFor(model => model.email, new { @class = "m-wrap" })
+                    @Html.ValidationMessageFor(model => model.email)
+                </div>
+            </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.idTpFornecedor)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.idTpFornecedor)
-            @Html.ValidationMessageFor(model => model.idTpFornecedor)
-        </div>
+            <div class="control-group">
+                @Html.LabelFor(model => model.telefone, new { @class = "control-label" })
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.status)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.status)
-            @Html.ValidationMessageFor(model => model.status)
-        </div>
+                <div class="controls">
+                    @Html.EditorFor(model => model.telefone, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.telefone)
+                </div>
+            </div>
 
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
-}
+            <div class="control-group">
+                @Html.LabelFor(model => model.idCidade, new { @class = "control-label" })
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+                <div class="controls">
+                    @Html.DropDownList("idCidade", String.Empty)
+                    @Html.ValidationMessageFor(model => model.idCidade)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.status, new { @class = "control-label" })
+
+                <div class="controls">
+                    <label class="radio"><span>@Html.RadioButtonFor(model => model.status, (byte)WebFitness.Status.Ativo)</span> @WebFitness.Status.Ativo</label>
+                    <label class="radio"><span>@Html.RadioButtonFor(model => model.status, (byte)WebFitness.Status.Inativo)</span> @WebFitness.Status.Inativo</label>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <input type="submit" class="btn btn-success" name="enviar" value="Salvar" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger" })
+            </div>
+
+        }
+
+    </div>
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

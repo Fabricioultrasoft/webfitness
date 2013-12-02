@@ -11,7 +11,8 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Funcionario
     {
         public Funcionario()
@@ -19,23 +20,79 @@ namespace WebFitness
             this.HistPgtoFuncionario = new HashSet<HistPgtoFuncionario>();
             this.HistSalarioFuncionario = new HashSet<HistSalarioFuncionario>();
         }
-    
+
+        [Display(Name = "Funcionário")]
         public int idFuncionario { get; set; }
+
+        [Display(Name = "Nome")]
+        [Required(ErrorMessage = "Nome é obrigatorio!")]
+        [StringLength(100, ErrorMessage="Nome deve ter no máximo 100 caracteres!")]
         public string nome { get; set; }
+
+        [Display(Name = "CPF")]
+        [Required(ErrorMessage = "CPF é obrigatorio!")]
+        [StringLength(20, ErrorMessage = "CPF deve ter no máximo 20 caracteres!")]
         public string cpf { get; set; }
+
+        [Display(Name = "Telefone")]
+        [Required(ErrorMessage = "Telefone é obrigatorio!")]
+        [StringLength(20, ErrorMessage = "Telefone deve ter no máximo 20 caracteres!")]
         public string telefone { get; set; }
+
+        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Email é obrigatorio!")]
+        [StringLength(100, ErrorMessage = "Email deve ter no máximo 100 caracteres!")]
         public string email { get; set; }
+
+        [Display(Name = "Endereço")]
+        [StringLength(100, ErrorMessage = "Endereço deve ter no máximo 100 caracteres!")]
         public string rua { get; set; }
+
+        [Display(Name = "Bairro")]
+        [StringLength(100, ErrorMessage = "Bairro deve ter no máximo 100 caracteres!")]
         public string bairro { get; set; }
+
+        [Display(Name = "CEP")]
+        [Required(ErrorMessage = "CEP é obrigatorio!")]
+        [StringLength(9, ErrorMessage = "CEP deve ter no máximo 9 caracteres!")]
         public string cep { get; set; }
+
+        [Display(Name = "CTPS")]
+        [Required(ErrorMessage = "CTPS é obrigatorio!")]
+        [StringLength(50, ErrorMessage = "CTPS deve ter no máximo 50 caracteres!")]
         public string ctps { get; set; }
+
+        [Display(Name = "Sexo")]
+        [Required(ErrorMessage = "Sexo é obrigatorio!")]
+        [StringLength(1, ErrorMessage = "Sexo deve ter no máximo 1 caracteres!")]
         public string sexo { get; set; }
+
+        [Display(Name = "Data de Nascimento")]
+        [Required(ErrorMessage = "Data de Nascimento é obrigatoria!")]
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public System.DateTime aniversario { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
+
+        [Display(Name = "Cidade")]
+        [Required(ErrorMessage = "Cidade é obrigatoria!")]
         public int idCidade { get; set; }
+
+        [Display(Name = "Status")]
         public Nullable<byte> status { get; set; }
+
+        [Display(Name = "Tipo Funcionário")]
+        [Required(ErrorMessage = "Tipo Funcionário é obrigatorio!")]
         public int idTpFuncionario { get; set; }
+
+        [Display(Name = "Login")]
+        [Required(ErrorMessage = "Login é obrigatorio!")]
+        [StringLength(100, ErrorMessage = "Login deve ter no máximo 100 caracteres!")]
         public string login { get; set; }
+
+        [Display(Name = "Senha")]
+        [StringLength(300, ErrorMessage = "Senha deve ter no máximo 300 caracteres!")]
         public string senha { get; set; }
     
         public virtual Cidade Cidade { get; set; }

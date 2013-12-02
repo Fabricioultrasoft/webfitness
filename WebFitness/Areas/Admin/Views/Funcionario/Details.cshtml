@@ -1,14 +1,14 @@
-﻿@model WebFitness.Aluno
+﻿@model WebFitness.Funcionario
 
 @{
-    ViewBag.Title = "Detalhes";
+    ViewBag.Title = "Visualizar";
 }
 
 <div class="span7">
     <div class="top-bar">
         <h3>
             <i class="icon-cog"></i>
-            Cadastro Alunos
+            Cadastro Funcionários
         </h3>
     </div>
     <div class="well no-padding">
@@ -25,7 +25,7 @@
             @Html.LabelFor(model => model.cpf, new { @class = "control-label" })
 
             <div class="controls">
-                @Html.LabelForModel(Model.cpf, new { @class = "exibeCpf" })
+                @Html.DisplayFor(model => model.cpf)
             </div>
         </div>
 
@@ -33,7 +33,7 @@
             @Html.LabelFor(model => model.telefone, new { @class = "control-label" })
 
             <div class="controls">
-                @Html.LabelForModel(Model.telefone, new { @class = "exibeTel" })
+                @Html.DisplayFor(model => model.telefone)
             </div>
         </div>
 
@@ -62,6 +62,22 @@
         </div>
 
         <div class="control-group">
+            @Html.LabelFor(model => model.cep, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.cep)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.ctps, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.ctps)
+            </div>
+        </div>
+
+        <div class="control-group">
             @Html.LabelFor(model => model.sexo, new { @class = "control-label" })
 
             <div class="controls">
@@ -85,10 +101,19 @@
         </div>
 
         <div class="control-group">
-            @Html.LabelFor(model => model.dtCriacao, new { @class = "control-label" })
+            @Html.LabelFor(model => model.idTpFuncionario, new { @class = "control-label" })
 
             <div class="controls">
-                @Html.DisplayFor(model => model.dtCriacao)
+               @if (Model.idTpFuncionario == (byte) WebFitness.TipoFunacionario.Administrador)
+                {
+                    @WebFitness.TipoFunacionario.Administrador
+                }
+                else if (Model.idTpFuncionario == (byte)WebFitness.TipoFunacionario.Instrutor)
+                {
+                    @WebFitness.TipoFunacionario.Instrutor
+                }else{
+                    @WebFitness.TipoFunacionario.Recepcionista
+                }
             </div>
         </div>
 
@@ -96,18 +121,19 @@
             @Html.LabelFor(model => model.status, new { @class = "control-label" })
 
             <div class="controls">
-                @if(Model.status == (byte) WebFitness.Status.Ativo){
-                    @WebFitness.Status.Ativo
+                @if (Model.status == (byte)WebFitness.Status.Ativo)
+                {
+                    @Html.Label("Ativo");
                 }
                 else
                 {
-                    @WebFitness.Status.Inativo
+                    @Html.Label("Inativo");
                 }
             </div>
         </div>
 
         <div class="control-group">
-            @Html.LabelFor(model => model.Cidade.dsCidade, new { @class = "control-label" })
+            @Html.LabelFor(model => model.idCidade, new { @class = "control-label" })
 
             <div class="controls">
                 @Html.DisplayFor(model => model.Cidade.dsCidade)
@@ -121,8 +147,11 @@
                 @Html.DisplayFor(model => model.login)
             </div>
         </div>
+
         <div class="form-actions">
             @Html.ActionLink("Voltar", "Index", null, new { @class = "btn btn-danger" })
         </div>
+
+
     </div>
 </div>

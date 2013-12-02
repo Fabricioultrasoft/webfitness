@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebFitness.classes;
 
 namespace WebFitness.Areas.Admin.Controllers
 {
@@ -37,12 +38,14 @@ namespace WebFitness.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(TpAula tpaula)
         {
+
+            tpaula.dsTpAula = Validation.SyntaxName(tpaula.dsTpAula);
+            tpaula.dtCriacao = DateTime.Now;
+            tpaula.idTpAula = 1;
+            tpaula.status = (byte)Status.Ativo;
+
             if (ModelState.IsValid)
             {
-                tpaula.dtCriacao = DateTime.Now;
-                tpaula.idTpAula = 1;
-                tpaula.status = (byte) Status.Ativo;
-
                 db.TpAula.Add(tpaula);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -74,6 +77,7 @@ namespace WebFitness.Areas.Admin.Controllers
         public ActionResult Edit(TpAula tpaula)
         {
             @ViewBag.Controller = controller;
+            tpaula.dsTpAula = Validation.SyntaxName(tpaula.dsTpAula);
 
             if (ModelState.IsValid)
             {

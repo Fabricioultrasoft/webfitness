@@ -13,4 +13,11 @@ namespace WebFitness
         Inativo = 0
     }
 
+    public enum TipoFunacionario : byte
+    {
+        Administrador = 1,
+        Instrutor = 2,
+        Recepcionista = 3
+    }
+
 }

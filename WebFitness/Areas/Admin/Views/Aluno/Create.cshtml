@@ -77,6 +77,7 @@
                 <div class="controls">
                     <label class="radio"><span>@Html.RadioButtonFor(model => model.sexo, 'M')</span> Masculino</label>
                     <label class="radio"><span>@Html.RadioButtonFor(model => model.sexo, 'F')</span> Feminino</label>
+                    @Html.ValidationMessageFor(model => model.sexo)
                 </div>
             </div>
 

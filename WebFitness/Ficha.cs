@@ -25,6 +25,7 @@ namespace WebFitness
         public int qtdRepeticoes { get; set; }
         public int series { get; set; }
         public Nullable<System.DateTime> dtCriacao { get; set; }
+        public byte status { get; set; }
     
         public virtual Aluno Aluno { get; set; }
         public virtual Exercicio Exercicio { get; set; }

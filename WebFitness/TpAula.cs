@@ -11,6 +11,7 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class TpAula
     {
@@ -18,10 +19,19 @@ namespace WebFitness
         {
             this.Aula = new HashSet<Aula>();
         }
-    
+
+        [Display(Name = "Código")]
         public int idTpAula { get; set; }
+
+        [Display(Name = "Descrição")]
+        [Required(ErrorMessage = "Descrição é obrigatoria!")]
+        [StringLength(100, ErrorMessage = "Descrição deve ter no máximo 100 caracteres!")]
         public string dsTpAula { get; set; }
+
+        [Display(Name = "Status")]
         public Nullable<byte> status { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
     
         public virtual ICollection<Aula> Aula { get; set; }

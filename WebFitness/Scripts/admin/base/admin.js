@@ -1,15 +1,18 @@
 ﻿$(document).ready(function () {
 
-    $('[name="cpf"]').mask('000.000.000-00', { reverse: true });
-    $('[name="cnpj"]').mask('000.000.000/0000-00', { reverse: true });
-    $('.exibeCpf').mask('000.000.000-00', { reverse: true });
-    $('.exibeCnpj').mask('000.000.000/0000-00', { reverse: true });
-    $('.exibeTel').mask('(00) 0000-0000', { reverse: true });
+    $('[name="cpf"]').mask('000.000.000-00');
+    $('[name="cnpj"]').mask('000.000.000/0000-00');
+    $('[name="cep"]').mask('00000-000');
+    $('[name="ctps"]').mask('0000000 00000 SS');
+    $('.exibeCpf').mask('000.000.000-00');
+    $('.exibeCep').mask('00000-000');
+    $('.exibeCnpj').mask('000.000.000/0000-00');
+    $('.exibeTel').mask('(00) 0000-0000');
     $('[name="telefone"]').mask('(00) 0000-0000');
     $('[name="aniversario"]').mask('00/00/0000');
 
     $('[name="enviar"]').click(function () {
-
+        /*
         if ($('[name="cpf"]')) {
             if (!validarCPF($('[name="cpf"]'))) {
                 return false;
@@ -21,6 +24,7 @@
                 return false;
             }
         }
+        */
 
     });
 
@@ -34,8 +38,8 @@ function validarCPF(campoCpf) {
     cpf = cpf.replace(/[^\d]+/g, '');
 
     if (cpf == '') {
-        alert("CPF não pode ser nulo!");
-        $(campoCpf).focus();
+        /*alert("CPF não pode ser nulo!");
+        $(campoCpf).focus();*/
         return false;
     } 
 

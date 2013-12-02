@@ -252,6 +252,7 @@
     <Property Name="idExercicio" Type="int" Nullable="false" />
     <Property Name="idAluno" Type="int" Nullable="false" />
     <Property Name="qtdRepeticoes" Type="int" Nullable="false" />
+    <Property Name="status" Type="tinyint" Nullable="false" />
     <Property Name="series" Type="int" Nullable="false" />
     <Property Name="dtCriacao" Type="datetime" />
   </EntityType>
@@ -282,7 +283,7 @@
     <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="rua" Type="nvarchar" Nullable="false" MaxLength="100" />
     <Property Name="bairro" Type="nvarchar" Nullable="false" MaxLength="100" />
-    <Property Name="cep" Type="nvarchar" Nullable="false" MaxLength="8" />
+    <Property Name="cep" Type="nvarchar" Nullable="false" MaxLength="9" />
     <Property Name="ctps" Type="nvarchar" Nullable="false" MaxLength="50" />
     <Property Name="sexo" Type="nvarchar" Nullable="false" MaxLength="1" />
     <Property Name="aniversario" Type="date" Nullable="false" />

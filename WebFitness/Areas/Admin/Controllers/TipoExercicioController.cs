@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WebFitness.classes;
 
 namespace WebFitness.Areas.Admin.Controllers
 {
@@ -43,6 +44,7 @@ namespace WebFitness.Areas.Admin.Controllers
             tpexercicio.dtCriacao = DateTime.Now;
             tpexercicio.status = (byte) Status.Ativo;
             tpexercicio.idTpExercicio = 1;
+            tpexercicio.dsTpExercicio = Validation.SyntaxName(tpexercicio.dsTpExercicio);
 
             if (ModelState.IsValid)
             {
@@ -76,6 +78,7 @@ namespace WebFitness.Areas.Admin.Controllers
         public ActionResult Edit(TpExercicio tpexercicio)
         {
             @ViewBag.Controller = controller;
+            tpexercicio.dsTpExercicio = Validation.SyntaxName(tpexercicio.dsTpExercicio);
             if (ModelState.IsValid)
             {
                 db.Entry(tpexercicio).State = EntityState.Modified;
