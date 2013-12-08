@@ -14,6 +14,12 @@ namespace WebFitness.Areas.Admin.Controllers
         private WebfitnessDBEntities db = new WebfitnessDBEntities();
         private String controller = "Funcionário";
 
+        public bool VerificaCpf(string cpf)
+        {
+
+            return false;
+        }
+
         //
         // GET: /Admin/Funcionario/
 
