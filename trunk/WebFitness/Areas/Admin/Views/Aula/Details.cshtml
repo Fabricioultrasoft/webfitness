@@ -1,0 +1,71 @@
+﻿@model WebFitness.Aula
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Aula</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.idAula)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.idAula)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dsAula)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dsAula)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.capacidade)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.capacidade)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.observacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.observacao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.preco)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.preco)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.status)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.status)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dtCriacao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dtCriacao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TpAula.dsTpAula)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TpAula.dsTpAula)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

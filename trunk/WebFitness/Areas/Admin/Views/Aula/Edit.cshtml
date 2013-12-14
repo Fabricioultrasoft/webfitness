@@ -1,0 +1,89 @@
+﻿@model WebFitness.Aula
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<div class="span7">
+    <div class="top-bar">
+        <h3>
+            <i class="icon-cog"></i>
+            Cadastro Aulas
+        </h3>
+    </div>
+    <div class="well no-padding">
+
+@using (Html.BeginForm("Edit", "Aula", FormMethod.Post, new { @class = "form-horizontal" }))
+        {    
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            @Html.HiddenFor(model => model.idAula)
+            @Html.HiddenFor(model => model.dtCriacao)
+   
+    
+           <div class="control-group">
+                @Html.LabelFor(model => model.dsAula, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.dsAula, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.dsAula)
+                </div>
+            </div>
+    
+    <div class="control-group">
+                @Html.LabelFor(model => model.capacidade, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.capacidade, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.capacidade)
+                </div>
+            </div>
+    
+    <div class="control-group">
+                @Html.LabelFor(model => model.observacao, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.observacao, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.observacao)
+                </div>
+            </div>
+
+    
+    <div class="control-group">
+                @Html.LabelFor(model => model.preco, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.preco, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.preco)
+                </div>
+            </div>
+
+       <div class="control-group">
+                @Html.LabelFor(model => model.idTpAula, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.DropDownList("idTpAula", String.Empty)
+                    @Html.ValidationMessageFor(model => model.idTpAula)
+                </div>
+            </div>
+
+   
+        <div class="control-group">
+                @Html.LabelFor(model => model.status, new { @class = "control-label" })
+
+                <div class="controls">
+                    <label class="radio"><span>@Html.RadioButtonFor(model => model.status, (byte) WebFitness.Status.Ativo)</span> @WebFitness.Status.Ativo</label>
+                    <label class="radio"><span>@Html.RadioButtonFor(model => model.status, (byte) WebFitness.Status.Inativo)</span> @WebFitness.Status.Inativo</label>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <input type="submit" class="btn btn-success" name="enviar" value="Salvar" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger" })
+            </div>
+
+        }
+
+    </div>
+</div>
