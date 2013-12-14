@@ -137,13 +137,13 @@ namespace WebFitness.Areas.Admin.Controllers
         public ActionResult Inactive(int id = 0)
         {
             @ViewBag.Controller = controller;
-            Fornecedor fornecedor = db.Fornecedor.Find(id);
-            if (fornecedor == null)
+            Funcionario funcionario = db.Funcionario.Find(id);
+            if (funcionario == null)
             {
                 return HttpNotFound();
             }
 
-            fornecedor.status = (byte)Status.Inativo;
+            funcionario.status = (byte)Status.Inativo;
             db.SaveChanges();
 
             return RedirectToAction("Index");
@@ -155,14 +155,14 @@ namespace WebFitness.Areas.Admin.Controllers
         public ActionResult Active(int id = 0)
         {
             @ViewBag.Controller = controller;
-            Fornecedor fornecedor = db.Fornecedor.Find(id);
+            Funcionario funcionario = db.Funcionario.Find(id);
 
-            if (fornecedor == null)
+            if (funcionario == null)
             {
                 return HttpNotFound();
             }
 
-            fornecedor.status = (byte) Status.Ativo;
+            funcionario.status = (byte) Status.Ativo;
             db.SaveChanges();
 
             return RedirectToAction("Index");

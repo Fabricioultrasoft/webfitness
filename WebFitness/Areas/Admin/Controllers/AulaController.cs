@@ -12,12 +12,14 @@ namespace WebFitness.Areas.Admin.Controllers
     public class AulaController : Controller
     {
         private WebfitnessDBEntities db = new WebfitnessDBEntities();
+        private String controller = "Aula";
 
         //
         // GET: /Admin/Aula/
 
         public ActionResult Index()
         {
+            @ViewBag.Controller = controller;
             var aula = db.Aula.Include(a => a.TpAula);
             return View(aula.ToList());
         }
@@ -27,6 +29,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         public ActionResult Details(int id = 0)
         {
+            @ViewBag.Controller = controller;
             Aula aula = db.Aula.Find(id);
             if (aula == null)
             {
@@ -40,6 +43,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
+            @ViewBag.Controller = controller;
             ViewBag.idTpAula = new SelectList(db.TpAula, "idTpAula", "dsTpAula");
             return View();
         }
@@ -51,10 +55,14 @@ namespace WebFitness.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Aula aula)
         {
+            @ViewBag.Controller = controller;
             if (ModelState.IsValid)
             {
+                
                 aula.status = (byte)Status.Ativo;
                 aula.dtCriacao = DateTime.Now;
+                aula.dsAula = Validation.SyntaxName(aula.dsAula);
+
                 db.Aula.Add(aula);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -69,6 +77,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         public ActionResult Edit(int id = 0)
         {
+            @ViewBag.Controller = controller;
             Aula aula = db.Aula.Find(id);
             if (aula == null)
             {
@@ -85,6 +94,7 @@ namespace WebFitness.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Aula aula)
         {
+            @ViewBag.Controller = controller;
             if (ModelState.IsValid)
             {
                 db.Entry(aula).State = EntityState.Modified;
@@ -95,29 +105,37 @@ namespace WebFitness.Areas.Admin.Controllers
             return View(aula);
         }
 
-        //
-        // GET: /Admin/Aula/Delete/5
 
-        public ActionResult Delete(int id = 0)
+        public ActionResult Inactive(int id = 0)
         {
+            @ViewBag.Controller = controller;
             Aula aula = db.Aula.Find(id);
             if (aula == null)
             {
                 return HttpNotFound();
             }
-            return View(aula);
+
+            aula.status = (byte)Status.Inativo;
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         //
-        // POST: /Admin/Aula/Delete/5
+        // GET: /Admin/Aluno/Active/5
 
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Active(int id = 0)
         {
+            @ViewBag.Controller = controller;
             Aula aula = db.Aula.Find(id);
-            db.Aula.Remove(aula);
+            if (aula == null)
+            {
+                return HttpNotFound();
+            }
+
+            aula.status = (byte)Status.Ativo;
             db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
