@@ -1,0 +1,90 @@
+﻿@model IEnumerable<WebFitness.Aula>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Aulas</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "Create", null, new { @class = "btn btn-large btn-primary" })
+</p>
+
+<div class="well no-padding tab-content">
+    <div class="tab-pane active" id="user-overview">
+        <table class="data-table">
+            <thead>
+                <tr>
+                     <th>Id</th>
+                    <th>Nome</th>
+                    <th>Capacidade</th>
+                    <th>Observação</th>
+                    <th>Preço</th>
+                    <th>Status</th>
+                    <th>Data Criação</th>
+                    <th>Tipo</th>
+                    <th class="right">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.idAula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dsAula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.capacidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.observacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.preco)
+        </td>
+        
+        <td>
+             @if (item.status == (byte)WebFitness.Status.Ativo)
+                            {
+                                <span class="label label-success">@WebFitness.Status.Ativo</span>
+                            }
+                            else
+                            {
+                                <span class="label label-important">@WebFitness.Status.Inativo</span>
+                            }
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dtCriacao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TpAula.dsTpAula)
+        </td>
+        
+
+        <td  class="right">
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.idAula }, new { @class = "btn" })
+
+                            @Html.ActionLink("Editar", "Edit", new { id = item.idAula }, new { @class = "btn btn-info" })
+
+                            @if (item.status == (byte)WebFitness.Status.Ativo)
+                            {
+                                @Html.ActionLink("Inativar", "Inactive", new { id = item.idAula }, new { @class = "btn btn-danger" })
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Ativar", "Active", new { id = item.idAula }, new { @class = "btn btn-success" })
+                            }
+                        </td>
+
+
+       
+    </tr>
+}
+            </tbody>
+        </table>
+    </div>
+</div>
