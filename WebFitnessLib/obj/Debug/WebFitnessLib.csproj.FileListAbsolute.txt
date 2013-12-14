@@ -1,8 +1,0 @@
-C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitnessLib\bin\Debug\WebFitnessLib.dll
-C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitnessLib\bin\Debug\WebFitnessLib.pdb
-C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitnessLib\obj\Debug\WebFitnessLib.dll
-C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2 - Cópia\WebFitness\WebFitnessLib\obj\Debug\WebFitnessLib.pdb
-C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitnessLib\bin\Debug\WebFitnessLib.dll
-C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitnessLib\bin\Debug\WebFitnessLib.pdb
-C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitnessLib\obj\Debug\WebFitnessLib.dll
-C:\Users\Arthur Augsten\Documents\GitHub\Projetos_2\WebFitness\WebFitnessLib\obj\Debug\WebFitnessLib.pdb
