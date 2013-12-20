@@ -12,6 +12,7 @@ namespace WebFitnessLib
 {
     partial class Mail
     {
+
         public Mail()
         {
 
