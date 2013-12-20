@@ -12,8 +12,8 @@ namespace WebFitnessLib
         // Configurações do servidor SMTP
         private static string mailServer = "smpt.google.com";
         private static Int32 mailServerPort = 995;
-        private static string mailUserName = "username";
-        private static string mailPassword = "password";
+        private static string mailUserName = "baierle.fitness@gmail.com";
+        private static string mailPassword = "baierle123";
 
         // Variáveis para montar o E-Mail
         public string mailTo { get; set; }
