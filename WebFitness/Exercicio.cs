@@ -11,6 +11,7 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Exercicio
     {
@@ -19,12 +20,28 @@ namespace WebFitness
             this.ExercicioEquipamento = new HashSet<ExercicioEquipamento>();
             this.Ficha = new HashSet<Ficha>();
         }
-    
+        
+        [Display(Name = "Código")]
         public int idExercicio { get; set; }
+
+        [Display(Name = "Nome")]
+        [Required(ErrorMessage = "Nome é obrigatorio!")]
+        [StringLength(100, ErrorMessage = "Nome deve ter no máximo 100 caracteres!")]
         public string dsExercicio { get; set; }
+
+        [Display(Name = "Observação")]
+        [Required(ErrorMessage = "Observação é obrigatorio!")]
+        [StringLength(200, ErrorMessage = "Observação deve ter no máximo 100 caracteres!")]
         public string observacao { get; set; }
+
+        [Display(Name = "Status")]
         public Nullable<byte> status { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public System.DateTime dtCriacao { get; set; }
+
+        [Display(Name = "Tipo Exercício")]
+        [Required(ErrorMessage = "Tipo de Exercício é obrigatorio!")]
         public int idTpExercicio { get; set; }
     
         public virtual TpExercicio TpExercicio { get; set; }

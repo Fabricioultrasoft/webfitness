@@ -11,15 +11,33 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Manutencao
     {
+        [Display(Name = "Código Manutenção")]
         public int idManutencao { get; set; }
+
+        [Display(Name = "Fornecedor")]
         public int idFornecedor { get; set; }
+
+        [Display(Name = "Tipo de Manutenção")]
+        [Required(ErrorMessage = "Tipo de Manutenção é obrigatorio!")]
         public int idTpManutencao { get; set; }
+
+        [Display(Name = "Valor")]
+        [Required(ErrorMessage = "Valor é obrigatorio!")]
         public decimal valorManutencao { get; set; }
+
+        [Display(Name = "Parcelas")]
+        [Required(ErrorMessage = "Quantidade de parcelas é obrigatorio!")]
         public int qtdParcelas { get; set; }
+
+        [Display(Name = "Data Manutenção")]
+        [Required(ErrorMessage = "Data de manutenção é obrigatorio!")]
         public System.DateTime dtManutencao { get; set; }
+
+        [Display(Name = "Data Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
         public int idEquipamento { get; set; }
     
