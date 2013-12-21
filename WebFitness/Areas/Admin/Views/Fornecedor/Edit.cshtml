@@ -18,22 +18,14 @@
             @Html.ValidationSummary(true)
     
             @Html.HiddenFor(model => model.idFornecedor)
-
+            @Html.HiddenFor(model => model.cnpj)
+            
             <div class="control-group">
                 @Html.LabelFor(model => model.dsFornecedor, new { @class = "control-label" })
 
                 <div class="controls">
                     @Html.EditorFor(model => model.dsFornecedor, new { @class = "span6 m-wrap" })
                     @Html.ValidationMessageFor(model => model.dsFornecedor)
-                </div>
-            </div>
-
-            <div class="control-group">
-                @Html.LabelFor(model => model.cnpj, new { @class = "control-label" })
-
-                <div class="controls">
-                    @Html.EditorFor(model => model.cnpj, new { @class = "span6 m-wrap" })
-                    @Html.ValidationMessageFor(model => model.cnpj)
                 </div>
             </div>
 
