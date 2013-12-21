@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using System.Data.Entity.Infrastructure;
 using WebFitness.classes;
 
+
 namespace WebFitness.Areas.Admin.Controllers
 {
     public class AlunoController : Controller
@@ -168,5 +169,123 @@ namespace WebFitness.Areas.Admin.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+        public string CheckDados(string cpf, string login, string ctps)
+        {
+
+            String retorno_login = "";
+            String retorno_cpf = "";
+            String retorno_ctps = "False";
+
+            try
+            {
+                Aluno aluno = (from u
+                                         in db.Aluno
+                                           where u.login == login
+                                           select u).First();
+
+                retorno_login = "True";
+
+            }
+            catch
+            {
+                retorno_login = "False";
+            }
+
+
+            try
+            {
+                Aluno aluno = (from u
+                                         in db.Aluno
+                                           where u.cpf == cpf
+                                           select u).First();
+
+                retorno_cpf = "True";
+
+            }
+            catch
+            {
+                retorno_cpf = "False";
+            }
+
+       
+            
+
+
+
+
+            //true tem registro
+            //false não tem registro
+            if (retorno_cpf == "False" && retorno_login == "False" && retorno_ctps == "False")
+            {
+                return "False";
+            }
+            else
+            {
+                if (retorno_cpf == "True" && retorno_login == "False" && retorno_ctps == "False")
+                {
+                    return "cpf_true";
+                }
+                else
+                {
+                    if (retorno_cpf == "False" && retorno_login == "True" && retorno_ctps == "False")
+                    {
+                        return "login_true";
+                    }
+                    else
+                    {
+                        if (retorno_cpf == "False" && retorno_login == "False" && retorno_ctps == "True")
+                        {
+                            return "ctps_true";
+                        }
+                        else
+                        {
+
+                            if (retorno_cpf == "False" && retorno_login == "True" && retorno_ctps == "True")
+                            {
+                                return "login_ctps_true";
+                            }
+                            else
+                            {
+                                if (retorno_cpf == "True" && retorno_login == "False" && retorno_ctps == "True")
+                                {
+                                    return "cpf_ctps_true";
+                                }
+                                else
+                                {
+
+                                    if (retorno_cpf == "True" && retorno_login == "True" && retorno_ctps == "False")
+                                    {
+                                        return "cpf_login_true";
+                                    }
+                                    else
+                                    {
+
+                                        return "True";
+                                    }
+
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+                }
+
+
+
+            }
+            //FIM else decimal fora   
+
+
+
+        }
+
+        //Fim do metodo
+
+
+       
     }
 }

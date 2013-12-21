@@ -148,5 +148,28 @@ namespace WebFitness.Areas.Admin.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+
+
+        public bool CheckCnpj(string cnpj){
+
+
+            try
+            {
+
+      
+
+                Fornecedor fornecedor = (from u 
+                                         in db.Fornecedor
+                                         where u.cnpj == cnpj
+                                        select u).First();
+
+                return true;
+            }
+            catch {
+                return false;
+            }
+
+            
+        }
     }
 }

@@ -1,32 +1,97 @@
 ﻿$(document).ready(function () {
 
     $('[name="cpf"]').mask('000.000.000-00');
-    $('[name="cnpj"]').mask('000.000.000/0000-00');
+    $('[name="cnpj"]').mask('00.000.000/0000-00');
     $('[name="cep"]').mask('00000-000');
     $('[name="ctps"]').mask('0000000 00000 SS');
     $('.exibeCpf').mask('000.000.000-00');
     $('.exibeCep').mask('00000-000');
-    $('.exibeCnpj').mask('000.000.000/0000-00');
+    $('.exibeCnpj').mask('00.000.000/0000-00');
     $('.exibeTel').mask('(00) 0000-0000');
     $('[name="telefone"]').mask('(00) 0000-0000');
     $('[name="aniversario"]').mask('00/00/0000');
 
-    $('[name="enviar"]').click(function () {
-        /*
-        if ($('[name="cpf"]')) {
+    $('[create="create"]').click(function () {
+
+        
+        
+
+        if ($('[name="cpf"]').length) {
+
+            $('[name="login"]').next('span').text('');
+            $('[name="ctps"]').next('span').text('');
+            $('[name="cpf"]').next('span').text('');
+
             if (!validarCPF($('[name="cpf"]'))) {
                 return false;
+            } else {
+                if ($('[name="ctps"]')) {
+                    if ($('[name="ctps"]').val() != "") {
+
+                        if ($('[name="login"]').val() != "") {
+
+
+                            var login = $('[name="login"]').val();
+                            var cpf = $('[name="cpf"]').val();
+                            var ctps = $('[name="ctps"]').val();
+
+                            if (!CheckDados(login, cpf, ctps)) {
+                                return false;
+                            }
+                        } else {
+                            $('[name="login"]').next('span').text('Login é obrigatorio!');
+                            $('[name="login"]').focus();
+                            return false;
+                        }
+                        return false;
+                    } else {
+                        $('[name="ctps"]').next('span').text('CTPS é obrigatorio!');
+                        $('[name="ctps"]').focus();
+                        return false;
+                    }
+                } else {
+
+                    if ($('[name="login"]').val() != "") {
+
+
+                        var login = $('[name="login"]').val();
+                        var cpf = $('[name="cpf"]').val();
+                        var ctps = "False";
+
+                        if (!CheckDados(login, cpf, ctps)) {
+                            return false;
+                        }
+                    } else {
+                        $('[name="login"]').next('span').text('Login é obrigatorio!');
+                        $('[name="login"]').focus();
+                        return false;
+                    }
+                    return false;
+
+                }
             }
         }
 
-        if ($('[name="cnpj"]')) {
-            if (!validarCNPJ($('[name="cnpj"]'))) {
+
+
+
+
+        if ($('[name="cnpj"]').length) {
+            $('[name="cnpj"]').next('span').text('');
+            if (!validarCNPJ($('[name="cnpj"]'))) {              
                 return false;
+            } else {
+                var cnpj = $('[name="cnpj"]').val();
+                if (!CheckCnpj(cnpj)) {
+                    return false;
+                };
             }
         }
-        */
+
 
     });
+
+
 
 });
 
@@ -38,10 +103,10 @@ function validarCPF(campoCpf) {
     cpf = cpf.replace(/[^\d]+/g, '');
 
     if (cpf == '') {
-        /*alert("CPF não pode ser nulo!");
-        $(campoCpf).focus();*/
+        $('[name="cpf"]').next('span').text('CPF é obrigatorio!');
+        $(campoCpf).focus();
         return false;
-    } 
+    }
 
     if (cpf.length != 11 ||
         cpf == "00000000000" ||
@@ -54,7 +119,7 @@ function validarCPF(campoCpf) {
         cpf == "77777777777" ||
         cpf == "88888888888" ||
         cpf == "99999999999") {
-        alert("CPF Inválido!");
+        $('[name="cpf"]').next('span').text('CPF Inválido!');
         $(campoCpf).focus();
         return false;
     }
@@ -69,9 +134,8 @@ function validarCPF(campoCpf) {
     if (rev == 10 || rev == 11)
         rev = 0;
 
-    if (rev != parseInt(cpf.charAt(9)))
-    {
-        alert("CPF Inválido");
+    if (rev != parseInt(cpf.charAt(9))) {
+        $('[name="cpf"]').next('span').text('CPF Inválido!');
         $(campoCpf).focus();
         return false;
     }
@@ -87,7 +151,7 @@ function validarCPF(campoCpf) {
         rev = 0;
 
     if (rev != parseInt(cpf.charAt(10))) {
-        alert("CPF Inválido!");
+        $('[name="cpf"]').next('span').text('CPF Inválido!');
         $(campoCpf).focus();
         return false;
     }
@@ -103,16 +167,11 @@ function validarCNPJ(campoCnpj) {
     cnpj = cnpj.replace(/[^\d]+/g, '');
 
     if (cnpj == '') {
-        alert('CNPJ não pode ser nulo');
+        $('[name="cnpj"]').next('span').text('CNPJ é obrigatorio!');
         $(campoCnpj).focus();
         return false;
     }
 
-    if (cnpj.length != 14) {
-        alert('CNPJ deve ter no mínimo 14 caracteres!');
-        $(campoCnpj).focus();
-        return false;
-    }
 
     // Elimina CNPJs invalidos conhecidos
     if (cnpj == "00000000000000" ||
@@ -126,7 +185,7 @@ function validarCNPJ(campoCnpj) {
         cnpj == "88888888888888" ||
         cnpj == "99999999999999") {
 
-        alert('CNPJ inválido!');
+        $('[name="cnpj"]').next('span').text('CNPJ Inválido!');
         $(campoCnpj).focus();
         return false;
     }
@@ -145,7 +204,7 @@ function validarCNPJ(campoCnpj) {
     }
     resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
     if (resultado != digitos.charAt(0)) {
-        alert('CNPJ inválido!');
+        $('[name="cnpj"]').next('span').text('CNPJ Inválido!');
         $(campoCnpj).focus();
         return false;
     }
@@ -162,10 +221,159 @@ function validarCNPJ(campoCnpj) {
 
     resultado = soma % 11 < 2 ? 0 : 11 - soma % 11;
     if (resultado != digitos.charAt(1)) {
-        alert('CNPJ inválido!');
+        $('[name="cnpj"]').next('span').text('CNPJ Inválido!');
         $(campoCnpj).focus();
         return false;
     }
 
     return true;
+}
+
+
+function CheckDados(login, cpf, ctps) {
+
+
+    //console.log(ctps);
+
+    $.ajax({
+        url: 'CheckDados',
+        data: {
+            login: login,
+            cpf: cpf,
+            ctps: ctps
+        },
+        success: function (data) {
+
+            //console.log(data);
+
+            
+            
+            switch (data) {
+
+                case 'cpf_true':
+
+                    $('[name="cpf"]').next('span').text('CPF já cadastrado!');
+                    $('[name="cpf"]').focus();
+                    return false;
+                    break;
+
+                case 'ctps_true':
+
+                    $('[name="ctps"]').next('span').text('CTPS já cadastrado!');
+                    $('[name="ctps"]').focus();
+                    return false;
+                    break;
+
+                case 'login_true':
+
+                    $('[name="login"]').next('span').text('Login já cadastrado!');
+                    $('[name="login"]').focus();
+                    return false;
+                    break;
+
+
+                case 'login_ctps_true':
+                    $('[name="login"]').next('span').text('Login já cadastrado!');
+                    $('[name="ctps"]').next('span').text('CTPS já cadastrado!');
+                   
+
+                    $('[name="ctps"]').focus();
+
+                    $('[name="ctps"]').blur(function () {
+                        $('[name="login"]').focus();
+                    });
+                    return false;
+                    break;
+
+                case 'cpf_ctps_true':
+                    $('[name="cpf"]').next('span').text('CPF já cadastrado!');
+                    $('[name="ctps"]').next('span').text('CTPS já cadastrado!');
+
+
+                    $('[name="cpf"]').focus();
+
+                    $('[name="cpf"]').blur(function () {
+                        $('[name="ctps"]').focus();
+                    });
+                    return false;
+                    break;
+
+                case 'cpf_login_true':
+                    $('[name="cpf"]').next('span').text('CPF já cadastrado!');
+                    $('[name="login"]').next('span').text('Login já cadastrado!');
+
+
+                    $('[name="cpf"]').focus();
+
+                    $('[name="cpf"]').blur(function () {
+                        $('[name="login"]').focus();
+                    });
+                    return false;
+                    break;
+
+
+
+                case 'True':
+                    $('[name="login"]').next('span').text('Login já cadastrado!');
+                    $('[name="ctps"]').next('span').text('CTPS já cadastrado!');
+                    $('[name="cpf"]').next('span').text('CPF já cadastrado!');
+
+                    $('[name="cpf"]').focus();
+                    
+                    $('[name="cpf"]').blur(function () {
+                        $('[name="ctps"]').focus();
+                    });
+
+                    $('[name="ctps"]').blur(function () {
+                        $('[name="login"]').focus();
+                    });
+                    return false;
+                    break;
+
+                case 'False':
+
+                    $('.form-horizontal').submit();
+
+                    break;
+            }
+            
+
+
+
+
+
+            return false;
+
+        }
+
+    });
+}
+
+
+function CheckCnpj(cnpj) {
+
+
+    console.log(cnpj);
+
+    
+    $.ajax({
+        url: 'CheckCnpj',
+        data: {
+            cnpj: cnpj
+        },
+        success: function (data) {
+
+            console.log(data);
+
+            if (data === "True") {
+                $('[name="cnpj"]').next('span').text('CNPJ já cadastrado!');
+                $('[name="cnpj"]').focus();
+                return false;
+            } else {
+                $('.form-horizontal').submit();
+            }
+
+        }
+
+    });
 }

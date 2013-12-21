@@ -18,8 +18,11 @@
             @Html.ValidationSummary(true)
 
             @Html.HiddenFor(model => model.idFuncionario)
-            @Html.HiddenFor(model => model.dtCriacao)
+            @Html.HiddenFor(model => model.cpf)
+            @Html.HiddenFor(model => model.ctps)
+                @Html.HiddenFor(model => model.dtCriacao)
             @Html.HiddenFor(model => model.login)
+
 
             <div class="control-group">
                 @Html.LabelFor(model => model.nome, new { @class = "control-label" })
@@ -30,14 +33,6 @@
                 </div>
             </div>
 
-            <div class="control-group">
-                @Html.LabelFor(model => model.cpf, new { @class = "control-label" })
-
-                <div class="controls">
-                    @Html.EditorFor(model => model.cpf, new { @class = "span6 m-wrap" })
-                    @Html.ValidationMessageFor(model => model.cpf)
-                </div>
-            </div>
 
             <div class="control-group">
                 @Html.LabelFor(model => model.telefone, new { @class = "control-label" })
@@ -84,14 +79,6 @@
                 </div>
             </div>
 
-            <div class="control-group">
-                @Html.LabelFor(model => model.ctps, new { @class = "control-label" })
-
-                <div class="controls">
-                    @Html.EditorFor(model => model.ctps, new { @class = "span6 m-wrap" })
-                    @Html.ValidationMessageFor(model => model.ctps)
-                </div>
-            </div>
 
             <div class="control-group">
                 @Html.LabelFor(model => model.sexo, new { @class = "control-label" })
