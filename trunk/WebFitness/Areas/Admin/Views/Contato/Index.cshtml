@@ -1,0 +1,53 @@
+﻿@model IEnumerable<WebFitness.Contato>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Contatos de Clientes</h2>
+
+<div class="well no-padding tab-content">
+    <div class="tab-pane active" id="user-overview">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.nome)</th>
+                    <th>@Html.DisplayNameFor(model => model.assunto)</th>
+                    <th>@Html.DisplayNameFor(model => model.dtCriacao)</th>
+                    <th>@Html.DisplayNameFor(model => model.status)</th>
+                    <th class="right">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.nome)</td>
+                        <td>@Html.DisplayFor(modelItem => item.assunto)</td>
+                        <td>@Html.DisplayFor(modelItem => item.dtCriacao)</td>
+                        <td>
+                            @if (item.status == (byte)WebFitness.Status.Ativo)
+                            {
+                                <span class="label label-success">@Html.Label("Pendente")</span>
+                            }
+                            else
+                            {
+                                <span class="label label-warning">@Html.Label("Respondido")</span>
+                            }
+                    </td>
+                    <td class="right">
+
+                        @Html.ActionLink("Detalhes", "Details", new { id = item.idContato }, new { @class = "btn" })
+
+                        @if (item.status == (byte)WebFitness.Status.Ativo)
+                        {
+                            @Html.ActionLink("Responder", "Answer", new { id = item.idContato }, new { @class = "btn btn-info" })
+                        }
+
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

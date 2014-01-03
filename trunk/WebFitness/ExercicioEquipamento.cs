@@ -11,11 +11,19 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class ExercicioEquipamento
     {
+        [Display(Name = "Exercício")]
+        [Required(ErrorMessage = "Exercício é obrigatório!")]
         public int idExercicio { get; set; }
+
+        [Display(Name = "Equipamento")]
+        [Required(ErrorMessage = "Equipamento é obrigatório!")]
         public int idEquipamento { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
     
         public virtual Equipamento Equipamento { get; set; }

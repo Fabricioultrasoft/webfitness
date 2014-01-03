@@ -15,30 +15,33 @@ namespace WebFitness
     
     public partial class Manutencao
     {
-        [Display(Name = "Código Manutenção")]
+        [Display(Name = "Código")]
         public int idManutencao { get; set; }
 
         [Display(Name = "Fornecedor")]
+        [Required(ErrorMessage = "Fornecedor é obrigatório!")]
         public int idFornecedor { get; set; }
 
         [Display(Name = "Tipo de Manutenção")]
-        [Required(ErrorMessage = "Tipo de Manutenção é obrigatorio!")]
+        [Required(ErrorMessage = "Tipo de manutenção é obrigatória!")]
         public int idTpManutencao { get; set; }
 
-        [Display(Name = "Valor")]
-        [Required(ErrorMessage = "Valor é obrigatorio!")]
+        [Display(Name = "Valor Manutenção")]
+        [Required(ErrorMessage = "Valor da manutenção é obrigatória!")]
         public decimal valorManutencao { get; set; }
 
-        [Display(Name = "Parcelas")]
-        [Required(ErrorMessage = "Quantidade de parcelas é obrigatorio!")]
+        [Display(Name = "Quantidade Parcelas")]
+        [Required(ErrorMessage = "Quantidade de parcelas é obrigatória!")]
         public int qtdParcelas { get; set; }
 
-        [Display(Name = "Data Manutenção")]
-        [Required(ErrorMessage = "Data de manutenção é obrigatorio!")]
+        [Display(Name = "Data de Manutenção")]
+        [Required(ErrorMessage = "Data de manutenção é obrigatória!")]
         public System.DateTime dtManutencao { get; set; }
 
-        [Display(Name = "Data Criação")]
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
+
+        [Display(Name = "Código")]
         public int idEquipamento { get; set; }
     
         public virtual Equipamento Equipamento { get; set; }

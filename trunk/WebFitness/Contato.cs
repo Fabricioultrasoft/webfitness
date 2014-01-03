@@ -11,14 +11,47 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Contato
     {
+
+        [Display(Name = "Código")]
         public int idContato { get; set; }
+
+        [Display(Name = "Nome")]
+        [StringLength(100, ErrorMessage="Nome pode ter no máximo 100 caracteres!")]
+        [Required(ErrorMessage = "Nome é obrigatório!")]
         public string nome { get; set; }
+
+        [Display(Name = "Assunto")]
+        [StringLength(100, ErrorMessage="Assunto pode ter no máximo 100 caracteres!")]
+        [Required(ErrorMessage = "Assunnto é obrigatório!")]
         public string assunto { get; set; }
+
+        [Display(Name = "Mensagem")]
+        [StringLength(100, ErrorMessage="Mensagemm pode ter no máximo 100 caracteres!")]
+        [Required(ErrorMessage = "Mensagem é obrigatória!")]
         public string mensagem { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
+
+        [Display(Name = "Status")]
         public Nullable<byte> status { get; set; }
+
+        [Display(Name = "E-mail")]
+        [StringLength(100, ErrorMessage="E-mail pode ter no máxiimo 100 caracteres!")]
+        public string email { get; set; }
+
+        [Display(Name = "Assunto Resposta")]
+        [StringLength(100, ErrorMessage="Assunto pode ter no máxiimo 100 caracteres!")]
+        [Required(ErrorMessage = "Assunto é obrigatório!")]
+        public string assuntoResposta { get; set; }
+
+        [Display(Name = "Mensagem Resposta")]
+        [StringLength(100, ErrorMessage="Mensagem pode ter no máxiimo 100 caracteres!")]
+        [Required(ErrorMessage = "Mensagem é obrigatória!")]
+        public string mensagemResposta { get; set; }
     }
 }

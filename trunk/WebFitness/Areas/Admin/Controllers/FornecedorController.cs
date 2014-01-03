@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebFitness.classes;
+using WebFitness.Classes;
 
 namespace WebFitness.Areas.Admin.Controllers
 {
@@ -16,7 +16,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Fornecedor/
-
+        [Authorize]
         public ActionResult Index()
         {
             @ViewBag.Controller = controller;
@@ -26,7 +26,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Fornecedor/Details/5
-
+        [Authorize]
         public ActionResult Details(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -40,7 +40,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Fornecedor/Create
-
+        [Authorize]
         public ActionResult Create()
         {
             @ViewBag.Controller = controller;
@@ -50,7 +50,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // POST: /Admin/Fornecedor/Create
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Fornecedor fornecedor)
@@ -74,7 +74,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Fornecedor/Edit/5
-
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -89,7 +89,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // POST: /Admin/Fornecedor/Edit/5
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Fornecedor fornecedor)
@@ -108,7 +108,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aluno/Inactive/5
-
+        [Authorize]
         public ActionResult Inactive(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -126,7 +126,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aluno/Active/5
-
+        [Authorize]
         public ActionResult Active(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -149,27 +149,28 @@ namespace WebFitness.Areas.Admin.Controllers
             base.Dispose(disposing);
         }
 
-
-        public bool CheckCnpj(string cnpj){
+        public bool CheckCnpj(string cnpj)
+        {
 
 
             try
             {
 
-      
 
-                Fornecedor fornecedor = (from u 
+
+                Fornecedor fornecedor = (from u
                                          in db.Fornecedor
                                          where u.cnpj == cnpj
-                                        select u).First();
+                                         select u).First();
 
                 return true;
             }
-            catch {
+            catch
+            {
                 return false;
             }
 
-            
+
         }
     }
 }

@@ -11,6 +11,7 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Cidade
     {
@@ -20,11 +21,23 @@ namespace WebFitness
             this.Fornecedor = new HashSet<Fornecedor>();
             this.Funcionario = new HashSet<Funcionario>();
         }
-    
+
+        [Display(Name="Código")]
         public int idCidade { get; set; }
+
+        [Display(Name = "Descrição")]
+        [StringLength(100, ErrorMessage="Descrição pode ter no máxiimo 100 caracteres!")]
+        [Required(ErrorMessage = "Observação é obrigatória!")]
         public string dsCidade { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
+
+        [Display(Name = "UF")]
+        [Required(ErrorMessage = "UF é obrigatória!")]
         public int idUf { get; set; }
+
+        [Display(Name = "Status")]
         public Nullable<byte> status { get; set; }
     
         public virtual ICollection<Aluno> Aluno { get; set; }

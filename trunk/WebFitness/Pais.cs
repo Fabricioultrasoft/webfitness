@@ -11,6 +11,7 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Pais
     {
@@ -18,11 +19,20 @@ namespace WebFitness
         {
             this.Uf = new HashSet<Uf>();
         }
-    
+
+        [Display(Name = "Código")]
         public int idPais { get; set; }
+
+        [Display(Name = "Descrição")]
         public string dsPais { get; set; }
+
+        [Display(Name = "Abreviação")]
         public string abrevPais { get; set; }
+
+        [Display(Name = "Status")]
         public Nullable<byte> status { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public System.DateTime dtCriacao { get; set; }
     
         public virtual ICollection<Uf> Uf { get; set; }

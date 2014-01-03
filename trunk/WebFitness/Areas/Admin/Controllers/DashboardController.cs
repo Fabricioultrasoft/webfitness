@@ -10,7 +10,7 @@ namespace WebFitness.Areas.Admin.Controllers
     {
         //
         // GET: /Admin/Dashboard/
-
+        [Authorize]
         public ActionResult Index()
         {
             return View();

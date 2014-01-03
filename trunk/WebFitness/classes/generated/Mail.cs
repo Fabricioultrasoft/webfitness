@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Mail;
 
-namespace WebFitnessLib
+namespace WebFitness
 {
     partial class Mail
     {
         // Configurações do servidor SMTP
-        private static string mailServer = "smpt.google.com";
-        private static Int32 mailServerPort = 995;
+        private static string mailServer = "smtp.gmail.com";
+        private static Int32 mailServerPort = 587;
         private static string mailUserName = "baierle.fitness@gmail.com";
         private static string mailPassword = "baierle123";
 

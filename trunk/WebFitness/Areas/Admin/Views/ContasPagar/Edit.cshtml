@@ -1,0 +1,70 @@
+﻿@model WebFitness.ContasPagar
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<div class="span7">
+    <div class="top-bar">
+        <h3>
+            <i class="icon-cog"></i>
+            Cadastro de Contas a Pagar
+        </h3>
+    </div>
+    <div class="well no-padding">
+
+        @using (Html.BeginForm("Edit", "ContasPagar", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            @Html.HiddenFor(model => model.idContasPagar)
+            @Html.HiddenFor(model => model.idTabelaFK)
+            @Html.HiddenFor(model => model.tpRegistro)
+
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.dsContasPagar, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.dsContasPagar, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.dsContasPagar)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.valor, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.valor, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.valor)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.dtVencimento, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.dtVencimento, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.dtVencimento)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.dtPagamento, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.dtPagamento, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.dtPagamento)
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <input type="submit" class="btn btn-success" name="enviar" value="Salvar" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger" })
+            </div>
+
+        }
+
+    </div>
+</div>

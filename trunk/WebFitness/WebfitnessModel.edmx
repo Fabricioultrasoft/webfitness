@@ -4,154 +4,24 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="WebfitnessDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="WebfitnessDBModelStoreContainer">
-          <EntitySet Name="Aluno" EntityType="WebfitnessDBModel.Store.Aluno" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="AlunoAula" EntityType="WebfitnessDBModel.Store.AlunoAula" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Aula" EntityType="WebfitnessDBModel.Store.Aula" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Cidade" EntityType="WebfitnessDBModel.Store.Cidade" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Compra" EntityType="WebfitnessDBModel.Store.Compra" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Contato" EntityType="WebfitnessDBModel.Store.Contato" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Equipamento" EntityType="WebfitnessDBModel.Store.Equipamento" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="EquipamentoAula" EntityType="WebfitnessDBModel.Store.EquipamentoAula" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Exercicio" EntityType="WebfitnessDBModel.Store.Exercicio" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ExercicioEquipamento" EntityType="WebfitnessDBModel.Store.ExercicioEquipamento" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Ficha" EntityType="WebfitnessDBModel.Store.Ficha" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Fornecedor" EntityType="WebfitnessDBModel.Store.Fornecedor" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Funcionario" EntityType="WebfitnessDBModel.Store.Funcionario" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="HistExercicioAluno" EntityType="WebfitnessDBModel.Store.HistExercicioAluno" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="HistPgtoAluno" EntityType="WebfitnessDBModel.Store.HistPgtoAluno" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="HistPgtoFuncionario" EntityType="WebfitnessDBModel.Store.HistPgtoFuncionario" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="HistSalarioFuncionario" EntityType="WebfitnessDBModel.Store.HistSalarioFuncionario" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Manutencao" EntityType="WebfitnessDBModel.Store.Manutencao" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Pais" EntityType="WebfitnessDBModel.Store.Pais" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TpAula" EntityType="WebfitnessDBModel.Store.TpAula" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TpExercicio" EntityType="WebfitnessDBModel.Store.TpExercicio" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TpManutencao" EntityType="WebfitnessDBModel.Store.TpManutencao" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Uf" EntityType="WebfitnessDBModel.Store.Uf" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Venda" EntityType="WebfitnessDBModel.Store.Venda" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_Aluno_Cidade" Association="WebfitnessDBModel.Store.FK_Aluno_Cidade">
-            <End Role="Cidade" EntitySet="Cidade" />
-            <End Role="Aluno" EntitySet="Aluno" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AlunoAula_Aluno" Association="WebfitnessDBModel.Store.FK_AlunoAula_Aluno">
-            <End Role="Aluno" EntitySet="Aluno" />
-            <End Role="AlunoAula" EntitySet="AlunoAula" />
-          </AssociationSet>
-          <AssociationSet Name="FK_AlunoAula_Aula" Association="WebfitnessDBModel.Store.FK_AlunoAula_Aula">
-            <End Role="Aula" EntitySet="Aula" />
-            <End Role="AlunoAula" EntitySet="AlunoAula" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Aula_TpAula" Association="WebfitnessDBModel.Store.FK_Aula_TpAula">
-            <End Role="TpAula" EntitySet="TpAula" />
-            <End Role="Aula" EntitySet="Aula" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Cidade_Uf" Association="WebfitnessDBModel.Store.FK_Cidade_Uf">
-            <End Role="Uf" EntitySet="Uf" />
-            <End Role="Cidade" EntitySet="Cidade" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Compra_Equipamento" Association="WebfitnessDBModel.Store.FK_Compra_Equipamento">
-            <End Role="Equipamento" EntitySet="Equipamento" />
-            <End Role="Compra" EntitySet="Compra" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Compra_Fornecedor" Association="WebfitnessDBModel.Store.FK_Compra_Fornecedor">
-            <End Role="Fornecedor" EntitySet="Fornecedor" />
-            <End Role="Compra" EntitySet="Compra" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Equipamento_Fornecedor" Association="WebfitnessDBModel.Store.FK_Equipamento_Fornecedor">
-            <End Role="Fornecedor" EntitySet="Fornecedor" />
-            <End Role="Equipamento" EntitySet="Equipamento" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EquipamentoAula_Aula" Association="WebfitnessDBModel.Store.FK_EquipamentoAula_Aula">
-            <End Role="Aula" EntitySet="Aula" />
-            <End Role="EquipamentoAula" EntitySet="EquipamentoAula" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EquipamentoAula_Equipamento" Association="WebfitnessDBModel.Store.FK_EquipamentoAula_Equipamento">
-            <End Role="Equipamento" EntitySet="Equipamento" />
-            <End Role="EquipamentoAula" EntitySet="EquipamentoAula" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Exercicio_TpExercicio" Association="WebfitnessDBModel.Store.FK_Exercicio_TpExercicio">
-            <End Role="TpExercicio" EntitySet="TpExercicio" />
-            <End Role="Exercicio" EntitySet="Exercicio" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ExercicioEquipamento_Equipamento" Association="WebfitnessDBModel.Store.FK_ExercicioEquipamento_Equipamento">
-            <End Role="Equipamento" EntitySet="Equipamento" />
-            <End Role="ExercicioEquipamento" EntitySet="ExercicioEquipamento" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ExercicioEquipamento_Exercicio" Association="WebfitnessDBModel.Store.FK_ExercicioEquipamento_Exercicio">
-            <End Role="Exercicio" EntitySet="Exercicio" />
-            <End Role="ExercicioEquipamento" EntitySet="ExercicioEquipamento" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Ficha_Aluno" Association="WebfitnessDBModel.Store.FK_Ficha_Aluno">
-            <End Role="Aluno" EntitySet="Aluno" />
-            <End Role="Ficha" EntitySet="Ficha" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Ficha_Exercicio" Association="WebfitnessDBModel.Store.FK_Ficha_Exercicio">
-            <End Role="Exercicio" EntitySet="Exercicio" />
-            <End Role="Ficha" EntitySet="Ficha" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Fornecedor_Cidade" Association="WebfitnessDBModel.Store.FK_Fornecedor_Cidade">
-            <End Role="Cidade" EntitySet="Cidade" />
-            <End Role="Fornecedor" EntitySet="Fornecedor" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Funcionario_Cidade" Association="WebfitnessDBModel.Store.FK_Funcionario_Cidade">
-            <End Role="Cidade" EntitySet="Cidade" />
-            <End Role="Funcionario" EntitySet="Funcionario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HistExercicioAluno_Ficha" Association="WebfitnessDBModel.Store.FK_HistExercicioAluno_Ficha">
-            <End Role="Ficha" EntitySet="Ficha" />
-            <End Role="HistExercicioAluno" EntitySet="HistExercicioAluno" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HistPgtoAluno_Aluno" Association="WebfitnessDBModel.Store.FK_HistPgtoAluno_Aluno">
-            <End Role="Aluno" EntitySet="Aluno" />
-            <End Role="HistPgtoAluno" EntitySet="HistPgtoAluno" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HistPgtoFuncionario_Funcionario" Association="WebfitnessDBModel.Store.FK_HistPgtoFuncionario_Funcionario">
-            <End Role="Funcionario" EntitySet="Funcionario" />
-            <End Role="HistPgtoFuncionario" EntitySet="HistPgtoFuncionario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_HistSalarioFuncionario_Funcionario" Association="WebfitnessDBModel.Store.FK_HistSalarioFuncionario_Funcionario">
-            <End Role="Funcionario" EntitySet="Funcionario" />
-            <End Role="HistSalarioFuncionario" EntitySet="HistSalarioFuncionario" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Manutencao_Equipamento" Association="WebfitnessDBModel.Store.FK_Manutencao_Equipamento">
-            <End Role="Equipamento" EntitySet="Equipamento" />
-            <End Role="Manutencao" EntitySet="Manutencao" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Manutencao_Fornecedor" Association="WebfitnessDBModel.Store.FK_Manutencao_Fornecedor">
-            <End Role="Fornecedor" EntitySet="Fornecedor" />
-            <End Role="Manutencao" EntitySet="Manutencao" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Manutencao_TpManutencao" Association="WebfitnessDBModel.Store.FK_Manutencao_TpManutencao">
-            <End Role="TpManutencao" EntitySet="TpManutencao" />
-            <End Role="Manutencao" EntitySet="Manutencao" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Uf_Pais" Association="WebfitnessDBModel.Store.FK_Uf_Pais">
-            <End Role="Pais" EntitySet="Pais" />
-            <End Role="Uf" EntitySet="Uf" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Venda_Equipamento" Association="WebfitnessDBModel.Store.FK_Venda_Equipamento">
-            <End Role="Equipamento" EntitySet="Equipamento" />
-            <End Role="Venda" EntitySet="Venda" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="WebfitnessDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Aluno">
           <Key>
             <PropertyRef Name="idAluno" />
           </Key>
-          <Property Name="idAluno" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="nome" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="cpf" Type="nvarchar" Nullable="false" MaxLength="20" />
-          <Property Name="telefone" Type="nvarchar" Nullable="false" MaxLength="20" />
-          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="rua" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="bairro" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="sexo" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="idAluno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cpf" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="telefone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="rua" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="bairro" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="sexo" Type="nvarchar" MaxLength="1" Nullable="false" />
           <Property Name="aniversario" Type="date" Nullable="false" />
           <Property Name="dtCriacao" Type="datetime" />
           <Property Name="status" Type="tinyint" />
           <Property Name="idCidade" Type="int" Nullable="false" />
-          <Property Name="login" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="login" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="senha" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="AlunoAula">
@@ -167,8 +37,8 @@
           <Key>
             <PropertyRef Name="idAula" />
           </Key>
-          <Property Name="idAula" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="dsAula" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="idAula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dsAula" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="capacidade" Type="int" Nullable="false" />
           <Property Name="observacao" Type="nvarchar" MaxLength="200" />
           <Property Name="preco" Type="money" Nullable="false" />
@@ -180,8 +50,8 @@
           <Key>
             <PropertyRef Name="idCidade" />
           </Key>
-          <Property Name="idCidade" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="dsCidade" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="idCidade" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dsCidade" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="dtCriacao" Type="datetime" />
           <Property Name="idUf" Type="int" Nullable="false" />
           <Property Name="status" Type="tinyint" />
@@ -190,7 +60,7 @@
           <Key>
             <PropertyRef Name="idCompra" />
           </Key>
-          <Property Name="idCompra" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idCompra" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idFornecedor" Type="int" />
           <Property Name="valorCompra" Type="money" />
           <Property Name="qtdParcelas" Type="int" />
@@ -198,26 +68,40 @@
           <Property Name="dtCriacao" Type="datetime" />
           <Property Name="idEquipamento" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="ContasPagar">
+          <Key>
+            <PropertyRef Name="idContasPagar" />
+          </Key>
+          <Property Name="idContasPagar" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dsContasPagar" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="valor" Type="money" Nullable="false" />
+          <Property Name="dtVencimento" Type="date" Nullable="false" />
+          <Property Name="dtPagamento" Type="date" />
+          <Property Name="idTabelaFK" Type="int" />
+          <Property Name="tpRegistro" Type="tinyint" />
+        </EntityType>
         <EntityType Name="Contato">
           <Key>
             <PropertyRef Name="idContato" />
           </Key>
-          <Property Name="idContato" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="nome" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="assunto" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="idContato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="assunto" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="mensagem" Type="nvarchar(max)" Nullable="false" />
           <Property Name="dtCriacao" Type="datetime" />
           <Property Name="status" Type="tinyint" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="assuntoResposta" Type="nvarchar" MaxLength="200" />
+          <Property Name="mensagemResposta" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Equipamento">
           <Key>
             <PropertyRef Name="idEquipamento" />
           </Key>
-          <Property Name="idEquipamento" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="dsEquipamento" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="idEquipamento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dsEquipamento" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="dtCriacao" Type="datetime" />
           <Property Name="status " Type="tinyint" />
-          <Property Name="idTpEquipamento" Type="int" Nullable="false" />
           <Property Name="idFornecedor" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="EquipamentoAula">
@@ -233,8 +117,8 @@
           <Key>
             <PropertyRef Name="idExercicio" />
           </Key>
-          <Property Name="idExercicio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="dsExercicio" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="idExercicio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dsExercicio" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="observacao" Type="nvarchar" MaxLength="200" />
           <Property Name="status" Type="tinyint" />
           <Property Name="dtCriacao" Type="datetime" Nullable="false" />
@@ -253,7 +137,7 @@
           <Key>
             <PropertyRef Name="idFicha" />
           </Key>
-          <Property Name="idFicha" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idFicha" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idExercicio" Type="int" Nullable="false" />
           <Property Name="idAluno" Type="int" Nullable="false" />
           <Property Name="qtdRepeticoes" Type="int" Nullable="false" />
@@ -265,14 +149,14 @@
           <Key>
             <PropertyRef Name="idFornecedor" />
           </Key>
-          <Property Name="idFornecedor" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="dsFornecedor" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="idFornecedor" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dsFornecedor" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="cnpj" Type="nvarchar" MaxLength="20" />
           <Property Name="inscrEstadual" Type="nvarchar" MaxLength="20" />
-          <Property Name="rua" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="bairro" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="telefone" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="rua" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="bairro" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="telefone" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="dtCriacao" Type="datetime" />
           <Property Name="idCidade" Type="int" Nullable="false" />
           <Property Name="status" Type="tinyint" />
@@ -281,29 +165,29 @@
           <Key>
             <PropertyRef Name="idFuncionario" />
           </Key>
-          <Property Name="idFuncionario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="nome" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="cpf" Type="nvarchar" Nullable="false" MaxLength="20" />
-          <Property Name="telefone" Type="nvarchar" Nullable="false" MaxLength="20" />
-          <Property Name="email" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="rua" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="bairro" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="cep" Type="nvarchar" Nullable="false" MaxLength="9" />
-          <Property Name="ctps" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="sexo" Type="nvarchar" Nullable="false" MaxLength="1" />
+          <Property Name="idFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nome" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cpf" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="telefone" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="rua" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="bairro" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cep" Type="nvarchar" MaxLength="9" Nullable="false" />
+          <Property Name="ctps" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="sexo" Type="nvarchar" MaxLength="1" Nullable="false" />
           <Property Name="aniversario" Type="date" Nullable="false" />
           <Property Name="dtCriacao" Type="datetime" />
           <Property Name="idCidade" Type="int" Nullable="false" />
           <Property Name="status" Type="tinyint" />
           <Property Name="idTpFuncionario" Type="int" Nullable="false" />
-          <Property Name="login" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="login" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="senha" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="HistExercicioAluno">
           <Key>
             <PropertyRef Name="idHistExercicioAluno" />
           </Key>
-          <Property Name="idHistExercicioAluno" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idHistExercicioAluno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idFicha" Type="int" Nullable="false" />
           <Property Name="qtdRepeticoesVelha" Type="int" Nullable="false" />
           <Property Name="qtdRepeticoesNova" Type="int" Nullable="false" />
@@ -315,7 +199,7 @@
           <Key>
             <PropertyRef Name="idHistPgtoAluno" />
           </Key>
-          <Property Name="idHistPgtoAluno" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idHistPgtoAluno" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dtPgto" Type="datetime" Nullable="false" />
           <Property Name="idAluno" Type="int" Nullable="false" />
           <Property Name="vlrPgto" Type="money" Nullable="false" />
@@ -327,7 +211,7 @@
           <Key>
             <PropertyRef Name="idHistPgtoFuncionario" />
           </Key>
-          <Property Name="idHistPgtoFuncionario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idHistPgtoFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idFuncionario" Type="int" Nullable="false" />
           <Property Name="dtPgto" Type="date" Nullable="false" />
           <Property Name="dtCriacao" Type="datetime" />
@@ -339,7 +223,7 @@
           <Key>
             <PropertyRef Name="idHistSalarioFuncionario" />
           </Key>
-          <Property Name="idHistSalarioFuncionario" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idHistSalarioFuncionario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idFuncionario" Type="int" Nullable="false" />
           <Property Name="dtAumento" Type="date" Nullable="false" />
           <Property Name="salarioAntigo" Type="money" Nullable="false" />
@@ -350,7 +234,7 @@
           <Key>
             <PropertyRef Name="idManutencao" />
           </Key>
-          <Property Name="idManutencao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idManutencao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idFornecedor" Type="int" Nullable="false" />
           <Property Name="idTpManutencao" Type="int" Nullable="false" />
           <Property Name="valorManutencao" Type="money" Nullable="false" />
@@ -363,8 +247,8 @@
           <Key>
             <PropertyRef Name="idPais" />
           </Key>
-          <Property Name="idPais" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="dsPais" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="idPais" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dsPais" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="abrevPais" Type="nvarchar" MaxLength="50" />
           <Property Name="status" Type="tinyint" />
           <Property Name="dtCriacao" Type="datetime" Nullable="false" />
@@ -373,8 +257,8 @@
           <Key>
             <PropertyRef Name="idTpAula" />
           </Key>
-          <Property Name="idTpAula" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="dsTpAula" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="idTpAula" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dsTpAula" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="status" Type="tinyint" />
           <Property Name="dtCriacao" Type="datetime" />
         </EntityType>
@@ -382,8 +266,8 @@
           <Key>
             <PropertyRef Name="idTpExercicio" />
           </Key>
-          <Property Name="idTpExercicio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="dsTpExercicio" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="idTpExercicio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dsTpExercicio" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="status" Type="tinyint" />
           <Property Name="dtCriacao" Type="datetime" />
         </EntityType>
@@ -391,9 +275,9 @@
           <Key>
             <PropertyRef Name="idTpManutencao" />
           </Key>
-          <Property Name="idTpManutencao" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="dsTpManutencao" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="observacao" Type="nvarchar" Nullable="false" MaxLength="200" />
+          <Property Name="idTpManutencao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dsTpManutencao" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="observacao" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="status" Type="tinyint" />
           <Property Name="dtCriacao" Type="datetime" />
         </EntityType>
@@ -401,9 +285,9 @@
           <Key>
             <PropertyRef Name="idUf" />
           </Key>
-          <Property Name="idUf" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="dsUf" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="abrevUf" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="idUf" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="dsUf" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="abrevUf" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="dtCriacao" Type="datetime" />
           <Property Name="status" Type="tinyint" />
           <Property Name="idPais" Type="int" Nullable="false" />
@@ -412,7 +296,7 @@
           <Key>
             <PropertyRef Name="idVenda" />
           </Key>
-          <Property Name="idVenda" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="idVenda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="valorVenda" Type="money" Nullable="false" />
           <Property Name="qtdParcelas" Type="int" Nullable="false" />
           <Property Name="dtVenda" Type="date" Nullable="false" />
@@ -420,8 +304,8 @@
           <Property Name="idEquipamento" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Aluno_Cidade">
-          <End Role="Cidade" Type="WebfitnessDBModel.Store.Cidade" Multiplicity="1" />
-          <End Role="Aluno" Type="WebfitnessDBModel.Store.Aluno" Multiplicity="*" />
+          <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+          <End Role="Aluno" Type="Self.Aluno" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cidade">
               <PropertyRef Name="idCidade" />
@@ -432,8 +316,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AlunoAula_Aluno">
-          <End Role="Aluno" Type="WebfitnessDBModel.Store.Aluno" Multiplicity="1" />
-          <End Role="AlunoAula" Type="WebfitnessDBModel.Store.AlunoAula" Multiplicity="*" />
+          <End Role="Aluno" Type="Self.Aluno" Multiplicity="1" />
+          <End Role="AlunoAula" Type="Self.AlunoAula" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Aluno">
               <PropertyRef Name="idAluno" />
@@ -444,8 +328,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_AlunoAula_Aula">
-          <End Role="Aula" Type="WebfitnessDBModel.Store.Aula" Multiplicity="1" />
-          <End Role="AlunoAula" Type="WebfitnessDBModel.Store.AlunoAula" Multiplicity="*" />
+          <End Role="Aula" Type="Self.Aula" Multiplicity="1" />
+          <End Role="AlunoAula" Type="Self.AlunoAula" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Aula">
               <PropertyRef Name="idAula" />
@@ -456,8 +340,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Aula_TpAula">
-          <End Role="TpAula" Type="WebfitnessDBModel.Store.TpAula" Multiplicity="1" />
-          <End Role="Aula" Type="WebfitnessDBModel.Store.Aula" Multiplicity="*" />
+          <End Role="TpAula" Type="Self.TpAula" Multiplicity="1" />
+          <End Role="Aula" Type="Self.Aula" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TpAula">
               <PropertyRef Name="idTpAula" />
@@ -468,8 +352,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Cidade_Uf">
-          <End Role="Uf" Type="WebfitnessDBModel.Store.Uf" Multiplicity="1" />
-          <End Role="Cidade" Type="WebfitnessDBModel.Store.Cidade" Multiplicity="*" />
+          <End Role="Uf" Type="Self.Uf" Multiplicity="1" />
+          <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Uf">
               <PropertyRef Name="idUf" />
@@ -480,8 +364,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Compra_Equipamento">
-          <End Role="Equipamento" Type="WebfitnessDBModel.Store.Equipamento" Multiplicity="1" />
-          <End Role="Compra" Type="WebfitnessDBModel.Store.Compra" Multiplicity="*" />
+          <End Role="Equipamento" Type="Self.Equipamento" Multiplicity="1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Equipamento">
               <PropertyRef Name="idEquipamento" />
@@ -492,8 +376,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Compra_Fornecedor">
-          <End Role="Fornecedor" Type="WebfitnessDBModel.Store.Fornecedor" Multiplicity="0..1" />
-          <End Role="Compra" Type="WebfitnessDBModel.Store.Compra" Multiplicity="*" />
+          <End Role="Fornecedor" Type="Self.Fornecedor" Multiplicity="0..1" />
+          <End Role="Compra" Type="Self.Compra" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Fornecedor">
               <PropertyRef Name="idFornecedor" />
@@ -504,8 +388,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Equipamento_Fornecedor">
-          <End Role="Fornecedor" Type="WebfitnessDBModel.Store.Fornecedor" Multiplicity="1" />
-          <End Role="Equipamento" Type="WebfitnessDBModel.Store.Equipamento" Multiplicity="*" />
+          <End Role="Fornecedor" Type="Self.Fornecedor" Multiplicity="1" />
+          <End Role="Equipamento" Type="Self.Equipamento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Fornecedor">
               <PropertyRef Name="idFornecedor" />
@@ -516,8 +400,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EquipamentoAula_Aula">
-          <End Role="Aula" Type="WebfitnessDBModel.Store.Aula" Multiplicity="1" />
-          <End Role="EquipamentoAula" Type="WebfitnessDBModel.Store.EquipamentoAula" Multiplicity="*" />
+          <End Role="Aula" Type="Self.Aula" Multiplicity="1" />
+          <End Role="EquipamentoAula" Type="Self.EquipamentoAula" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Aula">
               <PropertyRef Name="idAula" />
@@ -528,8 +412,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_EquipamentoAula_Equipamento">
-          <End Role="Equipamento" Type="WebfitnessDBModel.Store.Equipamento" Multiplicity="1" />
-          <End Role="EquipamentoAula" Type="WebfitnessDBModel.Store.EquipamentoAula" Multiplicity="*" />
+          <End Role="Equipamento" Type="Self.Equipamento" Multiplicity="1" />
+          <End Role="EquipamentoAula" Type="Self.EquipamentoAula" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Equipamento">
               <PropertyRef Name="idEquipamento" />
@@ -540,8 +424,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Exercicio_TpExercicio">
-          <End Role="TpExercicio" Type="WebfitnessDBModel.Store.TpExercicio" Multiplicity="1" />
-          <End Role="Exercicio" Type="WebfitnessDBModel.Store.Exercicio" Multiplicity="*" />
+          <End Role="TpExercicio" Type="Self.TpExercicio" Multiplicity="1" />
+          <End Role="Exercicio" Type="Self.Exercicio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TpExercicio">
               <PropertyRef Name="idTpExercicio" />
@@ -552,8 +436,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExercicioEquipamento_Equipamento">
-          <End Role="Equipamento" Type="WebfitnessDBModel.Store.Equipamento" Multiplicity="1" />
-          <End Role="ExercicioEquipamento" Type="WebfitnessDBModel.Store.ExercicioEquipamento" Multiplicity="*" />
+          <End Role="Equipamento" Type="Self.Equipamento" Multiplicity="1" />
+          <End Role="ExercicioEquipamento" Type="Self.ExercicioEquipamento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Equipamento">
               <PropertyRef Name="idEquipamento" />
@@ -564,8 +448,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ExercicioEquipamento_Exercicio">
-          <End Role="Exercicio" Type="WebfitnessDBModel.Store.Exercicio" Multiplicity="1" />
-          <End Role="ExercicioEquipamento" Type="WebfitnessDBModel.Store.ExercicioEquipamento" Multiplicity="*" />
+          <End Role="Exercicio" Type="Self.Exercicio" Multiplicity="1" />
+          <End Role="ExercicioEquipamento" Type="Self.ExercicioEquipamento" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Exercicio">
               <PropertyRef Name="idExercicio" />
@@ -576,8 +460,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Ficha_Aluno">
-          <End Role="Aluno" Type="WebfitnessDBModel.Store.Aluno" Multiplicity="1" />
-          <End Role="Ficha" Type="WebfitnessDBModel.Store.Ficha" Multiplicity="*" />
+          <End Role="Aluno" Type="Self.Aluno" Multiplicity="1" />
+          <End Role="Ficha" Type="Self.Ficha" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Aluno">
               <PropertyRef Name="idAluno" />
@@ -588,8 +472,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Ficha_Exercicio">
-          <End Role="Exercicio" Type="WebfitnessDBModel.Store.Exercicio" Multiplicity="1" />
-          <End Role="Ficha" Type="WebfitnessDBModel.Store.Ficha" Multiplicity="*" />
+          <End Role="Exercicio" Type="Self.Exercicio" Multiplicity="1" />
+          <End Role="Ficha" Type="Self.Ficha" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Exercicio">
               <PropertyRef Name="idExercicio" />
@@ -600,8 +484,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Fornecedor_Cidade">
-          <End Role="Cidade" Type="WebfitnessDBModel.Store.Cidade" Multiplicity="1" />
-          <End Role="Fornecedor" Type="WebfitnessDBModel.Store.Fornecedor" Multiplicity="*" />
+          <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+          <End Role="Fornecedor" Type="Self.Fornecedor" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cidade">
               <PropertyRef Name="idCidade" />
@@ -612,8 +496,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Funcionario_Cidade">
-          <End Role="Cidade" Type="WebfitnessDBModel.Store.Cidade" Multiplicity="1" />
-          <End Role="Funcionario" Type="WebfitnessDBModel.Store.Funcionario" Multiplicity="*" />
+          <End Role="Cidade" Type="Self.Cidade" Multiplicity="1" />
+          <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cidade">
               <PropertyRef Name="idCidade" />
@@ -624,8 +508,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HistExercicioAluno_Ficha">
-          <End Role="Ficha" Type="WebfitnessDBModel.Store.Ficha" Multiplicity="1" />
-          <End Role="HistExercicioAluno" Type="WebfitnessDBModel.Store.HistExercicioAluno" Multiplicity="*" />
+          <End Role="Ficha" Type="Self.Ficha" Multiplicity="1" />
+          <End Role="HistExercicioAluno" Type="Self.HistExercicioAluno" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Ficha">
               <PropertyRef Name="idFicha" />
@@ -636,8 +520,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HistPgtoAluno_Aluno">
-          <End Role="Aluno" Type="WebfitnessDBModel.Store.Aluno" Multiplicity="1" />
-          <End Role="HistPgtoAluno" Type="WebfitnessDBModel.Store.HistPgtoAluno" Multiplicity="*" />
+          <End Role="Aluno" Type="Self.Aluno" Multiplicity="1" />
+          <End Role="HistPgtoAluno" Type="Self.HistPgtoAluno" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Aluno">
               <PropertyRef Name="idAluno" />
@@ -648,8 +532,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HistPgtoFuncionario_Funcionario">
-          <End Role="Funcionario" Type="WebfitnessDBModel.Store.Funcionario" Multiplicity="1" />
-          <End Role="HistPgtoFuncionario" Type="WebfitnessDBModel.Store.HistPgtoFuncionario" Multiplicity="*" />
+          <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="1" />
+          <End Role="HistPgtoFuncionario" Type="Self.HistPgtoFuncionario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Funcionario">
               <PropertyRef Name="idFuncionario" />
@@ -660,8 +544,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_HistSalarioFuncionario_Funcionario">
-          <End Role="Funcionario" Type="WebfitnessDBModel.Store.Funcionario" Multiplicity="1" />
-          <End Role="HistSalarioFuncionario" Type="WebfitnessDBModel.Store.HistSalarioFuncionario" Multiplicity="*" />
+          <End Role="Funcionario" Type="Self.Funcionario" Multiplicity="1" />
+          <End Role="HistSalarioFuncionario" Type="Self.HistSalarioFuncionario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Funcionario">
               <PropertyRef Name="idFuncionario" />
@@ -672,8 +556,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Manutencao_Equipamento">
-          <End Role="Equipamento" Type="WebfitnessDBModel.Store.Equipamento" Multiplicity="1" />
-          <End Role="Manutencao" Type="WebfitnessDBModel.Store.Manutencao" Multiplicity="*" />
+          <End Role="Equipamento" Type="Self.Equipamento" Multiplicity="1" />
+          <End Role="Manutencao" Type="Self.Manutencao" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Equipamento">
               <PropertyRef Name="idEquipamento" />
@@ -684,8 +568,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Manutencao_Fornecedor">
-          <End Role="Fornecedor" Type="WebfitnessDBModel.Store.Fornecedor" Multiplicity="1" />
-          <End Role="Manutencao" Type="WebfitnessDBModel.Store.Manutencao" Multiplicity="*" />
+          <End Role="Fornecedor" Type="Self.Fornecedor" Multiplicity="1" />
+          <End Role="Manutencao" Type="Self.Manutencao" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Fornecedor">
               <PropertyRef Name="idFornecedor" />
@@ -696,8 +580,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Manutencao_TpManutencao">
-          <End Role="TpManutencao" Type="WebfitnessDBModel.Store.TpManutencao" Multiplicity="1" />
-          <End Role="Manutencao" Type="WebfitnessDBModel.Store.Manutencao" Multiplicity="*" />
+          <End Role="TpManutencao" Type="Self.TpManutencao" Multiplicity="1" />
+          <End Role="Manutencao" Type="Self.Manutencao" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TpManutencao">
               <PropertyRef Name="idTpManutencao" />
@@ -708,8 +592,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Uf_Pais">
-          <End Role="Pais" Type="WebfitnessDBModel.Store.Pais" Multiplicity="1" />
-          <End Role="Uf" Type="WebfitnessDBModel.Store.Uf" Multiplicity="*" />
+          <End Role="Pais" Type="Self.Pais" Multiplicity="1" />
+          <End Role="Uf" Type="Self.Uf" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Pais">
               <PropertyRef Name="idPais" />
@@ -720,8 +604,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Venda_Equipamento">
-          <End Role="Equipamento" Type="WebfitnessDBModel.Store.Equipamento" Multiplicity="1" />
-          <End Role="Venda" Type="WebfitnessDBModel.Store.Venda" Multiplicity="*" />
+          <End Role="Equipamento" Type="Self.Equipamento" Multiplicity="1" />
+          <End Role="Venda" Type="Self.Venda" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Equipamento">
               <PropertyRef Name="idEquipamento" />
@@ -731,6 +615,137 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="WebfitnessDBModelStoreContainer">
+          <EntitySet Name="Aluno" EntityType="Self.Aluno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AlunoAula" EntityType="Self.AlunoAula" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Aula" EntityType="Self.Aula" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cidade" EntityType="Self.Cidade" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Compra" EntityType="Self.Compra" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ContasPagar" EntityType="Self.ContasPagar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contato" EntityType="Self.Contato" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Equipamento" EntityType="Self.Equipamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="EquipamentoAula" EntityType="Self.EquipamentoAula" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Exercicio" EntityType="Self.Exercicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExercicioEquipamento" EntityType="Self.ExercicioEquipamento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ficha" EntityType="Self.Ficha" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fornecedor" EntityType="Self.Fornecedor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Funcionario" EntityType="Self.Funcionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistExercicioAluno" EntityType="Self.HistExercicioAluno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistPgtoAluno" EntityType="Self.HistPgtoAluno" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistPgtoFuncionario" EntityType="Self.HistPgtoFuncionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HistSalarioFuncionario" EntityType="Self.HistSalarioFuncionario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Manutencao" EntityType="Self.Manutencao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pais" EntityType="Self.Pais" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TpAula" EntityType="Self.TpAula" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TpExercicio" EntityType="Self.TpExercicio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TpManutencao" EntityType="Self.TpManutencao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Uf" EntityType="Self.Uf" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Venda" EntityType="Self.Venda" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Aluno_Cidade" Association="Self.FK_Aluno_Cidade">
+            <End Role="Cidade" EntitySet="Cidade" />
+            <End Role="Aluno" EntitySet="Aluno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AlunoAula_Aluno" Association="Self.FK_AlunoAula_Aluno">
+            <End Role="Aluno" EntitySet="Aluno" />
+            <End Role="AlunoAula" EntitySet="AlunoAula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_AlunoAula_Aula" Association="Self.FK_AlunoAula_Aula">
+            <End Role="Aula" EntitySet="Aula" />
+            <End Role="AlunoAula" EntitySet="AlunoAula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aula_TpAula" Association="Self.FK_Aula_TpAula">
+            <End Role="TpAula" EntitySet="TpAula" />
+            <End Role="Aula" EntitySet="Aula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cidade_Uf" Association="Self.FK_Cidade_Uf">
+            <End Role="Uf" EntitySet="Uf" />
+            <End Role="Cidade" EntitySet="Cidade" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Equipamento" Association="Self.FK_Compra_Equipamento">
+            <End Role="Equipamento" EntitySet="Equipamento" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Compra_Fornecedor" Association="Self.FK_Compra_Fornecedor">
+            <End Role="Fornecedor" EntitySet="Fornecedor" />
+            <End Role="Compra" EntitySet="Compra" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Equipamento_Fornecedor" Association="Self.FK_Equipamento_Fornecedor">
+            <End Role="Fornecedor" EntitySet="Fornecedor" />
+            <End Role="Equipamento" EntitySet="Equipamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EquipamentoAula_Aula" Association="Self.FK_EquipamentoAula_Aula">
+            <End Role="Aula" EntitySet="Aula" />
+            <End Role="EquipamentoAula" EntitySet="EquipamentoAula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EquipamentoAula_Equipamento" Association="Self.FK_EquipamentoAula_Equipamento">
+            <End Role="Equipamento" EntitySet="Equipamento" />
+            <End Role="EquipamentoAula" EntitySet="EquipamentoAula" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Exercicio_TpExercicio" Association="Self.FK_Exercicio_TpExercicio">
+            <End Role="TpExercicio" EntitySet="TpExercicio" />
+            <End Role="Exercicio" EntitySet="Exercicio" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExercicioEquipamento_Equipamento" Association="Self.FK_ExercicioEquipamento_Equipamento">
+            <End Role="Equipamento" EntitySet="Equipamento" />
+            <End Role="ExercicioEquipamento" EntitySet="ExercicioEquipamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExercicioEquipamento_Exercicio" Association="Self.FK_ExercicioEquipamento_Exercicio">
+            <End Role="Exercicio" EntitySet="Exercicio" />
+            <End Role="ExercicioEquipamento" EntitySet="ExercicioEquipamento" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ficha_Aluno" Association="Self.FK_Ficha_Aluno">
+            <End Role="Aluno" EntitySet="Aluno" />
+            <End Role="Ficha" EntitySet="Ficha" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ficha_Exercicio" Association="Self.FK_Ficha_Exercicio">
+            <End Role="Exercicio" EntitySet="Exercicio" />
+            <End Role="Ficha" EntitySet="Ficha" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Fornecedor_Cidade" Association="Self.FK_Fornecedor_Cidade">
+            <End Role="Cidade" EntitySet="Cidade" />
+            <End Role="Fornecedor" EntitySet="Fornecedor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Funcionario_Cidade" Association="Self.FK_Funcionario_Cidade">
+            <End Role="Cidade" EntitySet="Cidade" />
+            <End Role="Funcionario" EntitySet="Funcionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistExercicioAluno_Ficha" Association="Self.FK_HistExercicioAluno_Ficha">
+            <End Role="Ficha" EntitySet="Ficha" />
+            <End Role="HistExercicioAluno" EntitySet="HistExercicioAluno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistPgtoAluno_Aluno" Association="Self.FK_HistPgtoAluno_Aluno">
+            <End Role="Aluno" EntitySet="Aluno" />
+            <End Role="HistPgtoAluno" EntitySet="HistPgtoAluno" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistPgtoFuncionario_Funcionario" Association="Self.FK_HistPgtoFuncionario_Funcionario">
+            <End Role="Funcionario" EntitySet="Funcionario" />
+            <End Role="HistPgtoFuncionario" EntitySet="HistPgtoFuncionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HistSalarioFuncionario_Funcionario" Association="Self.FK_HistSalarioFuncionario_Funcionario">
+            <End Role="Funcionario" EntitySet="Funcionario" />
+            <End Role="HistSalarioFuncionario" EntitySet="HistSalarioFuncionario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Manutencao_Equipamento" Association="Self.FK_Manutencao_Equipamento">
+            <End Role="Equipamento" EntitySet="Equipamento" />
+            <End Role="Manutencao" EntitySet="Manutencao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Manutencao_Fornecedor" Association="Self.FK_Manutencao_Fornecedor">
+            <End Role="Fornecedor" EntitySet="Fornecedor" />
+            <End Role="Manutencao" EntitySet="Manutencao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Manutencao_TpManutencao" Association="Self.FK_Manutencao_TpManutencao">
+            <End Role="TpManutencao" EntitySet="TpManutencao" />
+            <End Role="Manutencao" EntitySet="Manutencao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uf_Pais" Association="Self.FK_Uf_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Uf" EntitySet="Uf" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Venda_Equipamento" Association="Self.FK_Venda_Equipamento">
+            <End Role="Equipamento" EntitySet="Equipamento" />
+            <End Role="Venda" EntitySet="Venda" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -741,6 +756,7 @@
           <EntitySet Name="Aula" EntityType="WebfitnessDBModel.Aula" />
           <EntitySet Name="Cidade" EntityType="WebfitnessDBModel.Cidade" />
           <EntitySet Name="Compra" EntityType="WebfitnessDBModel.Compra" />
+          <EntitySet Name="ContasPagar" EntityType="WebfitnessDBModel.ContasPagar" />
           <EntitySet Name="Contato" EntityType="WebfitnessDBModel.Contato" />
           <EntitySet Name="Equipamento" EntityType="WebfitnessDBModel.Equipamento" />
           <EntitySet Name="EquipamentoAula" EntityType="WebfitnessDBModel.EquipamentoAula" />
@@ -856,33 +872,33 @@
             <End Role="Funcionario" EntitySet="Funcionario" />
             <End Role="HistSalarioFuncionario" EntitySet="HistSalarioFuncionario" />
           </AssociationSet>
-          <AssociationSet Name="FK_Uf_Pais" Association="WebfitnessDBModel.FK_Uf_Pais">
-            <End Role="Pais" EntitySet="Pais" />
-            <End Role="Uf" EntitySet="Uf" />
-          </AssociationSet>
           <AssociationSet Name="FK_Manutencao_TpManutencao" Association="WebfitnessDBModel.FK_Manutencao_TpManutencao">
             <End Role="TpManutencao" EntitySet="TpManutencao" />
             <End Role="Manutencao" EntitySet="Manutencao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Uf_Pais" Association="WebfitnessDBModel.FK_Uf_Pais">
+            <End Role="Pais" EntitySet="Pais" />
+            <End Role="Uf" EntitySet="Uf" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Aluno">
           <Key>
             <PropertyRef Name="idAluno" />
           </Key>
-          <Property Type="Int32" Name="idAluno" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="cpf" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="telefone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="rua" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="bairro" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="sexo" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="aniversario" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Byte" Name="status" />
-          <Property Type="Int32" Name="idCidade" Nullable="false" />
-          <Property Type="String" Name="login" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="senha" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="idAluno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cpf" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="telefone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rua" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="bairro" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="aniversario" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="idCidade" Type="Int32" Nullable="false" />
+          <Property Name="login" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="senha" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Cidade" Relationship="WebfitnessDBModel.FK_Aluno_Cidade" FromRole="Aluno" ToRole="Cidade" />
           <NavigationProperty Name="AlunoAula" Relationship="WebfitnessDBModel.FK_AlunoAula_Aluno" FromRole="Aluno" ToRole="AlunoAula" />
           <NavigationProperty Name="Ficha" Relationship="WebfitnessDBModel.FK_Ficha_Aluno" FromRole="Aluno" ToRole="Ficha" />
@@ -893,9 +909,9 @@
             <PropertyRef Name="idAula" />
             <PropertyRef Name="idAluno" />
           </Key>
-          <Property Type="Int32" Name="idAula" Nullable="false" />
-          <Property Type="Int32" Name="idAluno" Nullable="false" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
+          <Property Name="idAula" Type="Int32" Nullable="false" />
+          <Property Name="idAluno" Type="Int32" Nullable="false" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Aluno" Relationship="WebfitnessDBModel.FK_AlunoAula_Aluno" FromRole="AlunoAula" ToRole="Aluno" />
           <NavigationProperty Name="Aula" Relationship="WebfitnessDBModel.FK_AlunoAula_Aula" FromRole="AlunoAula" ToRole="Aula" />
         </EntityType>
@@ -903,14 +919,14 @@
           <Key>
             <PropertyRef Name="idAula" />
           </Key>
-          <Property Type="Int32" Name="idAula" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="dsAula" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="Int32" Name="capacidade" Nullable="false" />
-          <Property Type="String" Name="observacao" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="Decimal" Name="preco" Nullable="false" Precision="19" Scale="4" />
-          <Property Type="Byte" Name="status" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Int32" Name="idTpAula" Nullable="false" />
+          <Property Name="idAula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dsAula" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="capacidade" Type="Int32" Nullable="false" />
+          <Property Name="observacao" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="preco" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="idTpAula" Type="Int32" Nullable="false" />
           <NavigationProperty Name="AlunoAula" Relationship="WebfitnessDBModel.FK_AlunoAula_Aula" FromRole="Aula" ToRole="AlunoAula" />
           <NavigationProperty Name="TpAula" Relationship="WebfitnessDBModel.FK_Aula_TpAula" FromRole="Aula" ToRole="TpAula" />
           <NavigationProperty Name="EquipamentoAula" Relationship="WebfitnessDBModel.FK_EquipamentoAula_Aula" FromRole="Aula" ToRole="EquipamentoAula" />
@@ -919,11 +935,11 @@
           <Key>
             <PropertyRef Name="idCidade" />
           </Key>
-          <Property Type="Int32" Name="idCidade" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="dsCidade" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Int32" Name="idUf" Nullable="false" />
-          <Property Type="Byte" Name="status" />
+          <Property Name="idCidade" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dsCidade" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="idUf" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Byte" />
           <NavigationProperty Name="Aluno" Relationship="WebfitnessDBModel.FK_Aluno_Cidade" FromRole="Cidade" ToRole="Aluno" />
           <NavigationProperty Name="Uf" Relationship="WebfitnessDBModel.FK_Cidade_Uf" FromRole="Cidade" ToRole="Uf" />
           <NavigationProperty Name="Fornecedor" Relationship="WebfitnessDBModel.FK_Fornecedor_Cidade" FromRole="Cidade" ToRole="Fornecedor" />
@@ -933,37 +949,51 @@
           <Key>
             <PropertyRef Name="idCompra" />
           </Key>
-          <Property Type="Int32" Name="idCompra" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="idFornecedor" />
-          <Property Type="Decimal" Name="valorCompra" Precision="19" Scale="4" />
-          <Property Type="Int32" Name="qtdParcelas" />
-          <Property Type="DateTime" Name="dtVenda" Precision="0" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Int32" Name="idEquipamento" Nullable="false" />
+          <Property Name="idCompra" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFornecedor" Type="Int32" />
+          <Property Name="valorCompra" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="qtdParcelas" Type="Int32" />
+          <Property Name="dtVenda" Type="DateTime" Precision="0" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="idEquipamento" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Equipamento" Relationship="WebfitnessDBModel.FK_Compra_Equipamento" FromRole="Compra" ToRole="Equipamento" />
           <NavigationProperty Name="Fornecedor" Relationship="WebfitnessDBModel.FK_Compra_Fornecedor" FromRole="Compra" ToRole="Fornecedor" />
+        </EntityType>
+        <EntityType Name="ContasPagar">
+          <Key>
+            <PropertyRef Name="idContasPagar" />
+          </Key>
+          <Property Name="idContasPagar" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dsContasPagar" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="valor" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="dtVencimento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dtPagamento" Type="DateTime" Precision="0" />
+          <Property Name="idTabelaFK" Type="Int32" />
+          <Property Name="tpRegistro" Type="Byte" />
         </EntityType>
         <EntityType Name="Contato">
           <Key>
             <PropertyRef Name="idContato" />
           </Key>
-          <Property Type="Int32" Name="idContato" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="assunto" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="mensagem" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Byte" Name="status" />
+          <Property Name="idContato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="assunto" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mensagem" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="assuntoResposta" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="mensagemResposta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Equipamento">
           <Key>
             <PropertyRef Name="idEquipamento" />
           </Key>
-          <Property Type="Int32" Name="idEquipamento" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="dsEquipamento" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Byte" Name="status_" />
-          <Property Type="Int32" Name="idTpEquipamento" Nullable="false" />
-          <Property Type="Int32" Name="idFornecedor" Nullable="false" />
+          <Property Name="idEquipamento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dsEquipamento" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="status_" Type="Byte" />
+          <Property Name="idFornecedor" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Compra" Relationship="WebfitnessDBModel.FK_Compra_Equipamento" FromRole="Equipamento" ToRole="Compra" />
           <NavigationProperty Name="Fornecedor" Relationship="WebfitnessDBModel.FK_Equipamento_Fornecedor" FromRole="Equipamento" ToRole="Fornecedor" />
           <NavigationProperty Name="EquipamentoAula" Relationship="WebfitnessDBModel.FK_EquipamentoAula_Equipamento" FromRole="Equipamento" ToRole="EquipamentoAula" />
@@ -976,9 +1006,9 @@
             <PropertyRef Name="idAula" />
             <PropertyRef Name="idEquipamento" />
           </Key>
-          <Property Type="Int32" Name="idAula" Nullable="false" />
-          <Property Type="Int32" Name="idEquipamento" Nullable="false" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
+          <Property Name="idAula" Type="Int32" Nullable="false" />
+          <Property Name="idEquipamento" Type="Int32" Nullable="false" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Aula" Relationship="WebfitnessDBModel.FK_EquipamentoAula_Aula" FromRole="EquipamentoAula" ToRole="Aula" />
           <NavigationProperty Name="Equipamento" Relationship="WebfitnessDBModel.FK_EquipamentoAula_Equipamento" FromRole="EquipamentoAula" ToRole="Equipamento" />
         </EntityType>
@@ -986,12 +1016,12 @@
           <Key>
             <PropertyRef Name="idExercicio" />
           </Key>
-          <Property Type="Int32" Name="idExercicio" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="dsExercicio" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="observacao" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="Byte" Name="status" />
-          <Property Type="DateTime" Name="dtCriacao" Nullable="false" Precision="3" />
-          <Property Type="Int32" Name="idTpExercicio" Nullable="false" />
+          <Property Name="idExercicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dsExercicio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="observacao" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="dtCriacao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idTpExercicio" Type="Int32" Nullable="false" />
           <NavigationProperty Name="TpExercicio" Relationship="WebfitnessDBModel.FK_Exercicio_TpExercicio" FromRole="Exercicio" ToRole="TpExercicio" />
           <NavigationProperty Name="ExercicioEquipamento" Relationship="WebfitnessDBModel.FK_ExercicioEquipamento_Exercicio" FromRole="Exercicio" ToRole="ExercicioEquipamento" />
           <NavigationProperty Name="Ficha" Relationship="WebfitnessDBModel.FK_Ficha_Exercicio" FromRole="Exercicio" ToRole="Ficha" />
@@ -1001,9 +1031,9 @@
             <PropertyRef Name="idExercicio" />
             <PropertyRef Name="idEquipamento" />
           </Key>
-          <Property Type="Int32" Name="idExercicio" Nullable="false" />
-          <Property Type="Int32" Name="idEquipamento" Nullable="false" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
+          <Property Name="idExercicio" Type="Int32" Nullable="false" />
+          <Property Name="idEquipamento" Type="Int32" Nullable="false" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Equipamento" Relationship="WebfitnessDBModel.FK_ExercicioEquipamento_Equipamento" FromRole="ExercicioEquipamento" ToRole="Equipamento" />
           <NavigationProperty Name="Exercicio" Relationship="WebfitnessDBModel.FK_ExercicioEquipamento_Exercicio" FromRole="ExercicioEquipamento" ToRole="Exercicio" />
         </EntityType>
@@ -1011,32 +1041,32 @@
           <Key>
             <PropertyRef Name="idFicha" />
           </Key>
-          <Property Type="Int32" Name="idFicha" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="idExercicio" Nullable="false" />
-          <Property Type="Int32" Name="idAluno" Nullable="false" />
-          <Property Type="Int32" Name="qtdRepeticoes" Nullable="false" />
-          <Property Type="Int32" Name="series" Nullable="false" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
+          <Property Name="idFicha" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idExercicio" Type="Int32" Nullable="false" />
+          <Property Name="idAluno" Type="Int32" Nullable="false" />
+          <Property Name="qtdRepeticoes" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Byte" Nullable="false" />
+          <Property Name="series" Type="Int32" Nullable="false" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Aluno" Relationship="WebfitnessDBModel.FK_Ficha_Aluno" FromRole="Ficha" ToRole="Aluno" />
           <NavigationProperty Name="Exercicio" Relationship="WebfitnessDBModel.FK_Ficha_Exercicio" FromRole="Ficha" ToRole="Exercicio" />
           <NavigationProperty Name="HistExercicioAluno" Relationship="WebfitnessDBModel.FK_HistExercicioAluno_Ficha" FromRole="Ficha" ToRole="HistExercicioAluno" />
-          <Property Type="Byte" Name="status" Nullable="false" />
         </EntityType>
         <EntityType Name="Fornecedor">
           <Key>
             <PropertyRef Name="idFornecedor" />
           </Key>
-          <Property Type="Int32" Name="idFornecedor" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="dsFornecedor" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="cnpj" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="inscrEstadual" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="rua" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="bairro" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="telefone" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Int32" Name="idCidade" Nullable="false" />
-          <Property Type="Byte" Name="status" />
+          <Property Name="idFornecedor" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dsFornecedor" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cnpj" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="inscrEstadual" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="rua" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="bairro" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="telefone" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="idCidade" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Byte" />
           <NavigationProperty Name="Cidade" Relationship="WebfitnessDBModel.FK_Fornecedor_Cidade" FromRole="Fornecedor" ToRole="Cidade" />
           <NavigationProperty Name="Compra" Relationship="WebfitnessDBModel.FK_Compra_Fornecedor" FromRole="Fornecedor" ToRole="Compra" />
           <NavigationProperty Name="Equipamento" Relationship="WebfitnessDBModel.FK_Equipamento_Fornecedor" FromRole="Fornecedor" ToRole="Equipamento" />
@@ -1046,23 +1076,23 @@
           <Key>
             <PropertyRef Name="idFuncionario" />
           </Key>
-          <Property Type="Int32" Name="idFuncionario" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="nome" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="cpf" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="telefone" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="email" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="rua" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="bairro" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="cep" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="ctps" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="sexo" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="aniversario" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Int32" Name="idCidade" Nullable="false" />
-          <Property Type="Byte" Name="status" />
-          <Property Type="Int32" Name="idTpFuncionario" Nullable="false" />
-          <Property Type="String" Name="login" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="senha" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cpf" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="telefone" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="rua" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="bairro" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cep" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+          <Property Name="ctps" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="sexo" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="aniversario" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="idCidade" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="idTpFuncionario" Type="Int32" Nullable="false" />
+          <Property Name="login" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="senha" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Cidade" Relationship="WebfitnessDBModel.FK_Funcionario_Cidade" FromRole="Funcionario" ToRole="Cidade" />
           <NavigationProperty Name="HistPgtoFuncionario" Relationship="WebfitnessDBModel.FK_HistPgtoFuncionario_Funcionario" FromRole="Funcionario" ToRole="HistPgtoFuncionario" />
           <NavigationProperty Name="HistSalarioFuncionario" Relationship="WebfitnessDBModel.FK_HistSalarioFuncionario_Funcionario" FromRole="Funcionario" ToRole="HistSalarioFuncionario" />
@@ -1071,65 +1101,65 @@
           <Key>
             <PropertyRef Name="idHistExercicioAluno" />
           </Key>
-          <Property Type="Int32" Name="idHistExercicioAluno" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="idFicha" Nullable="false" />
-          <Property Type="Int32" Name="qtdRepeticoesVelha" Nullable="false" />
-          <Property Type="Int32" Name="qtdRepeticoesNova" Nullable="false" />
-          <Property Type="Int32" Name="seriesVelho" Nullable="false" />
-          <Property Type="Int32" Name="seriesNovo" Nullable="false" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
+          <Property Name="idHistExercicioAluno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFicha" Type="Int32" Nullable="false" />
+          <Property Name="qtdRepeticoesVelha" Type="Int32" Nullable="false" />
+          <Property Name="qtdRepeticoesNova" Type="Int32" Nullable="false" />
+          <Property Name="seriesVelho" Type="Int32" Nullable="false" />
+          <Property Name="seriesNovo" Type="Int32" Nullable="false" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Ficha" Relationship="WebfitnessDBModel.FK_HistExercicioAluno_Ficha" FromRole="HistExercicioAluno" ToRole="Ficha" />
         </EntityType>
         <EntityType Name="HistPgtoAluno">
           <Key>
             <PropertyRef Name="idHistPgtoAluno" />
           </Key>
-          <Property Type="Int32" Name="idHistPgtoAluno" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="DateTime" Name="dtPgto" Nullable="false" Precision="3" />
-          <Property Type="Int32" Name="idAluno" Nullable="false" />
-          <Property Type="Decimal" Name="vlrPgto" Nullable="false" Precision="19" Scale="4" />
-          <Property Type="DateTime" Name="dtVigenciaInicial" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="dtVigenciaFinal" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
+          <Property Name="idHistPgtoAluno" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dtPgto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idAluno" Type="Int32" Nullable="false" />
+          <Property Name="vlrPgto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="dtVigenciaInicial" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dtVigenciaFinal" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Aluno" Relationship="WebfitnessDBModel.FK_HistPgtoAluno_Aluno" FromRole="HistPgtoAluno" ToRole="Aluno" />
         </EntityType>
         <EntityType Name="HistPgtoFuncionario">
           <Key>
             <PropertyRef Name="idHistPgtoFuncionario" />
           </Key>
-          <Property Type="Int32" Name="idHistPgtoFuncionario" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="idFuncionario" Nullable="false" />
-          <Property Type="DateTime" Name="dtPgto" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Decimal" Name="vlrPgto" Nullable="false" Precision="19" Scale="4" />
-          <Property Type="DateTime" Name="dtVigenciaInicial" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="dtVigenciaFinal" Nullable="false" Precision="0" />
+          <Property Name="idHistPgtoFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" />
+          <Property Name="dtPgto" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="vlrPgto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="dtVigenciaInicial" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dtVigenciaFinal" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Funcionario" Relationship="WebfitnessDBModel.FK_HistPgtoFuncionario_Funcionario" FromRole="HistPgtoFuncionario" ToRole="Funcionario" />
         </EntityType>
         <EntityType Name="HistSalarioFuncionario">
           <Key>
             <PropertyRef Name="idHistSalarioFuncionario" />
           </Key>
-          <Property Type="Int32" Name="idHistSalarioFuncionario" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="idFuncionario" Nullable="false" />
-          <Property Type="DateTime" Name="dtAumento" Nullable="false" Precision="0" />
-          <Property Type="Decimal" Name="salarioAntigo" Nullable="false" Precision="19" Scale="4" />
-          <Property Type="Decimal" Name="salarioNovo" Nullable="false" Precision="19" Scale="4" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
+          <Property Name="idHistSalarioFuncionario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" />
+          <Property Name="dtAumento" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="salarioAntigo" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="salarioNovo" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Funcionario" Relationship="WebfitnessDBModel.FK_HistSalarioFuncionario_Funcionario" FromRole="HistSalarioFuncionario" ToRole="Funcionario" />
         </EntityType>
         <EntityType Name="Manutencao">
           <Key>
             <PropertyRef Name="idManutencao" />
           </Key>
-          <Property Type="Int32" Name="idManutencao" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="idFornecedor" Nullable="false" />
-          <Property Type="Int32" Name="idTpManutencao" Nullable="false" />
-          <Property Type="Decimal" Name="valorManutencao" Nullable="false" Precision="19" Scale="4" />
-          <Property Type="Int32" Name="qtdParcelas" Nullable="false" />
-          <Property Type="DateTime" Name="dtManutencao" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Int32" Name="idEquipamento" Nullable="false" />
+          <Property Name="idManutencao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idFornecedor" Type="Int32" Nullable="false" />
+          <Property Name="idTpManutencao" Type="Int32" Nullable="false" />
+          <Property Name="valorManutencao" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="qtdParcelas" Type="Int32" Nullable="false" />
+          <Property Name="dtManutencao" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="idEquipamento" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Equipamento" Relationship="WebfitnessDBModel.FK_Manutencao_Equipamento" FromRole="Manutencao" ToRole="Equipamento" />
           <NavigationProperty Name="Fornecedor" Relationship="WebfitnessDBModel.FK_Manutencao_Fornecedor" FromRole="Manutencao" ToRole="Fornecedor" />
           <NavigationProperty Name="TpManutencao" Relationship="WebfitnessDBModel.FK_Manutencao_TpManutencao" FromRole="Manutencao" ToRole="TpManutencao" />
@@ -1138,54 +1168,54 @@
           <Key>
             <PropertyRef Name="idPais" />
           </Key>
-          <Property Type="Int32" Name="idPais" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="dsPais" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="abrevPais" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="Byte" Name="status" />
-          <Property Type="DateTime" Name="dtCriacao" Nullable="false" Precision="3" />
+          <Property Name="idPais" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dsPais" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="abrevPais" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="dtCriacao" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Uf" Relationship="WebfitnessDBModel.FK_Uf_Pais" FromRole="Pais" ToRole="Uf" />
         </EntityType>
         <EntityType Name="TpAula">
           <Key>
             <PropertyRef Name="idTpAula" />
           </Key>
-          <Property Type="Int32" Name="idTpAula" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="dsTpAula" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="Byte" Name="status" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
+          <Property Name="idTpAula" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dsTpAula" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Aula" Relationship="WebfitnessDBModel.FK_Aula_TpAula" FromRole="TpAula" ToRole="Aula" />
         </EntityType>
         <EntityType Name="TpExercicio">
           <Key>
             <PropertyRef Name="idTpExercicio" />
           </Key>
-          <Property Type="Int32" Name="idTpExercicio" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="dsTpExercicio" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="Byte" Name="status" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
+          <Property Name="idTpExercicio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dsTpExercicio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Exercicio" Relationship="WebfitnessDBModel.FK_Exercicio_TpExercicio" FromRole="TpExercicio" ToRole="Exercicio" />
         </EntityType>
         <EntityType Name="TpManutencao">
           <Key>
             <PropertyRef Name="idTpManutencao" />
           </Key>
-          <Property Type="Int32" Name="idTpManutencao" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="dsTpManutencao" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="observacao" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Type="Byte" Name="status" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
+          <Property Name="idTpManutencao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dsTpManutencao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="observacao" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Manutencao" Relationship="WebfitnessDBModel.FK_Manutencao_TpManutencao" FromRole="TpManutencao" ToRole="Manutencao" />
         </EntityType>
         <EntityType Name="Uf">
           <Key>
             <PropertyRef Name="idUf" />
           </Key>
-          <Property Type="Int32" Name="idUf" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="dsUf" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="abrevUf" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Byte" Name="status" />
-          <Property Type="Int32" Name="idPais" Nullable="false" />
+          <Property Name="idUf" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dsUf" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="abrevUf" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Byte" />
+          <Property Name="idPais" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cidade" Relationship="WebfitnessDBModel.FK_Cidade_Uf" FromRole="Uf" ToRole="Cidade" />
           <NavigationProperty Name="Pais" Relationship="WebfitnessDBModel.FK_Uf_Pais" FromRole="Uf" ToRole="Pais" />
         </EntityType>
@@ -1193,12 +1223,12 @@
           <Key>
             <PropertyRef Name="idVenda" />
           </Key>
-          <Property Type="Int32" Name="idVenda" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Decimal" Name="valorVenda" Nullable="false" Precision="19" Scale="4" />
-          <Property Type="Int32" Name="qtdParcelas" Nullable="false" />
-          <Property Type="DateTime" Name="dtVenda" Nullable="false" Precision="0" />
-          <Property Type="DateTime" Name="dtCriacao" Precision="3" />
-          <Property Type="Int32" Name="idEquipamento" Nullable="false" />
+          <Property Name="idVenda" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="valorVenda" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="qtdParcelas" Type="Int32" Nullable="false" />
+          <Property Name="dtVenda" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="dtCriacao" Type="DateTime" Precision="3" />
+          <Property Name="idEquipamento" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Equipamento" Relationship="WebfitnessDBModel.FK_Venda_Equipamento" FromRole="Venda" ToRole="Equipamento" />
         </EntityType>
         <Association Name="FK_Aluno_Cidade">
@@ -1489,18 +1519,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Uf_Pais">
-          <End Type="WebfitnessDBModel.Pais" Role="Pais" Multiplicity="1" />
-          <End Type="WebfitnessDBModel.Uf" Role="Uf" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Pais">
-              <PropertyRef Name="idPais" />
-            </Principal>
-            <Dependent Role="Uf">
-              <PropertyRef Name="idPais" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Manutencao_TpManutencao">
           <End Type="WebfitnessDBModel.TpManutencao" Role="TpManutencao" Multiplicity="1" />
           <End Type="WebfitnessDBModel.Manutencao" Role="Manutencao" Multiplicity="*" />
@@ -1510,6 +1528,18 @@
             </Principal>
             <Dependent Role="Manutencao">
               <PropertyRef Name="idTpManutencao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Uf_Pais">
+          <End Type="WebfitnessDBModel.Pais" Role="Pais" Multiplicity="1" />
+          <End Type="WebfitnessDBModel.Uf" Role="Uf" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pais">
+              <PropertyRef Name="idPais" />
+            </Principal>
+            <Dependent Role="Uf">
+              <PropertyRef Name="idPais" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1586,9 +1616,25 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ContasPagar">
+            <EntityTypeMapping TypeName="WebfitnessDBModel.ContasPagar">
+              <MappingFragment StoreEntitySet="ContasPagar">
+                <ScalarProperty Name="tpRegistro" ColumnName="tpRegistro" />
+                <ScalarProperty Name="idTabelaFK" ColumnName="idTabelaFK" />
+                <ScalarProperty Name="dtPagamento" ColumnName="dtPagamento" />
+                <ScalarProperty Name="dtVencimento" ColumnName="dtVencimento" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="dsContasPagar" ColumnName="dsContasPagar" />
+                <ScalarProperty Name="idContasPagar" ColumnName="idContasPagar" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Contato">
             <EntityTypeMapping TypeName="WebfitnessDBModel.Contato">
               <MappingFragment StoreEntitySet="Contato">
+                <ScalarProperty Name="mensagemResposta" ColumnName="mensagemResposta" />
+                <ScalarProperty Name="assuntoResposta" ColumnName="assuntoResposta" />
+                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
                 <ScalarProperty Name="mensagem" ColumnName="mensagem" />
@@ -1602,7 +1648,6 @@
             <EntityTypeMapping TypeName="WebfitnessDBModel.Equipamento">
               <MappingFragment StoreEntitySet="Equipamento">
                 <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
-                <ScalarProperty Name="idTpEquipamento" ColumnName="idTpEquipamento" />
                 <ScalarProperty Name="status_" ColumnName="status " />
                 <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
                 <ScalarProperty Name="dsEquipamento" ColumnName="dsEquipamento" />
@@ -1643,9 +1688,9 @@
           <EntitySetMapping Name="Ficha">
             <EntityTypeMapping TypeName="WebfitnessDBModel.Ficha">
               <MappingFragment StoreEntitySet="Ficha">
-                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
                 <ScalarProperty Name="series" ColumnName="series" />
+                <ScalarProperty Name="status" ColumnName="status" />
                 <ScalarProperty Name="qtdRepeticoes" ColumnName="qtdRepeticoes" />
                 <ScalarProperty Name="idAluno" ColumnName="idAluno" />
                 <ScalarProperty Name="idExercicio" ColumnName="idExercicio" />
@@ -1841,6 +1886,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

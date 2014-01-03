@@ -11,14 +11,31 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Venda
     {
+        [Display(Name="Código")]
+        [Required(ErrorMessage = "Código é obrigatório!")]
         public int idVenda { get; set; }
+
+        [Display(Name = "Valor")]
+        [Required(ErrorMessage = "Valor é obrigatório!")]
         public decimal valorVenda { get; set; }
+
+        [Display(Name = "Parcelas")]
+        [Required(ErrorMessage = "Quantidade de parcelas é obrigatória!")]
         public int qtdParcelas { get; set; }
+
+        [Display(Name = "Data da Venda")]
+        [Required(ErrorMessage = "Data da venda é obrigatória!")]
         public System.DateTime dtVenda { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
+
+        [Display(Name = "Equipamento")]
+        [Required(ErrorMessage = "Equipamento é obrigatório!")]
         public int idEquipamento { get; set; }
     
         public virtual Equipamento Equipamento { get; set; }

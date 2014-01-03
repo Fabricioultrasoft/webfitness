@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity.Infrastructure;
-using WebFitness.classes;
+using WebFitness.Classes;
 
 
 namespace WebFitness.Areas.Admin.Controllers
@@ -18,7 +18,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aluno/
-
+        [Authorize]
         public ActionResult Index()
         {
             @ViewBag.Controller = controller;
@@ -28,7 +28,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aluno/Details/5
-
+        [Authorize]
         public ActionResult Details(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -42,7 +42,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aluno/Create
-
+        [Authorize]
         public ActionResult Create()
         {
             @ViewBag.Controller = controller;
@@ -52,7 +52,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // POST: /Admin/Aluno/Create
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Aluno aluno)
@@ -78,7 +78,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aluno/Edit/5
-
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -93,7 +93,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // POST: /Admin/Aluno/Edit/5
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Aluno aluno)
@@ -129,7 +129,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aluno/Inactive/5
-
+        [Authorize]
         public ActionResult Inactive(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -147,7 +147,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aluno/Active/5
-
+        [Authorize]
         public ActionResult Active(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -169,6 +169,121 @@ namespace WebFitness.Areas.Admin.Controllers
             db.Dispose();
             base.Dispose(disposing);
         }
+<<<<<<< .mine
+
+        public string CheckDados(string cpf, string login, string ctps)
+        {
+
+            String retorno_login = "";
+            String retorno_cpf = "";
+            String retorno_ctps = "False";
+
+            try
+            {
+                Aluno aluno = (from u
+                                         in db.Aluno
+                               where u.login == login
+                               select u).First();
+
+                retorno_login = "True";
+
+            }
+            catch
+            {
+                retorno_login = "False";
+            }
+
+
+            try
+            {
+                Aluno aluno = (from u
+                                         in db.Aluno
+                               where u.cpf == cpf
+                               select u).First();
+
+                retorno_cpf = "True";
+
+            }
+            catch
+            {
+                retorno_cpf = "False";
+            }
+
+
+
+
+
+
+
+            //true tem registro
+            //false não tem registro
+            if (retorno_cpf == "False" && retorno_login == "False" && retorno_ctps == "False")
+            {
+                return "False";
+            }
+            else
+            {
+                if (retorno_cpf == "True" && retorno_login == "False" && retorno_ctps == "False")
+                {
+                    return "cpf_true";
+                }
+                else
+                {
+                    if (retorno_cpf == "False" && retorno_login == "True" && retorno_ctps == "False")
+                    {
+                        return "login_true";
+                    }
+                    else
+                    {
+                        if (retorno_cpf == "False" && retorno_login == "False" && retorno_ctps == "True")
+                        {
+                            return "ctps_true";
+                        }
+                        else
+                        {
+
+                            if (retorno_cpf == "False" && retorno_login == "True" && retorno_ctps == "True")
+                            {
+                                return "login_ctps_true";
+                            }
+                            else
+                            {
+                                if (retorno_cpf == "True" && retorno_login == "False" && retorno_ctps == "True")
+                                {
+                                    return "cpf_ctps_true";
+                                }
+                                else
+                                {
+
+                                    if (retorno_cpf == "True" && retorno_login == "True" && retorno_ctps == "False")
+                                    {
+                                        return "cpf_login_true";
+                                    }
+                                    else
+                                    {
+
+                                        return "True";
+                                    }
+
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+                }
+
+
+
+            }
+            //FIM else decimal fora   
+
+
+
+        }
+=======
 
         public string CheckDados(string cpf, string login, string ctps)
         {
@@ -284,8 +399,5 @@ namespace WebFitness.Areas.Admin.Controllers
         }
 
         //Fim do metodo
-
-
-       
     }
 }

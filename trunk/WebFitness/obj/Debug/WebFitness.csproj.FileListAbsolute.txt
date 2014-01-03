@@ -93,5 +93,6 @@ E:\Projetos 2\WebFitness\bin\System.Web.Razor.xml
 E:\Projetos 2\WebFitness\bin\System.Web.WebPages.xml
 E:\Projetos 2\WebFitness\bin\System.Web.WebPages.Deployment.xml
 E:\Projetos 2\WebFitness\bin\System.Web.WebPages.Razor.xml
+E:\Projetos 2\WebFitness\obj\Debug\WebFitness.csprojResolveAssemblyReference.cache
 E:\Projetos 2\WebFitness\obj\Debug\WebFitness.dll
 E:\Projetos 2\WebFitness\obj\Debug\WebFitness.pdb

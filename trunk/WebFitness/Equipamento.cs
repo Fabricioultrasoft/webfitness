@@ -11,6 +11,7 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Equipamento
     {
@@ -22,12 +23,27 @@ namespace WebFitness
             this.Manutencao = new HashSet<Manutencao>();
             this.Venda = new HashSet<Venda>();
         }
-    
+
+        [Display(Name = "Código")]
         public int idEquipamento { get; set; }
+
+        [Display(Name = "Descrição")]
+        [StringLength(100, ErrorMessage = "Descrição não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Descrição é obrigatória!")]
         public string dsEquipamento { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
+
+        [Display(Name = "Status")]
         public Nullable<byte> status_ { get; set; }
+
+        [Display(Name = "Tipo de Equipamento")]
+        [Required(ErrorMessage = "Tipo de equipamento é obrigatório!")]
         public int idTpEquipamento { get; set; }
+
+        [Display(Name = "Fornecedor")]
+        [Required(ErrorMessage = "Fornecedor é obrigatório!")]
         public int idFornecedor { get; set; }
     
         public virtual ICollection<Compra> Compra { get; set; }

@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebFitness.classes;
+using WebFitness.Classes;
 
 namespace WebFitness.Areas.Admin.Controllers
 {
@@ -15,7 +15,7 @@ namespace WebFitness.Areas.Admin.Controllers
         private String controller = "Tipo Aula";
         //
         // GET: /Admin/TipoAula/
-
+        [Authorize]
         public ActionResult Index()
         {
             @ViewBag.Controller = controller;
@@ -24,7 +24,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/TipoAula/Create
-
+        [Authorize]
         public ActionResult Create()
         {
             @ViewBag.Controller = controller;
@@ -33,7 +33,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // POST: /Admin/TipoAula/Create
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(TpAula tpaula)
@@ -56,7 +56,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/TipoAula/Edit/5
-
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -71,7 +71,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // POST: /Admin/TipoAula/Edit/5
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(TpAula tpaula)
@@ -90,7 +90,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/TipoAula/Inactive/5
-
+        [Authorize]
         public ActionResult Inactive(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -107,6 +107,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/TipoAula/Active/5
+        [Authorize]
         public ActionResult Active(int id = 0)
         {
             @ViewBag.Controller = controller;

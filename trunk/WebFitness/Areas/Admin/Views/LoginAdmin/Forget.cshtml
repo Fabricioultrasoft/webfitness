@@ -1,0 +1,101 @@
+﻿@model WebFitness.Funcionario
+
+@{
+    Layout = null;
+    ViewBag.Title = "Forget";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <title>@ViewBag.Title - @ViewBag.Controller</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="~/Areas/Admin/Content/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <!-- Styles -->
+    <link href="~/Content/themes/admin/base/css/chosen.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/themes/admin/base/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Content/themes/admin/base/css/avocado.css" rel="stylesheet" type="text/css" id="theme-style">
+    <link href="~/Content/themes/admin/base/css/prism.css" rel="stylesheet/less" type="text/css">
+    <link href="~/Content/themes/admin/base/css/fullcalendar.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,600,300" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        body {
+            padding-top: 102px;
+        }
+    </style>
+    <link href="~/Content/themes/admin/base/css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="~/Content/themes/admin/admin.css" rel="stylesheet" type="text/css">
+
+    <!-- JavaScript/jQuery, Pre-DOM -->
+    <script src="~/Scripts/admin/base/jquery1.9.1.min.js"></script>
+    <script src="~/Scripts/admin/base/jquery.mask.js"></script>
+    <script src="~/Scripts/admin/base/admin.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;sensor=false"></script>
+    <script src="~/Scripts/admin/base/excanvas.min.js"></script>
+    <script src="~/Scripts/admin/base/jquery.flot.js"></script>
+    <script src="~/Scripts/admin/base/jquery.jpanelmenu.min.js"></script>
+    <script src="~/Scripts/admin/base/jquery.cookie.js"></script>
+    <script src="~/Scripts/admin/base/avocado-custom-predom.js"></script>
+
+    <!-- HTML5, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+        <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+    <div class="container">
+
+
+        @using (Html.BeginForm("Forget", "LoginAdmin", FormMethod.Post, new { @class = "form-signin form-horizontal" }))
+        {
+
+            <div class="top-bar">
+                <h3>Web Fitness - <b>Área Restrita</b></h3>
+            </div>
+            <div class="well no-padding">
+                <div class="control-group">
+                    <label class="control-label" for="inputName"><i class="icon-user"></i></label>
+                    <div class="controls">
+                        <input type="text" id="email" name="email" placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="padding">
+                    <button class="btn btn-primary" type="submit">Send mail</button>
+                    <div style="float:right; width:140px; height: 30px;">
+                        @ViewBag.ModelStatus
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+</body>
+
+<!-- Javascript
+        ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="~/Scripts/admin/base/jquery.hotkeys.js"></script>
+<script src="~/Scripts/admin/base/fullcalendar.min.js"></script>
+<script src="~/Scripts/admin/base/jquery-ui-1.10.2.custom.min.js"></script>
+<script src="~/Scripts/admin/base/jquery.pajinate.js"></script>
+<script src="~/Scripts/admin/base/jquery.prism.min.js"></script>
+<script src="~/Scripts/admin/base/jquery.dataTables.min.js"></script>
+<script src="~/Scripts/admin/base/jquery.flot.time.js"></script>
+<script src="~/Scripts/admin/base/jquery.flot.pie.js"></script>
+<script src="~/Scripts/admin/base/jquery.flot.resize.js"></script>
+<script src="~/Scripts/admin/base/bootstrap.min.js"></script>
+<script src="~/Scripts/admin/base/bootstrap-wysiwyg.js"></script>
+<script src="~/Scripts/admin/base/bootstrap-typeahead.js"></script>
+<script src="~/Scripts/admin/base/jquery.easing.min.js"></script>
+<script src="~/Scripts/admin/base/jquery.chosen.min.js"></script>
+<script src="~/Scripts/admin/base/avocado-custom.js"></script>
+
+</html>

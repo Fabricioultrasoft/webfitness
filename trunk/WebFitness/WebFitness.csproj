@@ -131,11 +131,17 @@
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContasPagarController.cs" />
     <Compile Include="Areas\Admin\Controllers\AlunoController.cs" />
+    <Compile Include="Areas\Admin\Controllers\AulaController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContatoController.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Areas\Admin\Controllers\EquipamentoController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ExercicioController.cs" />
     <Compile Include="Areas\Admin\Controllers\FornecedorController.cs" />
     <Compile Include="Areas\Admin\Controllers\FuncionarioController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ManutencaoController.cs" />
     <Compile Include="Areas\Admin\Controllers\TipoAulaController.cs" />
     <Compile Include="Areas\Admin\Controllers\TipoManutencaoController.cs" />
     <Compile Include="Areas\Admin\Controllers\TipoExercicioController.cs" />
@@ -147,9 +153,13 @@
     </Compile>
     <Compile Include="Classes\generated\Mail.cs" />
     <Compile Include="Classes\Mail.cs" />
+    <Compile Include="Classes\SessionManager.cs" />
     <Compile Include="Classes\Validation.cs" />
     <Compile Include="Classes\_Enum.cs" />
     <Compile Include="Compra.cs">
+      <DependentUpon>WebfitnessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ContasPagar.cs">
       <DependentUpon>WebfitnessModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Contato.cs">
@@ -414,6 +424,69 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Admin\Views\LoginAdmin\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Aula\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Aula\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Aula\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Aula\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\LoginAdmin\Forget.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Exercicio\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Exercicio\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Exercicio\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Exercicio\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Manutencao\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Manutencao\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Manutencao\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Manutencao\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Equipamento\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Equipamento\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Equipamento\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Equipamento\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Contato\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Contato\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\Contato\Answer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\ContasPagar\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\ContasPagar\Create.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Admin\Views\ContasPagar\Edit.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

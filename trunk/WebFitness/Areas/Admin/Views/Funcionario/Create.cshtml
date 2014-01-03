@@ -111,7 +111,7 @@
                 @Html.LabelFor(model => model.idTpFuncionario, new { @class = "control-label" })
 
                 <div class="controls">
-                    @*<label class="radio"><span>@Html.RadioButtonFor(model => model.idTpFuncionario, WebFitness.TipoFunacionario.Administrador)</span> @WebFitness.TipoFunacionario.Administrador</label>*@
+                    <label class="radio"><span>@Html.RadioButtonFor(model => model.idTpFuncionario, (byte)WebFitness.TipoFunacionario.Administrador)</span> @WebFitness.TipoFunacionario.Administrador</label>
                     <label class="radio"><span>@Html.RadioButtonFor(model => model.idTpFuncionario, (byte)WebFitness.TipoFunacionario.Instrutor)</span> @WebFitness.TipoFunacionario.Instrutor</label>
                     <label class="radio"><span>@Html.RadioButtonFor(model => model.idTpFuncionario, (byte)WebFitness.TipoFunacionario.Recepcionista)</span> @WebFitness.TipoFunacionario.Recepcionista</label>
                 </div>

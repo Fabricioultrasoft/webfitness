@@ -5,7 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using WebFitness.classes;
+using WebFitness.Classes;
 
 namespace WebFitness.Areas.Admin.Controllers
 {
@@ -16,7 +16,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aula/
-
+        [Authorize]
         public ActionResult Index()
         {
             @ViewBag.Controller = controller;
@@ -26,7 +26,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aula/Details/5
-
+        [Authorize]
         public ActionResult Details(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -40,7 +40,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aula/Create
-
+        [Authorize]
         public ActionResult Create()
         {
             @ViewBag.Controller = controller;
@@ -50,7 +50,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // POST: /Admin/Aula/Create
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Aula aula)
@@ -74,7 +74,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aula/Edit/5
-
+        [Authorize]
         public ActionResult Edit(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -89,7 +89,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // POST: /Admin/Aula/Edit/5
-
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Aula aula)
@@ -105,7 +105,7 @@ namespace WebFitness.Areas.Admin.Controllers
             return View(aula);
         }
 
-
+        [Authorize]
         public ActionResult Inactive(int id = 0)
         {
             @ViewBag.Controller = controller;
@@ -123,7 +123,7 @@ namespace WebFitness.Areas.Admin.Controllers
 
         //
         // GET: /Admin/Aluno/Active/5
-
+        [Authorize]
         public ActionResult Active(int id = 0)
         {
             @ViewBag.Controller = controller;

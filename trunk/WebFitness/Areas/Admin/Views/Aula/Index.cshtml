@@ -16,10 +16,8 @@
         <table class="data-table">
             <thead>
                 <tr>
-                    <th>@Html.DisplayNameFor(model => model.idAula)</th>
                     <th>@Html.DisplayNameFor(model => model.dsAula)</th>
                     <th>@Html.DisplayNameFor(model => model.capacidade)</th>
-                    <th>@Html.DisplayNameFor(model => model.observacao)</th>
                     <th>@Html.DisplayNameFor(model => model.preco)</th>
                     <th>@Html.DisplayNameFor(model => model.status)</th>
                     <th>@Html.DisplayNameFor(model => model.dtCriacao)</th>
@@ -29,26 +27,15 @@
             </thead>
             <tbody>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.idAula)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dsAula)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.capacidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.observacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.preco)
-        </td>
-        
-        <td>
-             @if (item.status == (byte)WebFitness.Status.Ativo)
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.dsAula)</td>
+                        <td>@Html.DisplayFor(modelItem => item.capacidade)</td>
+                        <td>@Html.DisplayFor(modelItem => item.preco)</td>
+
+                        <td>
+                            @if (item.status == (byte)WebFitness.Status.Ativo)
                             {
                                 <span class="label label-success">@WebFitness.Status.Ativo</span>
                             }
@@ -56,16 +43,11 @@
                             {
                                 <span class="label label-important">@WebFitness.Status.Inativo</span>
                             }
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dtCriacao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TpAula.dsTpAula)
-        </td>
-        
+                        </td>
+                        <td>@Html.DisplayFor(modelItem => item.dtCriacao)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TpAula.dsTpAula)</td>
 
-        <td  class="right">
+                        <td class="right">
                             @Html.ActionLink("Detalhes", "Details", new { id = item.idAula }, new { @class = "btn" })
 
                             @Html.ActionLink("Editar", "Edit", new { id = item.idAula }, new { @class = "btn btn-info" })
@@ -80,10 +62,8 @@
                             }
                         </td>
 
-
-       
-    </tr>
-}
+                    </tr>
+                }
             </tbody>
         </table>
     </div>

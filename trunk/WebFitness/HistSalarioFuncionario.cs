@@ -11,14 +11,29 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class HistSalarioFuncionario
     {
+        [Display(Name = "Código")]
         public int idHistSalarioFuncionario { get; set; }
+
+        [Display(Name = "Funcionário")]
+        [Required(ErrorMessage = "Funcionário é obrigatório!")]
         public int idFuncionario { get; set; }
+
+        [Display(Name = "Data Aumento")]
+        [Required(ErrorMessage = "Data de aumento é obrigatória!")]
         public System.DateTime dtAumento { get; set; }
+
+        [Display(Name = "Salário Antigo")]
         public decimal salarioAntigo { get; set; }
+
+        [Display(Name = "Salário Novo")]
+        [Required(ErrorMessage = "Novo salário é obrigatório!")]
         public decimal salarioNovo { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
     
         public virtual Funcionario Funcionario { get; set; }

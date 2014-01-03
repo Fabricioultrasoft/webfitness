@@ -5,7 +5,7 @@ using System.Web;
 using System.Text;
 using System.Security.Cryptography;
 
-namespace WebFitness.classes
+namespace WebFitness.Classes
 {
     public class Validation
     {

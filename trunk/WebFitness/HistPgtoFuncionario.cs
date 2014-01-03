@@ -11,15 +11,35 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class HistPgtoFuncionario
     {
+
+        [Display(Name = "Código")]
         public int idHistPgtoFuncionario { get; set; }
+
+        [Display(Name = "Funcionário")]
+        [Required(ErrorMessage = "Funcionário é obrigatório!")]
         public int idFuncionario { get; set; }
+
+        [Display(Name = "Data de Pagamento")]
+        [Required(ErrorMessage = "Data de pagamento é obrigatória!")]
         public System.DateTime dtPgto { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
+
+        [Display(Name = "Valor Pagamnento")]
+        [Required(ErrorMessage = "Valor pagamento é obrigatório!")]
         public decimal vlrPgto { get; set; }
+
+        [Display(Name = "Data Vigência Inicial")]
+        [Required(ErrorMessage = "Data inicial é obrigatória!")]
         public System.DateTime dtVigenciaInicial { get; set; }
+
+        [Display(Name = "Data Vigência Final")]
+        [Required(ErrorMessage = "Data final é obrigatório!")]
         public System.DateTime dtVigenciaFinal { get; set; }
     
         public virtual Funcionario Funcionario { get; set; }

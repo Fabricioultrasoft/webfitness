@@ -1,0 +1,60 @@
+﻿@model WebFitness.Equipamento
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<div class="span7">
+    <div class="top-bar">
+        <h3>
+            <i class="icon-cog"></i>
+            Cadastro Equipamentos
+        </h3>
+    </div>
+    <div class="well no-padding">
+        @using (Html.BeginForm("Edit", "Equipamento", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            
+            @Html.HiddenFor(model => model.idEquipamento)
+            @Html.HiddenFor(model => model.dtCriacao)
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.dsEquipamento, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.dsEquipamento, new { @class = "span6 m-wrap" })
+                    @Html.ValidationMessageFor(model => model.dsEquipamento)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.idFornecedor, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.DropDownList("idFornecedor", String.Empty)
+                    @Html.ValidationMessageFor(model => model.idFornecedor)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.status_, new { @class = "control-label" })
+
+                <div class="controls">
+                    <label class="radio"><span>@Html.RadioButtonFor(model => model.status_, (byte)WebFitness.Status.Ativo)</span> @WebFitness.Status.Ativo</label>
+                    <label class="radio"><span>@Html.RadioButtonFor(model => model.status_, (byte)WebFitness.Status.Inativo)</span> @WebFitness.Status.Inativo</label>
+                </div>
+            </div>
+            
+            <div class="form-actions">
+                <input type="submit" class="btn btn-success" name="enviar" value="Salvar" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger" })
+            </div>
+
+
+
+        }
+
+    </div>
+</div>

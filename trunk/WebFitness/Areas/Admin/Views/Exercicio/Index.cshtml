@@ -1,0 +1,62 @@
+﻿@model IEnumerable<WebFitness.Exercicio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Exercícios</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "Create", null, new { @class = "btn btn-large btn-primary" })
+</p>
+
+<div class="well no-padding tab-content">
+    <div class="tab-pane active" id="user-overview">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.dsExercicio)</th>
+                    <th>@Html.DisplayNameFor(model => model.idTpExercicio)</th>
+                    <th>@Html.DisplayNameFor(model => model.dtCriacao)</th>
+                    <th>@Html.DisplayNameFor(model => model.status)</th>
+                    <th class="right">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.dsExercicio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.TpExercicio.dsTpExercicio)</td>
+                        <td>@Html.DisplayFor(modelItem => item.dtCriacao)</td>
+                        <td>
+                            @if (item.status == (byte)WebFitness.Status.Ativo)
+                            {
+                                <span class="label label-success">@WebFitness.Status.Ativo</span>
+                            }
+                            else
+                            {
+                                <span class="label label-important">@WebFitness.Status.Inativo</span>
+                            }
+                        </td>
+                        <td class="right">
+                            @Html.ActionLink("Detalhes", "Details", new { id = item.idExercicio }, new { @class = "btn" })
+
+                            @Html.ActionLink("Editar", "Edit", new { id = item.idExercicio }, new { @class = "btn btn-info" })
+
+                            @if (item.status == (byte)WebFitness.Status.Ativo)
+                            {
+                                @Html.ActionLink("Inativar", "Inactive", new { id = item.idExercicio }, new { @class = "btn btn-danger" })
+                            }
+                            else
+                            {
+                                @Html.ActionLink("Ativar", "Active", new { id = item.idExercicio }, new { @class = "btn btn-success" })
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

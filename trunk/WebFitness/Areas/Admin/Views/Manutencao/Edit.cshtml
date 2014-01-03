@@ -1,0 +1,88 @@
+﻿@model WebFitness.Manutencao
+
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<div class="span7">
+    <div class="top-bar">
+        <h3>
+            <i class="icon-cog"></i>
+            Cadastro Manutenção
+        </h3>
+    </div>
+    <div class="well no-padding">
+        @using (Html.BeginForm("Edit", "Manutencao", FormMethod.Post, new { @class = "form-horizontal" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            @Html.HiddenFor(model => model.idManutencao)
+            @Html.HiddenFor(model => model.dtCriacao)
+            
+            <div class="control-group">
+                @Html.LabelFor(model => model.idFornecedor, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.DropDownList("idFornecedor", String.Empty)
+                    @Html.ValidationMessageFor(model => model.idFornecedor)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.idTpManutencao, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.DropDownList("idTpManutencao", String.Empty)
+                    @Html.ValidationMessageFor(model => model.idTpManutencao)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.valorManutencao, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.valorManutencao)
+                    @Html.ValidationMessageFor(model => model.valorManutencao)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.qtdParcelas, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.qtdParcelas)
+                    @Html.ValidationMessageFor(model => model.qtdParcelas)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.dtManutencao, new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.EditorFor(model => model.dtManutencao)
+                    @Html.ValidationMessageFor(model => model.dtManutencao)
+                </div>
+            </div>
+
+            <div class="control-group">
+                @Html.LabelFor(model => model.idEquipamento, "Equipamento", new { @class = "control-label" })
+
+                <div class="controls">
+                    @Html.DropDownList("idEquipamento", String.Empty)
+                    @Html.ValidationMessageFor(model => model.idEquipamento)
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <input type="submit" class="btn btn-success" name="enviar" value="Salvar" />
+                @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger" })
+            </div>
+
+        }
+
+    </div>
+</div>
+
+}
