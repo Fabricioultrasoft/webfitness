@@ -20,18 +20,18 @@ namespace WebFitness
             this.ExercicioEquipamento = new HashSet<ExercicioEquipamento>();
             this.Ficha = new HashSet<Ficha>();
         }
-        
+
         [Display(Name = "Código")]
         public int idExercicio { get; set; }
 
-        [Display(Name = "Nome")]
-        [Required(ErrorMessage = "Nome é obrigatorio!")]
-        [StringLength(100, ErrorMessage = "Nome deve ter no máximo 100 caracteres!")]
+        [Display(Name = "Descrição")]
+        [StringLength(100, ErrorMessage = "Descrição não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Descrição é obrigatória!")]
         public string dsExercicio { get; set; }
 
         [Display(Name = "Observação")]
-        [Required(ErrorMessage = "Observação é obrigatorio!")]
-        [StringLength(200, ErrorMessage = "Observação deve ter no máximo 100 caracteres!")]
+        [StringLength(200, ErrorMessage = "Observação não pode ter mais que 200 caracteres!")]
+        [Required(ErrorMessage = "Observação é obrigatória!")]
         public string observacao { get; set; }
 
         [Display(Name = "Status")]
@@ -40,8 +40,8 @@ namespace WebFitness
         [Display(Name = "Data de Criação")]
         public System.DateTime dtCriacao { get; set; }
 
-        [Display(Name = "Tipo Exercício")]
-        [Required(ErrorMessage = "Tipo de Exercício é obrigatorio!")]
+        [Display(Name = "Tipo de Exercício")]
+        [Required(ErrorMessage = "Tipo de exercício é obrigatório!")]
         public int idTpExercicio { get; set; }
     
         public virtual TpExercicio TpExercicio { get; set; }

@@ -8,7 +8,7 @@ using System.Net.Mail;
 using System.IO;
 
 
-namespace WebFitnessLib
+namespace WebFitness
 {
     partial class Mail
     {
@@ -18,18 +18,9 @@ namespace WebFitnessLib
 
         }
 
-        public Mail(string mailTo, string mailFrom, string mailSubject, string mailBody)
+        public Mail(string mailTo, string mailSubject, string mailBody)
         {
             this.mailTo = mailTo;
-            this.mailFrom = mailFrom;
-            this.mailSubject = mailSubject;
-            this.mailBody = mailBody;
-        }
-
-        public Mail(string[] mailTo, string mailFrom, string mailSubject, string mailBody)
-        {
-            this.mailToCollection = mailTo;
-            this.mailFrom = mailFrom;
             this.mailSubject = mailSubject;
             this.mailBody = mailBody;
         }
@@ -46,9 +37,9 @@ namespace WebFitnessLib
             SmtpClient client = new SmtpClient();
             Int64 attachmentSize = 0;
 
-            mail.From = new MailAddress(this.mailFrom);
-            mail.Subject = this.mailSubject;
-            mail.Body = this.mailBody;
+            mail.From     = new MailAddress(mailUserName);
+            mail.Subject  = this.mailSubject;
+            mail.Body     = this.mailBody;
             mail.Priority = this.mailPriority;
 
             if (!string.IsNullOrEmpty(this.mailTo))

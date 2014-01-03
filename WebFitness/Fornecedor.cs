@@ -22,46 +22,49 @@ namespace WebFitness
             this.Manutencao = new HashSet<Manutencao>();
         }
 
-        [Display(Name = "Fornecedor")]
+        [Display(Name = "Código")]
         public int idFornecedor { get; set; }
 
-        [Display(Name = "Nome")]
-        [Required(ErrorMessage = "Nome é obrigatorio!")]
-        [StringLength(100, ErrorMessage = "Nome deve ter no máximo 100 caracteres!")]
+        [Display(Name = "Descrição")]
+        [StringLength(100, ErrorMessage = "Descrição não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Descrição é obrigatória!")]
         public string dsFornecedor { get; set; }
 
         [Display(Name = "CNPJ")]
-        [Required(ErrorMessage = "CNPJ é obrigatorio!")]
-        [StringLength(20, ErrorMessage = "CNPJ deve ter no máximo 20 caracteres!")]
+        [StringLength(20, ErrorMessage = "CNPJ não pode ter mais que 20 caracteres!")]
+        [Required(ErrorMessage = "CNPJ é obrigatório!")]
         public string cnpj { get; set; }
 
         [Display(Name = "Inscrição Estadual")]
-        [StringLength(20, ErrorMessage = "Inscrição Estadual deve ter no máximo 20 caracteres!")]
+        [StringLength(20, ErrorMessage = "Inscrição estadual não pode ter mais que 20 caracteres!")]
+        [Required(ErrorMessage = "Inscrição estadual é obrigatória!")]
         public string inscrEstadual { get; set; }
 
         [Display(Name = "Endereço")]
-        [StringLength(100, ErrorMessage = "Endereço deve ter no máximo 100 caracteres!")]
+        [StringLength(100, ErrorMessage = "Endereço não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Endereço é obrigatório!")]
         public string rua { get; set; }
 
         [Display(Name = "Bairro")]
-        [StringLength(100, ErrorMessage = "Bairro deve ter no máximo 100 caracteres!")]
+        [StringLength(100, ErrorMessage = "Bairro não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Bairro é obrigatório!")]
         public string bairro { get; set; }
 
-        [Display(Name = "Email")]
-        [Required(ErrorMessage = "Email é obrigatorio!")]
-        [StringLength(100, ErrorMessage = "Email deve ter no máximo 100 caracteres!")]
+        [Display(Name = "E-mail")]
+        [StringLength(100, ErrorMessage = "E-mail não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "E-mail é obrigatório!")]
         public string email { get; set; }
 
         [Display(Name = "Telefone")]
-        [Required(ErrorMessage = "Telefone é obrigatorio!")]
-        [StringLength(100, ErrorMessage = "Telefone deve ter no máximo 100 caracteres!")]
+        [StringLength(20, ErrorMessage = "Telefone não pode ter mais que 20 caracteres!")]
+        [Required(ErrorMessage = "Telefone é obrigatório!")]
         public string telefone { get; set; }
 
         [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
 
         [Display(Name = "Cidade")]
-        [Required(ErrorMessage = "Cidade é obrigatoria!")]
+        [Required(ErrorMessage = "Cidade é obrigatória!")]
         public int idCidade { get; set; }
 
         [Display(Name = "Status")]

@@ -12,7 +12,7 @@ namespace WebFitness
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class Aula
     {
         public Aula()
@@ -21,25 +21,26 @@ namespace WebFitness
             this.EquipamentoAula = new HashSet<EquipamentoAula>();
         }
 
+
         [Display(Name = "Código")]
         public int idAula { get; set; }
 
-        [Display(Name = "Nome")]
-        [Required(ErrorMessage = "Nome é obrigatorio!")]
-        [StringLength(100, ErrorMessage = "Nome deve ter no máximo 100 caracteres!")]
+        [Display(Name = "Descrição")]
+        [StringLength(100, ErrorMessage = "Descrição não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Descrição é obrigatória!")]
         public string dsAula { get; set; }
 
         [Display(Name = "Capacidade")]
-        [Required(ErrorMessage = "Capacidade é obrigatoria!")]
+        [Required(ErrorMessage = "Capacidade é obrigatória!")]
         public int capacidade { get; set; }
 
         [Display(Name = "Observação")]
-        [Required(ErrorMessage = "Observação é obrigatorio!")]
-        [StringLength(200, ErrorMessage = "Observação deve ter no máximo 100 caracteres!")]
+        [StringLength(200, ErrorMessage = "Observação não pode ter mais que 200 caracteres!")]
+        [Required(ErrorMessage = "Observação é obrigatória!")]
         public string observacao { get; set; }
 
         [Display(Name = "Preço")]
-        [Required(ErrorMessage = "Preço é obrigatorio!")]
+        [Required(ErrorMessage = "Preço é obrigatório!")]
         public decimal preco { get; set; }
 
         [Display(Name = "Status")]
@@ -48,8 +49,8 @@ namespace WebFitness
         [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
 
-        [Display(Name = "Tipo Aula")]
-        [Required(ErrorMessage = "Tipo de Aula é obrigatorio!")]
+        [Display(Name = "Tipo de Aula")]
+        [Required(ErrorMessage = "Tipo de aula é obrigatória!")]
         public int idTpAula { get; set; }
     
         public virtual ICollection<AlunoAula> AlunoAula { get; set; }

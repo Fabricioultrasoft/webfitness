@@ -1,0 +1,55 @@
+﻿@model IEnumerable<WebFitness.ContasPagar>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Contas a Pagar</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "Create", null, new { @class = "btn btn-large btn-primary" })
+</p>
+
+<div class="well no-padding tab-content">
+    <div class="tab-pane active" id="user-overview">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.dsContasPagar)</th>
+                    <th>@Html.DisplayNameFor(model => model.valor)</th>
+                    <th>@Html.DisplayNameFor(model => model.dtVencimento)</th>
+                    <th>@Html.DisplayNameFor(model => model.dtPagamento)</th>
+                    <th>@Html.DisplayNameFor(model => model.tpRegistro)</th>
+                    <th class="right"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.dsContasPagar)</td>
+                        <td>@Html.DisplayFor(modelItem => item.valor)</td>
+                        <td>@Html.DisplayFor(modelItem => item.dtVencimento)</td>
+                        <td>@Html.DisplayFor(modelItem => item.dtPagamento)</td>
+                        <td>@if( item.tpRegistro == (byte) WebFitness.TipoContasPagar.Diversas)
+                            {
+                                @WebFitness.TipoContasPagar.Diversas
+                            }
+                            else if (item.tpRegistro == (byte)WebFitness.TipoContasPagar.Manutencao)
+                            {
+                                @WebFitness.TipoContasPagar.Manutencao
+                            }else
+                            {
+                                @WebFitness.TipoContasPagar.Salario
+                            }
+                        </td>
+                        <td class="right">
+                            @Html.ActionLink("Editar", "Edit", new { id = item.idContasPagar }, new { @class = "btn btn-info" })
+                            @Html.ActionLink("Excluir", "Delete", new { id = item.idContasPagar }, new { @class = "btn btn-danger" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

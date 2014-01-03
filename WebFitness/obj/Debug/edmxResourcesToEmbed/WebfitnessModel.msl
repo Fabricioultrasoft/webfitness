@@ -68,9 +68,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="ContasPagar">
+      <EntityTypeMapping TypeName="WebfitnessDBModel.ContasPagar">
+        <MappingFragment StoreEntitySet="ContasPagar">
+          <ScalarProperty Name="tpRegistro" ColumnName="tpRegistro" />
+          <ScalarProperty Name="idTabelaFK" ColumnName="idTabelaFK" />
+          <ScalarProperty Name="dtPagamento" ColumnName="dtPagamento" />
+          <ScalarProperty Name="dtVencimento" ColumnName="dtVencimento" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="dsContasPagar" ColumnName="dsContasPagar" />
+          <ScalarProperty Name="idContasPagar" ColumnName="idContasPagar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Contato">
       <EntityTypeMapping TypeName="WebfitnessDBModel.Contato">
         <MappingFragment StoreEntitySet="Contato">
+          <ScalarProperty Name="mensagemResposta" ColumnName="mensagemResposta" />
+          <ScalarProperty Name="assuntoResposta" ColumnName="assuntoResposta" />
+          <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
           <ScalarProperty Name="mensagem" ColumnName="mensagem" />
@@ -84,7 +100,6 @@
       <EntityTypeMapping TypeName="WebfitnessDBModel.Equipamento">
         <MappingFragment StoreEntitySet="Equipamento">
           <ScalarProperty Name="idFornecedor" ColumnName="idFornecedor" />
-          <ScalarProperty Name="idTpEquipamento" ColumnName="idTpEquipamento" />
           <ScalarProperty Name="status_" ColumnName="status " />
           <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
           <ScalarProperty Name="dsEquipamento" ColumnName="dsEquipamento" />
@@ -125,9 +140,9 @@
     <EntitySetMapping Name="Ficha">
       <EntityTypeMapping TypeName="WebfitnessDBModel.Ficha">
         <MappingFragment StoreEntitySet="Ficha">
-          <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="dtCriacao" ColumnName="dtCriacao" />
           <ScalarProperty Name="series" ColumnName="series" />
+          <ScalarProperty Name="status" ColumnName="status" />
           <ScalarProperty Name="qtdRepeticoes" ColumnName="qtdRepeticoes" />
           <ScalarProperty Name="idAluno" ColumnName="idAluno" />
           <ScalarProperty Name="idExercicio" ColumnName="idExercicio" />

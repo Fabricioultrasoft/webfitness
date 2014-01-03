@@ -11,6 +11,7 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class Ficha
     {
@@ -18,14 +19,31 @@ namespace WebFitness
         {
             this.HistExercicioAluno = new HashSet<HistExercicioAluno>();
         }
-    
+
+        [Display(Name = "Código")]
         public int idFicha { get; set; }
+
+        [Display(Name = "Exercício")]
+        [Required(ErrorMessage = "Exercício é obrigatório!")]
         public int idExercicio { get; set; }
+
+        [Display(Name = "Aluno")]
+        [Required(ErrorMessage = "Aluno é obrigatório!")]
         public int idAluno { get; set; }
+
+        [Display(Name = "Repetições")]
+        [Required(ErrorMessage = "Quantidade de repetições é obrigatório!")]
         public int qtdRepeticoes { get; set; }
-        public int series { get; set; }
-        public Nullable<System.DateTime> dtCriacao { get; set; }
+
+        [Display(Name = "Status")]
         public byte status { get; set; }
+
+        [Display(Name = "Séries")]
+        [Required(ErrorMessage = "Série de exercício é obrigatório!")]
+        public int series { get; set; }
+
+        [Display(Name = "Data de Criação")]
+        public Nullable<System.DateTime> dtCriacao { get; set; }
     
         public virtual Aluno Aluno { get; set; }
         public virtual Exercicio Exercicio { get; set; }

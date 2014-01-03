@@ -1,0 +1,113 @@
+﻿@model WebFitness.Contato
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<div class="span7">
+    <div class="top-bar">
+        <h3>
+            <i class="icon-cog"></i>
+            Contato Clientes
+        </h3>
+    </div>
+    <div class="well no-padding">
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.idContato, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.idContato, new { @class = "span6 m-wrap" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.nome, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.nome, new { @class = "span6 m-wrap" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.email, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.email, new { @class = "span6 m-wrap" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.assunto, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.assunto, new { @class = "span6 m-wrap" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.mensagem, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.mensagem, new { @class = "span6 m-wrap" })
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.assuntoResposta, new { @class = "control-label" })
+
+            <div class="controls">
+                @if (Model.mensagemResposta.IsEmpty())
+                {
+                    @Html.Label("Não há resposta enviada")
+                }
+                else
+                {
+                    @Html.DisplayFor(model => model.assuntoResposta)
+                }
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.mensagemResposta, new { @class = "control-label" })
+
+            <div class="controls">
+
+                @if (Model.mensagemResposta.IsEmpty())
+                {
+                    @Html.Label("Não há resposta enviada")
+                }
+                else
+                {
+                    @Html.DisplayFor(model => model.mensagemResposta)
+                }
+
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.status, new { @class = "control-label" })
+
+            <div class="controls">
+                @if (Model.status == (byte)WebFitness.Status.Ativo)
+                {
+                    @Html.Label("Pendente")
+                }
+                else
+                {
+                    @Html.Label("Respondido")
+                }
+            </div>
+        </div>
+
+
+        <div class="form-actions">
+            @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger" })
+
+        </div>
+    </div>
+</div>

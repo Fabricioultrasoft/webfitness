@@ -30,6 +30,7 @@ namespace WebFitness
         public DbSet<Aula> Aula { get; set; }
         public DbSet<Cidade> Cidade { get; set; }
         public DbSet<Compra> Compra { get; set; }
+        public DbSet<ContasPagar> ContasPagar { get; set; }
         public DbSet<Contato> Contato { get; set; }
         public DbSet<Equipamento> Equipamento { get; set; }
         public DbSet<EquipamentoAula> EquipamentoAula { get; set; }

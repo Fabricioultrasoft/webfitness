@@ -12,7 +12,7 @@ namespace WebFitness
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class TpAula
     {
         public TpAula()
@@ -24,8 +24,8 @@ namespace WebFitness
         public int idTpAula { get; set; }
 
         [Display(Name = "Descrição")]
-        [Required(ErrorMessage = "Descrição é obrigatoria!")]
-        [StringLength(100, ErrorMessage = "Descrição deve ter no máximo 100 caracteres!")]
+        [StringLength(100, ErrorMessage = "Descrição não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Descrição é obrigatória!")]
         public string dsTpAula { get; set; }
 
         [Display(Name = "Status")]

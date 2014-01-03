@@ -20,4 +20,11 @@ namespace WebFitness
         Recepcionista = 3
     }
 
+    public enum TipoContasPagar : byte
+    {
+        Manutencao = 1,
+        Salario = 2,
+        Diversas = 3
+    }
+
 }

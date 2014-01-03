@@ -22,45 +22,46 @@ namespace WebFitness
             this.HistPgtoAluno = new HashSet<HistPgtoAluno>();
         }
 
-        [Display(Name = "Aluno")]
+        [Display(Name = "Código")]
         public int idAluno { get; set; }
 
         [Display(Name = "Nome")]
-        [Required(ErrorMessage = "Nome é obrigatorio!")]
-        [StringLength(100, ErrorMessage = "Nome deve ter no máximo 100 caracteres!")]
+        [StringLength(100, ErrorMessage = "Nome não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Nome é obrigatório!")]
         public string nome { get; set; }
 
         [Display(Name = "CPF")]
-        [Required(ErrorMessage = "CPF é obrigatorio!")]
-        [StringLength(20, ErrorMessage = "CPF deve ter no máximo 20 caracteres!")]
+        [StringLength(20, ErrorMessage = "CPF não pode ter mais que 20 caracteres!")]
+        [Required(ErrorMessage = "CPF é obrigatório!")]
         public string cpf { get; set; }
 
         [Display(Name = "Telefone")]
-        [Required(ErrorMessage = "Telefone é obrigatorio!")]
-        [StringLength(20, ErrorMessage = "Telefone deve ter no máximo 100 caracteres!")]
+        [StringLength(20, ErrorMessage = "Telefone não pode ter mais que 20 caracteres!")]
+        [Required(ErrorMessage = "Telefone é obrigatório!")]
         public string telefone { get; set; }
 
-        [Display(Name = "Email")]
-        [Required(ErrorMessage = "Email é obrigatorio!")]
-        [StringLength(100, ErrorMessage = "Email deve ter no máximo 100 caracteres!")]
+        [Display(Name = "E-mail")]
+        [StringLength(100, ErrorMessage = "E-mail não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "E-mail é obrigatório!")]
         public string email { get; set; }
 
         [Display(Name = "Endereço")]
-        [StringLength(100, ErrorMessage = "Endereço deve ter no máximo 100 caracteres!")]
+        [StringLength(100, ErrorMessage = "Endereço não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Endereço é obrigatória!")]
         public string rua { get; set; }
 
         [Display(Name = "Bairro")]
-        [StringLength(100, ErrorMessage = "Bairro deve ter no máximo 100 caracteres!")]
+        [StringLength(100, ErrorMessage = "Bairro não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Bairro é obrigatório!")]
         public string bairro { get; set; }
 
         [Display(Name = "Sexo")]
-        [Required(ErrorMessage = "Sexo é obrigatorio!")]
-        [StringLength(1, ErrorMessage = "Sexo deve ter no máximo 1 caracteres!")]
+        [StringLength(1, ErrorMessage = "Sexo deve ser M ou F!")]
+        [Required(ErrorMessage = "Sexo é obrigatório!")]
         public string sexo { get; set; }
 
         [Display(Name = "Data de Nascimento")]
-        [Required(ErrorMessage = "Data de Nascimento é obrigatoria!")]
-        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        [Required(ErrorMessage = "Data de Nascimento é obrigatória!")]
         public System.DateTime aniversario { get; set; }
 
         [Display(Name = "Data de Criação")]
@@ -70,16 +71,14 @@ namespace WebFitness
         public Nullable<byte> status { get; set; }
 
         [Display(Name = "Cidade")]
-        [Required(ErrorMessage = "Cidade é obrigatório!")]
+        [Required(ErrorMessage = "Cidade é obrigatória!")]
         public int idCidade { get; set; }
 
         [Display(Name = "Login")]
-        [Required(ErrorMessage = "Login é obrigatorio!")]
-        [StringLength(100, ErrorMessage = "Login deve ter no máximo 100 caracteres!")]
+        [StringLength(100, ErrorMessage = "Login não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Login é obrigatório!")]
         public string login { get; set; }
 
-        [Display(Name = "Senha")]
-        [StringLength(300, ErrorMessage = "Senha deve ter no máximo 300 caracteres!")]
         public string senha { get; set; }
     
         public virtual Cidade Cidade { get; set; }

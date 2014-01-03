@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
-using WebFitness.classes;
+using WebFitness.Classes;
 
 namespace WebFitness.Areas.Admin.Controllers
 {
@@ -33,38 +33,50 @@ namespace WebFitness.Areas.Admin.Controllers
             @ViewBag.Controller = controller;
             string senha = Validation.GetMD5Hash(funcionario.senha);
 
-            /*
-            var user = (from funcionarioTmp
-                       in db.Funcionario
-                       where funcionarioTmp.login == funcionario.login
-                          && funcionarioTmp.senha == senha
-                       select funcionarioTmp ).First();
-            */
-            try
-            {
-                Funcionario user = (from u
-                                      in db.Funcionario
-                                    where u.login == funcionario.login
-                                       && u.senha == senha
-                                    select u).First();
+            //try
+            //{
+            Funcionario user = (from funcionarioTmp
+                                  in db.Funcionario
+                                where funcionarioTmp.login == funcionario.login
+                                  && funcionarioTmp.senha == senha
+                                select funcionarioTmp).First();
 
-                FormsAuthentication.SetAuthCookie(user.nome, false);
-                if (ReturnUrl == null)
-                    return RedirectToAction("Index", "Dashboard");
-                else
-                    return Redirect(ReturnUrl);
+            FormsAuthentication.SetAuthCookie(user.nome, false);
+            Session["FUNCIONARIO"] = user;
 
-                //return RedirectToAction("Login");
-            }
-            catch
-            {
-                return RedirectToAction("Login");
-            }
+            if (!String.IsNullOrEmpty(ReturnUrl))
+                return Redirect(ReturnUrl);
+            else
+                return RedirectToAction("Index", "Dashboard");
+
+
+            //}
+            //catch
+            //{
+            //    return RedirectToAction("Login");
+            //}
         }
 
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
+        }
+
+        public ActionResult Forget()
+        {
+            @ViewBag.Controller = controller;
+            Session.Clear();
+            return View();
+        }
+
+        //
+        // POST: /Admin/LoginAdmin/Create
+
+        [HttpPost]
+        public ActionResult Forget(Funcionario funcionario, String ReturnUrl)
+        {
+            @ViewBag.Controller = controller;
             return RedirectToAction("Login");
         }
 

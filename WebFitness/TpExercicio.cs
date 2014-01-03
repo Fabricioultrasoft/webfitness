@@ -12,20 +12,20 @@ namespace WebFitness
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-
+    
     public partial class TpExercicio
     {
         public TpExercicio()
         {
             this.Exercicio = new HashSet<Exercicio>();
         }
-
-        [Display(Name = "Código")]
+        
+        [Display(Name="Código")]
         public int idTpExercicio { get; set; }
 
         [Display(Name = "Descrição")]
-        [Required(ErrorMessage = "Descrição é obrigatoria!")]
-        [StringLength(100, ErrorMessage = "Descrição deve ter no máximo 100 caracteres!")]
+        [StringLength(100, ErrorMessage = "Descrição não pode ter mais que 100 caracteres!")]
+        [Required(ErrorMessage = "Descrição é obrigatória!")]
         public string dsTpExercicio { get; set; }
 
         [Display(Name = "Status")]

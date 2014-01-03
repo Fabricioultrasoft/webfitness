@@ -11,15 +11,34 @@ namespace WebFitness
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class HistExercicioAluno
     {
+        [Display(Name = "Código")]
         public int idHistExercicioAluno { get; set; }
+
+        [Display(Name = "Ficha")]
+        [Required(ErrorMessage = "Ficha é obrigatória!")]
         public int idFicha { get; set; }
+
+        [Display(Name = "Repetições Velha")]
+        [Required(ErrorMessage = "Quantidade de repetições antiga é obrigatória!")]
         public int qtdRepeticoesVelha { get; set; }
+
+        [Display(Name = "Repetições Novas")]
+        [Required(ErrorMessage = "Nova quantidade de repetições é obrigatório!")]
         public int qtdRepeticoesNova { get; set; }
+
+        [Display(Name = "Series Velha")]
+        [Required(ErrorMessage = "Quantidade de séries antiga é obrigatória!")]
         public int seriesVelho { get; set; }
+
+        [Display(Name = "Series Nova")]
+        [Required(ErrorMessage = "A nova quantidade de séries é obrigatória!")]
         public int seriesNovo { get; set; }
+
+        [Display(Name = "Data de Criação")]
         public Nullable<System.DateTime> dtCriacao { get; set; }
     
         public virtual Ficha Ficha { get; set; }

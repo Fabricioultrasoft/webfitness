@@ -1,0 +1,75 @@
+﻿@model WebFitness.Manutencao
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<div class="span7">
+    <div class="top-bar">
+        <h3>
+            <i class="icon-cog"></i>
+            Cadastro Manutenção
+        </h3>
+    </div>
+    <div class="well no-padding">
+        <div class="control-group">
+            @Html.LabelFor(model => model.idFornecedor, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.Fornecedor.dsFornecedor)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.idTpManutencao, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.TpManutencao.dsTpManutencao)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.valorManutencao, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.valorManutencao)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.qtdParcelas, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.qtdParcelas)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.dtManutencao, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.dtManutencao)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.dtCriacao, new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.dtCriacao)
+            </div>
+        </div>
+
+        <div class="control-group">
+            @Html.LabelFor(model => model.idEquipamento, "Equipamento", new { @class = "control-label" })
+
+            <div class="controls">
+                @Html.DisplayFor(model => model.Equipamento.dsEquipamento)
+            </div>
+        </div>
+
+        <div class="form-actions">
+            @Html.ActionLink("Cancelar", "Index", null, new { @class = "btn btn-danger" })
+        </div>
+    </div>
+</div>
